@@ -288,6 +288,18 @@
   - type: IntrinsicRadioTransmitter
     channels:
     - STShadowlingMind
+    - Binary
+    - Common 
+    - Command
+    - CentCom
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    - Syndicate
+    - Prison
   - type: ActiveRadio
     channels:
     - STShadowlingMind
@@ -343,3 +355,19 @@
   - type: Alerts
   - type: Speech
     speechVerb: Ghost
+  - type: Access
+    groups:
+    - AllAccess
+    - Silicon
+    - PrisonAllAccess
+    tags:
+    - CentralCommand
+    - NuclearOperative
+    - SyndicateAgent
+    - Wizard
+    - Xenoborg
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - StunImmune
