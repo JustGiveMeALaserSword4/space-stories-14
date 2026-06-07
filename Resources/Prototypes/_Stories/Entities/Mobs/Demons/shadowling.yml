@@ -254,6 +254,7 @@
   - type: MobCollision
   - type: PressureImmunity
   - type: MeleeWeapon
+    altDisarm: false
     soundHit:
       collection: Punch
     angle: 30
