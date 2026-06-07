@@ -52,6 +52,16 @@
       ]
     },
     {
+      "name": "deny",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
       "name": "deny_unlit",
       "delays": [
         [
@@ -144,6 +154,9 @@
           0.4
         ]
       ]
+    },
+    {
+      "name": "locked"
     },
     {
       "name": "pressure_unlit",

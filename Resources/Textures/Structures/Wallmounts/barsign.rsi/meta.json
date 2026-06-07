@@ -31,6 +31,24 @@
       ]
     },
     {
+      "name": "corvax_alcoholic",
+      "delays": [
+        [
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
       "name": "thewiggleroom",
       "delays": [
         [
