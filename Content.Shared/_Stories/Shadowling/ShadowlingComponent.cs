@@ -137,12 +137,6 @@ public sealed partial class ShadowlingComponent : Component
     };
 
     [DataField]
-    public DamageSpecifier SonicScreechWindowDamage = new()
-    {
-        DamageDict = new() { { "Structural", 80 } }
-    };
-
-    [DataField]
     public SoundSpecifier? GlareSound = new SoundPathSpecifier("/Audio/_Stories/Magic/forcewall.ogg");
 
     [DataField]

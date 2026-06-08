@@ -22,7 +22,7 @@
   categories: [HideSpawnMenu]
   components:
   - type: Action
-    useDelay: 60
+    useDelay: 15
     icon:
       sprite: _Stories/Actions/shadowling.rsi
       state: enthrall
@@ -142,7 +142,7 @@
   parent: BaseAction
   id: STActionShadowlingSonicScreech
   name: Sonic Screech
-  description: Deafens, stuns, and confuses nearby people. Also shatters windows.
+  description: Deafens, stuns, and confuses nearby people.
   categories: [HideSpawnMenu]
   components:
   - type: Action
@@ -180,7 +180,7 @@
   categories: [HideSpawnMenu]
   components:
   - type: Action
-    useDelay: 300
+    useDelay: 120
     icon:
       sprite: _Stories/Actions/shadowling.rsi
       state: revive_thrall

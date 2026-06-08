@@ -385,13 +385,10 @@ public sealed class ShadowlingActionSystem : EntitySystem
             {
                 _emp.DoEmpEffects(target, 50000, TimeSpan.FromSeconds(6));
             }
-            else if (_tag.HasTag(target, WindowTag))
-            {
-                _damageable.TryChangeDamage(target, component.SonicScreechWindowDamage, true);
-            }
             else if (HasComp<MobStateComponent>(target))
             {
                 _stun.TryKnockdown(target, TimeSpan.FromSeconds(2), true);
+                _stun.TryAddStunDuration(target, TimeSpan.FromSeconds(2));
             }
         }
         args.Handled = true;

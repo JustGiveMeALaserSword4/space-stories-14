@@ -183,7 +183,7 @@
     attackRate: 1
     damage:
       types:
-        Slash: 15
+        Blunt: 15
   - type: MovementSpeedModifier
     baseWalkSpeed: 4.5
     baseSprintSpeed: 6.0
@@ -262,7 +262,7 @@
     attackRate: 1
     damage:
       types:
-        Slash: 35
+        Blunt: 35
   - type: ZombieImmune
   - type: VisionProvider
     drawFov: false
