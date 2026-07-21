@@ -51,3 +51,4 @@ public sealed class VerbScanEvent : EntityEventArgs
     public FormattedMessage VerbScanMessage = new();
     public EntityUid Examiner;
 }
+// TODO: Сделано не опытным, начинающим кодером, прошу переделать при необходимости или убрать этот комментарий ^w^

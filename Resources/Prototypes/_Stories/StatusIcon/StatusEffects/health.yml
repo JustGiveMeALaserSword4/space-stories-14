@@ -1,0 +1,8 @@
+- type: healthIcon
+  parent: HealthIcon
+  id: STPerishWarnIcon
+  priority: 2
+  locationPreference: right
+  icon:
+    sprite: /Textures/Interface/Misc/health_icons.rsi
+    state: Critical

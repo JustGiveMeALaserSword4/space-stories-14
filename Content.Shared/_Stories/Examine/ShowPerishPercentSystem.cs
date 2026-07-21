@@ -35,4 +35,3 @@ public sealed class ShowPerishPercentSystem : EntitySystem
         args.VerbScanMessage.PushNewline();
     }
 }
-// TODO: Сделано не опытным, начинающим кодером, прошу переделать при необходимости или убрать этот комментарий ^w^
