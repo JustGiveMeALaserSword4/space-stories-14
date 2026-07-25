@@ -14,3 +14,27 @@
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#585b70"
+
+- type: entity
+  parent: BaseCartridgePistol
+  id: STCartridgeDeagle
+  name: cartridge (.50 AE)
+  description: TODO
+  components:
+  - type: CartridgeAmmo
+    proto: STBulletDeagle
+  - type: Tag
+    tags:
+    - STCartridgeDeagle
+
+- type: entity
+  parent: STCartridgePistolSilver
+  id: STCartridgeDeagleSilver
+  name: cartridge (.50 AE silver)
+  description: TODO
+  components:
+  - type: CartridgeAmmo
+    proto: STBulletDeagleSilver
+  - type: Tag
+    tags:
+    - STCartridgeDeagle

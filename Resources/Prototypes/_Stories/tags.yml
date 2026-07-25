@@ -18,3 +18,9 @@
 
 - type: Tag
   id: STEncryptionJuridical
+
+- type: Tag
+  id: STMagazineDeagle
+
+- type: Tag
+  id: STCartridgeDeagle
