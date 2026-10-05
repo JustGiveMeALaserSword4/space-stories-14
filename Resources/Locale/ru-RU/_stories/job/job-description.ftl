@@ -22,7 +22,17 @@ stories-job-description-officer-security-centcom = Вы живой щит ста
 stories-job-description-medic-centcom = Убедитесь, что экипаж станции Центрального командования, жив и здоров.
 stories-job-description-engineer-centcom = Поддерживайте целостность и работу жизненно важных систем станции Центрального командования.
 stories-job-description-worker-centcom = Выполняйте любую порученную вам работу, вы элитный уборщик.
+stories-job-description-blueshield = Защищайте глав отделов ценой своей жизни. Вы не офицер службы безопасности и не проводите аресты.
 
 # DSO-Jobs
 
 stories-job-description-special-officer = Руководите силами департамента спецопераций.
+
+# Prison-Jobs
+
+stories-job-description-guardian-nt = Встань на защиту командования станции со своим крутым мечом и способностями!
+stories-job-description-head-of-prison = Охраняйте это место используя все возможное и невозможно, иначе на свободу вырвутся самые опасные обитатели вселенной.
+stories-job-description-prison-engineer = Обслуживайте тюрьму, ибо сбежавшие зеки придут за вами в первую очередь.
+stories-job-description-prison-medic = Лечите самых опасных преступников космических просторов.
+stories-job-description-prison-officer = Ограждать станцию от преступного элемента - это ваша наивысшая миссия на смену, не подведите.
+stories-job-description-prisoner = Как я сюда попал?

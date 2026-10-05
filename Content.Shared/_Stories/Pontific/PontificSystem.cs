@@ -26,7 +26,7 @@ public sealed partial class PontificSystem : EntitySystem
         SubscribeLocalEvent<PontificComponent, PontificPrayerEvent>(OnPrayer);
         SubscribeLocalEvent<PontificComponent, PontificFlameSwordsEvent>(OnFlameSwords);
 
-        SubscribeLocalEvent<CreateEntityEvent>(OnCreateEntity); // TODO: Move to abilities system
+        SubscribeLocalEvent<CreateEntityEvent>(OnCreateEntity);
 
         InitializeFlame();
         InitializePrayer();
@@ -81,7 +81,7 @@ public sealed partial class PontificSystem : EntitySystem
         {
             EnsureComp<PontificFlameComponent>(entity).DamageMultiplier = args.DamageMultiplier;
             EnsureComp<PontificFlameComponent>(entity).SpeedMultiplier = args.SpeedMultiplier;
-            _movementSpeed.RefreshMovementSpeedModifiers(entity);
+            _movementSpeed.RefreshMovementSpeedModifiers(entity.Owner);
             args.Handled = true;
         }
     }
@@ -105,7 +105,7 @@ public sealed partial class PontificSystem : EntitySystem
         }
     }
 
-    private void OnCreateEntity(CreateEntityEvent args) // TODO: Move to abilities system
+    private void OnCreateEntity(CreateEntityEvent args)
     {
         Spawn(args.Proto, Transform(args.Performer).Coordinates);
     }

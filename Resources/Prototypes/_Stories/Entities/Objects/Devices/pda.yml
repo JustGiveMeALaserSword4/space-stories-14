@@ -1,11 +1,36 @@
 - type: entity
   parent: BaseSecurityPDA
-  id: IAAPDA
-  name: КПК агента внутрених дел
-  description: Корпорация и прибыль - лучшие друзья.
+  id: STGuardianNtPDA
+  name: Bladeguard PDA
+  description: Red means powerful. It has scratches from a lightsaber on it.
+  components:
+  - type: Tag
+    tags:
+      - STForceRecallEquipment
+      - WhitelistChameleon
+      - WhitelistChameleonPDA
+  - type: Pda
+    id: STGuardianNtIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-ert
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+    accentHColor: "#447987"
+    accentVColor: "#447987"
+  - type: Icon
+    state: pda-ert
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: STIAAPDA
+  name: Internal Affairs Agent PDA
+  description: Corporation and profit are best friends.
   components:
   - type: Pda
-    id: IAAIDCard
+    id: STIAAIDCard
     penSlot:
       startingItem: PenCentcom
       priority: -1
@@ -46,14 +71,14 @@
 
 - type: entity
   parent: BasePDA
-  id: PRISONPDAHeadOfPrison
-  name: КПК начальника тюрьмы
-  description: Этот КПК - ваш путь к свободе.
+  id: STPRISONPDAHeadOfPrison
+  name: Prison warden's PDA
+  description: This PDA is your path to freedom.
   components:
   - type: Sprite
     sprite: _Stories/Objects/Devices/pda.rsi
   - type: Pda
-    id: PRISONIDCardHeadOfPrison
+    id: STPRISONIDCardHeadOfPrison
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
@@ -64,13 +89,13 @@
     state: pda-hosp
 
 - type: entity
-  parent: PRISONPDAHeadOfPrison
-  id: PRISONPDAOfficer
-  name: КПК офицера тюрьмы
-  description: Этот КПК - ваш путь к свободе.
+  parent: STPRISONPDAHeadOfPrison
+  id: STPRISONPDAOfficer
+  name: Prison officer PDA
+  description: This PDA is your path to freedom.
   components:
   - type: Pda
-    id: PRISONIDCardOfficer
+    id: STPRISONIDCardOfficer
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
@@ -80,13 +105,13 @@
     state: pda-spofficer
 
 - type: entity
-  parent: PRISONPDAHeadOfPrison
-  id: PRISONPDAEngineer
-  name: КПК инженера тюрьмы
-  description: Этот КПК - ваш путь к свободе.
+  parent: STPRISONPDAHeadOfPrison
+  id: STPRISONPDAEngineer
+  name: Prison engineer's PDA
+  description: This PDA is your path to freedom.
   components:
   - type: Pda
-    id: PRISONIDCardEngineer
+    id: STPRISONIDCardEngineer
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
@@ -97,14 +122,14 @@
 
 - type: entity
   parent: BaseMedicalPDA
-  id: PRISONPDAMedic
-  name: КПК врача тюрьмы
-  description: Этот КПК - ваш путь к свободе.
+  id: STPRISONPDAMedic
+  name: Prison doctor PDA
+  description: This PDA is your path to freedom.
   components:
   - type: Sprite
     sprite: _Stories/Objects/Devices/pda.rsi
   - type: Pda
-    id: PRISONIDCardMedic
+    id: STPRISONIDCardMedic
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
@@ -358,6 +383,29 @@
     accentVColor: "#447987"
   - type: Icon
     state: pda-ert
+
+- type: entity
+  parent: BaseSecurityPDA
+  id: STBlueshieldPDA
+  name: blueshield PDA
+  description: A specialized PDA issued to the Blueshield Officer, built with high security standards.
+  components:
+  - type: Sprite
+    sprite: _Stories/Objects/Devices/pda.rsi
+  - type: Pda
+    id: STBlueshieldIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-blueshield
+  - type: PdaBorderColor
+    borderColor: "#28287a"
+    accentVColor: "#dfdfdf"
+    accentHColor: "#dfdfdf"
+  - type: Icon
+    sprite: _Stories/Objects/Devices/pda.rsi
+    state: pda-blueshield
 
 # DSO-Jobs
 

@@ -2,7 +2,7 @@ using System.Linq;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
-using Content.Shared.Ghost;
+using Content.Shared.Ghost.Components;
 using Content.Shared.Mind;
 using Content.Shared.Random.Helpers;
 using Robust.Shared.Prototypes;
@@ -22,6 +22,9 @@ public sealed partial class GhostSpriteStateSystem : EntitySystem
     public void SetGhostSprite(Entity<GhostSpriteStateComponent?> ent, EntityUid mind)
     {
         if (!Resolve(ent, ref ent.Comp))
+            return;
+
+        if (TryComp<Content.Shared._Stories.Sponsors.SponsorGhostSkinComponent>(ent, out var sponsorSkin) && !string.IsNullOrEmpty(sponsorSkin.Skin))
             return;
 
         if (!TryComp<AppearanceComponent>(ent, out var appearance) || !HasComp<MindComponent>(mind))

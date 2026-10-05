@@ -1,12 +1,12 @@
 using Robust.Shared.Map.Components;
+using Robust.Shared.Network;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
-
-using Content.Shared.Ghost;
 using Content.Shared.Singularity.Components;
 using Robust.Shared.Physics;
+using Content.Shared.Ghost.Components;
 
 namespace Content.Shared.Singularity.EntitySystems;
 
@@ -15,7 +15,7 @@ namespace Content.Shared.Singularity.EntitySystems;
 /// </summary>
 public abstract partial class SharedEventHorizonSystem : EntitySystem
 {
-
+    [Dependency] private INetManager _net = default!;
     [Dependency] private FixtureSystem _fixtures = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] protected IViewVariablesManager Vvm = default!;
@@ -66,9 +66,12 @@ public abstract partial class SharedEventHorizonSystem : EntitySystem
             return;
 
         eventHorizon.Radius = value;
-        Dirty(uid, eventHorizon);
-        if (updateFixture)
-            UpdateEventHorizonFixture(uid, eventHorizon: eventHorizon);
+        if (_net.IsServer && !TerminatingOrDeleted(uid))
+        {
+            Dirty(uid, eventHorizon);
+            if (updateFixture)
+                UpdateEventHorizonFixture(uid, eventHorizon: eventHorizon);
+        }
     }
 
     /// <summary>
@@ -89,9 +92,12 @@ public abstract partial class SharedEventHorizonSystem : EntitySystem
             return;
 
         eventHorizon.CanBreachContainment = value;
-        Dirty(uid, eventHorizon);
-        if (updateFixture)
-            UpdateEventHorizonFixture(uid, eventHorizon: eventHorizon);
+        if (_net.IsServer && !TerminatingOrDeleted(uid))
+        {
+            Dirty(uid, eventHorizon);
+            if (updateFixture)
+                UpdateEventHorizonFixture(uid, eventHorizon: eventHorizon);
+        }
     }
 
     /// <summary>
@@ -112,9 +118,12 @@ public abstract partial class SharedEventHorizonSystem : EntitySystem
             return;
 
         eventHorizon.ColliderFixtureId = value;
-        Dirty(uid, eventHorizon);
-        if (updateFixture)
-            UpdateEventHorizonFixture(uid, eventHorizon: eventHorizon);
+        if (_net.IsServer && !TerminatingOrDeleted(uid))
+        {
+            Dirty(uid, eventHorizon);
+            if (updateFixture)
+                UpdateEventHorizonFixture(uid, eventHorizon: eventHorizon);
+        }
     }
 
     /// <summary>
@@ -135,9 +144,12 @@ public abstract partial class SharedEventHorizonSystem : EntitySystem
             return;
 
         eventHorizon.ConsumerFixtureId = value;
-        Dirty(uid, eventHorizon);
-        if (updateFixture)
-            UpdateEventHorizonFixture(uid, eventHorizon: eventHorizon);
+        if (_net.IsServer && !TerminatingOrDeleted(uid))
+        {
+            Dirty(uid, eventHorizon);
+            if (updateFixture)
+                UpdateEventHorizonFixture(uid, eventHorizon: eventHorizon);
+        }
     }
 
     /// <summary>
@@ -148,6 +160,9 @@ public abstract partial class SharedEventHorizonSystem : EntitySystem
     /// <param name="eventHorizon">The state of the event horizon associated with the fixture to update.</param>
     public void UpdateEventHorizonFixture(EntityUid uid, FixturesComponent? fixtures = null, EventHorizonComponent? eventHorizon = null)
     {
+        if (!_net.IsServer || TerminatingOrDeleted(uid))
+            return;
+
         if (!Resolve(uid, ref eventHorizon))
             return;
 
@@ -191,7 +206,8 @@ public abstract partial class SharedEventHorizonSystem : EntitySystem
     /// <param name="args">The event arguments.</param>
     private void OnEventHorizonStartup(EntityUid uid, EventHorizonComponent comp, ComponentStartup args)
     {
-        UpdateEventHorizonFixture(uid, eventHorizon: comp);
+        if (_net.IsServer && !TerminatingOrDeleted(uid))
+            UpdateEventHorizonFixture(uid, eventHorizon: comp);
     }
 
     /// <summary>

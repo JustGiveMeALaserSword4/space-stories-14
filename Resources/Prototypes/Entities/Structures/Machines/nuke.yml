@@ -27,15 +27,15 @@
     holidays:
       festive:
       - FestiveSeason
-      pride:
-      - PrideMonth
+#      pride:
+#      - PrideMonth
   - type: GenericVisualizer
     visuals:
       enum.HolidayVisuals.Holiday:
         christmas:
           festive: { visible: true }
-        pride:
-          pride: { visible: true }
+#        pride:
+#          pride: { visible: true }
       enum.NukeVisuals.Deployed:
         enum.NukeVisualLayers.Base:
           False: { state: nuclearbomb_base }
@@ -66,7 +66,7 @@
     radius: 4
     energy: 2.0
     color: "#FF4020"
-    mask: /Textures/Effects/LightMasks/double_cone.png
+    lightMask: ConeDouble
   - type: RotatingLight
     speed: 120
   - type: NavMapBeacon
@@ -88,8 +88,8 @@
       whitelist:
         components:
         - NukeDisk
-    alertLevelOnActivate: delta
-    alertLevelOnDeactivate: green
+    alertLevelOnActivate: DeltaNuke
+    alertLevelOnDeactivate: Green
   - type: InteractionOutline
   - type: ActivatableUI
     key: enum.NukeUiKey.Key
@@ -109,7 +109,7 @@
     stealGroup: NuclearBomb
   - type: WarpPoint
     follow: true
-    location: nuclear bomb
+    location: location-nuclear-bomb
   - type: FTLSmashImmune
 
 - type: entity
@@ -147,15 +147,15 @@
     holidays:
       festive:
       - FestiveSeason
-      pride:
-      - PrideMonth
+#      pride:
+#      - PrideMonth
   - type: GenericVisualizer
     visuals:
       enum.HolidayVisuals.Holiday:
         christmas:
           festive: { visible: true }
-        pride:
-          pride: { visible: true }
+#        pride:
+#          pride: { visible: true }
   - type: Physics
     bodyType: Dynamic
   - type: Fixtures

@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatFedoraSpecialGrey
-  name: серая федора
-  description: Это серая фетровая шляпа.
+  id: STClothingHeadHatFedoraSpecialGrey
+  name: grey fedora
+  description: This is a grey fedora.
   components:
   - type: Sprite
     sprite: _Stories/Clothing/Head/Hats/greyfedora.rsi
@@ -16,9 +16,9 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatCapHoS
-  name: фуражка главы службы безопасности
-  description: Прочная форменная фуражка начальника службы безопасности. Напоминает рядовым офицерам, кто здесь главный.
+  id: STClothingHeadHatCapHoS
+  name: head of security's cap
+  description: A sturdy uniform cap of the Head of Security. Reminds rank-and-file officers who is in charge here.
   components:
   - type: Sprite
     sprite: _Stories/Clothing/Head/Hats/hoshat.rsi
@@ -81,3 +81,40 @@
     - Recyclable
     - WhitelistChameleon
     - HamsterWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: STClothingHeadHatBeretBlueshield
+  name: blueshield's beret
+  description: A blue beret made of durathread with a genuine golden badge, denoting its owner as a Blueshield Lieutenant. It seems to be padded with nano-kevlar, making it tougher than standard reinforced berets.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/Head/Hats/beret_blueshield.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Stories/Clothing/Head/Hats/beret_blueshield.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+
+- type: entity
+  parent: ClothingHeadBase
+  id: STClothingHeadHatBeretBlueshieldNavy
+  name: navy blueshield's beret
+  description: A navy-blue beret made of durathread with a silver badge, denoting its owner as a Blueshield Lieutenant. It seems to be padded with nano-kevlar, making it tougher than standard reinforced berets.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/Head/Hats/beret_blueshield.rsi
+    state: icon_navy
+  - type: Clothing
+    sprite: _Stories/Clothing/Head/Hats/beret_blueshield.rsi
+    equippedPrefix: navy
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85

@@ -1,10 +1,10 @@
 - type: listing
-  id: ActionForceLookUp
-  name: Прислушаться к силе
-  description: Позволяет обнаружить других пользователей силы в радиусе 25 метров.
-  productAction: ActionForceLookUp
+  id: STActionForceLookUp
+  name: Sense Force
+  description: Allows you to detect other force users within a 25-meter radius.
+  productAction: STActionForceLookUp
   cost:
-    SkillPoint: 1
+    STSkillPoint: 1
   categories:
   - Force
   conditions:
@@ -12,12 +12,12 @@
     stock: 1
 
 - type: listing
-  id: ActionForceKnock
-  name: Стук
-  description: Особая техника позволяющая открыть все ближайшие двери. По слухам, именно космическая федерация магов подала первый патент на это заклинание.
-  productAction: ActionForceKnock
+  id: STActionForceKnock
+  name: Knock
+  description: A special technique allowing you to open all nearby doors. Rumor has it the Space Wizard Federation filed the original patent for this spell.
+  productAction: STActionForceKnock
   cost:
-    SkillPoint: 1
+    STSkillPoint: 1
   categories:
   - Force
   conditions:
@@ -25,12 +25,12 @@
     stock: 1
 
 - type: listing
-  id: ActionRecallEquipments
-  name: Призвать экипировку
-  description: Призовите вашу экипировку к себе. Если она не сможет настигнуть вас, то телепортируется к вам.
-  productAction: ActionRecallEquipments
+  id: STActionRecallEquipments
+  name: Recall Equipment
+  description: Call your equipment to yourself. If it cannot reach you, it teleports to you.
+  productAction: STActionRecallEquipments
   cost:
-    SkillPoint: 2
+    STSkillPoint: 2
   categories:
   - Force
   conditions:
@@ -38,12 +38,12 @@
     stock: 1
 
 - type: listing
-  id: ActionRecallLightsaber
-  name: Призвать световой меч
-  description: Призовите ваш световой меч к себе. Если он не сможет настигнуть вас, то телепортируется к вам.
-  productAction: ActionRecallLightsaber
+  id: STActionRecallLightsaber
+  name: Recall Lightsaber
+  description: Call your lightsaber to yourself. If it cannot reach you, it teleports to you.
+  productAction: STActionRecallLightsaber
   cost:
-    SkillPoint: 2
+    STSkillPoint: 2
   categories:
   - Force
   conditions:
@@ -51,12 +51,12 @@
     stock: 1
 
 - type: listing
-  id: ActionTelekinesis
-  name: Телекинез
-  description: Ваша рука сможет манипулировать гравитацией вокруг объектов. Левитируйте своим мечом, чтобы вести бой на расстоянии. Другие пользователи силы уворачиваются от этого.
-  productAction: ActionTelekinesis
+  id: STActionTelekinesis
+  name: Telekinesis
+  description: Your hand manipulates gravity around objects. Levitate your blade to fight at range. Other force users will dodge this.
+  productAction: STActionTelekinesis
   cost:
-    SkillPoint: 3
+    STSkillPoint: 3
   categories:
   - Force
   conditions:
@@ -64,12 +64,12 @@
     stock: 1
 
 - type: listing
-  id: ActionFlashArea
-  name: Ослепление Силы
-  description: Cоздайте при помощи телекинеза вспышки энергии, вызывая временную слепоту. Может ослепить вас.
-  productAction: ActionFlashArea
+  id: STActionFlashArea
+  name: Force Flash
+  description: Create flashes of energy using telekinesis, causing temporary blindness. May blind you.
+  productAction: STActionFlashArea
   cost:
-    SkillPoint: 1
+    STSkillPoint: 1
   categories:
   - Force
   conditions:
@@ -77,12 +77,12 @@
     stock: 1
 
 - type: listing
-  id: ActionArtOfMovement
-  name: Искусство движения
-  description: Ускоряет вас, блокирует вашу боль на короткое время.
-  productAction: ActionArtOfMovement
+  id: STActionArtOfMovement
+  name: Art of Movement
+  description: Hastens you and blocks your pain for a short time.
+  productAction: STActionArtOfMovement
   cost:
-    SkillPoint: 3
+    STSkillPoint: 3
   categories:
   - Force
   conditions:
@@ -90,12 +90,12 @@
     stock: 1
 
 - type: listing
-  id: ActionEmp
-  name: Ионизация
-  description: Создайте ЭМ импульс в небольшом радиусе.
-  productAction: ActionEmp
+  id: STActionEmp
+  name: Ionize
+  description: Creates an EMP pulse in a small radius.
+  productAction: STActionEmp
   cost:
-    SkillPoint: 1
+    STSkillPoint: 1
   categories:
   - Force
   conditions:
@@ -103,12 +103,12 @@
     stock: 1
 
 - type: listing
-  id: ActionFreedom
-  name: Снятие оков
-  description: Снимите наручники с помощью телекинеза.
-  productAction: ActionFreedom
+  id: STActionFreedom
+  name: Break Restraints
+  description: Remove handcuffs using telekinesis.
+  productAction: STActionFreedom
   cost:
-    SkillPoint: 1
+    STSkillPoint: 1
   categories:
   - Force
   conditions:
@@ -116,12 +116,12 @@
     stock: 1
 
 - type: listing
-  id: ActionForceDash
-  name: Силовой рывок
-  description: Вскочите с огромной скоростью в нужную точку. Только не стену, пожалуйста.
-  productAction: ActionForceDash
+  id: STActionForceDash
+  name: Force Dash
+  description: Dash with immense speed to a target point. Just not into a wall, please.
+  productAction: STActionForceDash
   cost:
-    SkillPoint: 3
+    STSkillPoint: 3
   categories:
   - Force
   conditions:

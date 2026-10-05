@@ -1,52 +1,48 @@
-# Prison-Jobs
-
 - type: jobIcon
   parent: JobIcon
-  id: JobIconPRISONPrisoner
+  id: STJobIconPRISONPrisoner
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: prisoner
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconHeadOfSpacePrison
+  id: STJobIconHeadOfSpacePrison
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: HeadOfSpacePrison
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSpacePrisonOfficer
+  id: STJobIconSpacePrisonOfficer
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: SpacePrisonSecurityOfficer
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconGuardianNt
+  id: STJobIconGuardianNt
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: GuardianNtSecurity
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSpacePrisonEngineer
+  id: STJobIconSpacePrisonEngineer
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: SpacePrisonEngineer
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSpacePrisonMedic
+  id: STJobIconSpacePrisonMedic
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: SpacePrisonMedic
 
-# Juridical-Jobs
-
 - type: jobIcon
   parent: JobIcon
-  id: JobIconIAA
+  id: STJobIconIAA
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: IAA
@@ -60,43 +56,43 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSTMagistrate
+  id: STJobIconCommandMaid
+  icon:
+    sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
+    state: CommandMaid
+
+- type: jobIcon
+  parent: JobIcon
+  id: STJobIconPartyMaker
+  icon:
+    sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
+    state: PartyMaker
+
+- type: jobIcon
+  parent: JobIcon
+  id: STJobIconSecurityClown
+  icon:
+    sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
+    state: SecurityClown
+
+- type: jobIcon
+  parent: JobIcon
+  id: STJobIconBlueshield
+  icon:
+    sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
+    state: Blueshield
+
+- type: jobIcon
+  parent: JobIcon
+  id: STJobIconMagistrate
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: Magistrate
   jobName: stories-job-name-magistrate
 
-# Event-Restricted-Jobs
-
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSTCommandMaid
-  icon:
-    sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
-    state: CommandMaid
-  allowSelection: false
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconSTPartyMaker
-  icon:
-    sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
-    state: PartyMaker
-  allowSelection: false
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconSTSecurityClown
-  icon:
-    sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
-    state: SecurityClown
-  allowSelection: false
-
-# Centcom-Jobs
-
-- type: jobIcon
-  parent: JobIcon
-  id: JobIconSTChiefCentcom
+  id: STJobIconChiefCentcom
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: ChiefCentcom
@@ -104,14 +100,14 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSTCentcom
+  id: STJobIconCentcom
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: Centcom
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSTSecurityOfficerCentcom
+  id: STJobIconSecurityOfficerCentcom
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: CentcomSecurity
@@ -119,7 +115,7 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSTMedicCentcom
+  id: STJobIconMedicCentcom
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: CentcomMedic
@@ -127,7 +123,7 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSTEngineerCentcom
+  id: STJobIconEngineerCentcom
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: CentcomEngineer
@@ -135,7 +131,7 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSTWorkerCentcom
+  id: STJobIconWorkerCentcom
   icon:
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: CentcomService

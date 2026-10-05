@@ -1,138 +1,147 @@
 - type: entity
   parent: BaseAction
-  id: ActionForceShop
+  id: STActionForceShop
   name: "[color=purple]Skill store[/color]"
   description: Remember what you had to do.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
-    icon:
-      sprite: _Stories/Actions/force.rsi
-      state: skill
+
+  - type: Sprite
+    sprite: _Stories/Actions/force.rsi
+    layers:
+    - state: skill
   - type: InstantAction
     event: !type:ForceShopActionEvent
-
 - type: entity
   parent: BaseAction
-  id: ActionStopProtectiveBubble
+  id: STActionStopProtectiveBubble
   name: Disable protective bubble
   description: Disables the protective bubble around you.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     useDelay: 1
-    icon:
-      sprite: _Stories/Actions/force.rsi
-      state: stopshield
     itemIconStyle: NoItem
-  - type: InstantAction    
-    event: !type:StopProtectiveBubbleEvent
 
+  - type: Sprite
+    sprite: _Stories/Actions/force.rsi
+    layers:
+    - state: stopshield
+  - type: InstantAction
+    event: !type:StopProtectiveBubbleEvent
 - type: entity
   parent: BaseAction
-  id: ActionRecallEquipments
+  id: STActionRecallEquipments
   name: Summon equipment
   description: Summon your equipment to you.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     useDelay: 3
-    icon: 
-      sprite: _Stories/Actions/force.rsi
-      state: equip
     itemIconStyle: NoItem
-  - type: InstantAction    
+
+  - type: Sprite
+    sprite: _Stories/Actions/force.rsi
+    layers:
+    - state: equip
+  - type: InstantAction
     event: !type:InstantForceUserActionEvent
       volume: 50
       event: !type:RecallEquipmentsEvent
-
 - type: entity
   parent: BaseAction
-  id: ActionForceLookUp
+  id: STActionForceLookUp
   name: Listen to the Force
   description: Listen to the Force and find out if there are other Force users within a 25-meter radius.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     useDelay: 5
-    icon: 
-      sprite: _Stories/Actions/force.rsi
-      state: lookup
     itemIconStyle: BigAction
+
+  - type: Sprite
+    sprite: _Stories/Actions/force.rsi
+    layers:
+    - state: lookup
   - type: InstantAction
     event: !type:InstantForceUserActionEvent
       volume: 5
       event: !type:ForceLookUpActionEvent
-
 - type: entity
   parent: BaseAction
-  id: ActionRecallLightsaber
+  id: STActionRecallLightsaber
   name: Summon lightsaber
   description: Teleport your lightsaber to you. The farther the saber is, the more time it will take to pull it back a second time.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     useDelay: 3
-    icon: 
-      sprite: _Stories/Actions/force.rsi
-      state: sword
     itemIconStyle: NoItem
-  - type: InstantAction    
+
+  - type: Sprite
+    sprite: _Stories/Actions/force.rsi
+    layers:
+    - state: sword
+  - type: InstantAction
     event: !type:InstantForceUserActionEvent
       volume: 25
       event: !type:RecallLightsaberEvent
-
 - type: entity
   parent: BaseAction
-  id: ActionTelekinesis
+  id: STActionTelekinesis
   name: Telekinesis
   description: Your hand will be able to manipulate gravity around objects. Levitate your sword to fight from a distance.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     useDelay: 1
-    icon: 
-      sprite: _Stories/Actions/force.rsi
-      state: telekines
     itemIconStyle: NoItem
-  - type: InstantAction    
+
+  - type: Sprite
+    sprite: _Stories/Actions/force.rsi
+    layers:
+    - state: telekines
+  - type: InstantAction
     event: !type:InstantForceUserActionEvent
       volume: 5
       event: !type:HandTetherGunEvent
-
 - type: entity
   parent: BaseAction
-  id: ActionFlashArea
+  id: STActionFlashArea
   name: Force Blindness
   description: Create bursts of energy using telekinesis, causing temporary blindness.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     useDelay: 5
-    icon:
-      sprite: _Stories/Actions/force.rsi
-      state: flash
     itemIconStyle: NoItem
-  - type: InstantAction    
+
+  - type: Sprite
+    sprite: _Stories/Actions/force.rsi
+    layers:
+    - state: flash
+  - type: InstantAction
     event: !type:InstantForceUserActionEvent
       volume: 25
       event: !type:FlashAreaEvent
-
 - type: entity
   parent: BaseAction
-  id: ActionArtOfMovement
+  id: STActionArtOfMovement
   name: Art of Movement
   description: Speeds you up, blocks your pain for a short time.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     useDelay: 10
-    icon:
-      sprite: _Stories/Actions/force.rsi
-      state: movement
     itemIconStyle: NoItem
     checkCanInteract: false
-  - type: InstantAction    
+
+  - type: Sprite
+    sprite: _Stories/Actions/force.rsi
+    layers:
+    - state: movement
+  - type: InstantAction
     event: !type:InstantForceUserActionEvent
       volume: 100
       event: !type:InjectReagentsEvent
@@ -141,31 +150,31 @@
           reagents:
           - ReagentId: Stimulants
             Quantity: 15
-
 - type: entity
   parent: BaseAction
-  id: ActionEmp
+  id: STActionEmp
   name: Ionization
   description: Create an EMP pulse in a small radius.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     useDelay: 10
-    icon:
-      sprite: _Stories/Actions/force.rsi
-      state: emp
     itemIconStyle: NoItem
-  - type: InstantAction    
+
+  - type: Sprite
+    sprite: _Stories/Actions/force.rsi
+    layers:
+    - state: emp
+  - type: InstantAction
     event: !type:InstantForceUserActionEvent
       volume: 25
       event: !type:EmpActionEvent
         range: 1.75
         energyConsumption: 50000
         disableDuration: 10
-
 - type: entity
   parent: BaseAction
-  id: ActionFreedom
+  id: STActionFreedom
   name: Break cuffs
   description: Remove handcuffs using telekinesis.
   categories: [ HideSpawnMenu ]
@@ -173,30 +182,33 @@
   - type: Action
     useDelay: 10
     checkCanInteract: false
-    icon:
-      sprite: _Stories/Actions/force.rsi
-      state: freedom
     itemIconStyle: NoItem
-  - type: InstantAction    
+
+  - type: Sprite
+    sprite: _Stories/Actions/force.rsi
+    layers:
+    - state: freedom
+  - type: InstantAction
     event: !type:InstantForceUserActionEvent
       volume: 50
       event: !type:FreedomActionEvent
-
 - type: entity
   parent: BaseAction
-  id: ActionForceDash
+  id: STActionForceDash
   name: Force dash
   description: Leap at high speed to the target point. Just not into a wall, please.
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
     useDelay: 10
-    icon:
-      sprite: _Stories/Actions/force.rsi
-      state: dash
     itemIconStyle: NoItem
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/blink.ogg
+
+  - type: Sprite
+    sprite: _Stories/Actions/force.rsi
+    layers:
+    - state: dash
   - type: WorldTargetAction
     event: !type:WorldTargetForceUserActionEvent
       volume: 50
@@ -205,10 +217,9 @@
   - type: TargetAction
     range: 0
     checkCanAccess: false
-
 - type: entity
   parent: BaseAction
-  id: ActionForceKnock
+  id: STActionForceKnock
   name: Knock
   description: A special technique that allows opening all nearby doors. Rumor has it that the Space Wizard Federation filed the first patent for this spell.
   categories: [ HideSpawnMenu ]
@@ -216,9 +227,10 @@
   - type: Action
     useDelay: 3
     itemIconStyle: BigAction
-    icon:
-      sprite: _Stories/Actions/force.rsi
-      state: knock
+  - type: Sprite
+    sprite: _Stories/Actions/force.rsi
+    layers:
+    - state: knock
   - type: InstantAction
     event: !type:InstantForceUserActionEvent
       volume: 25

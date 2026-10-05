@@ -83,8 +83,26 @@ public sealed partial class StationEventComponent : Component
     public TimeSpan? EndTime;
 
     /// <summary>
-    /// If false, the event won't trigger during ongoing evacuation.
+    /// If false, the event won't trigger after the evacuation shuttle is called and cannot be recalled anymore.
     /// </summary>
     [DataField]
     public bool OccursDuringRoundEnd = true;
+
+    // Stories-Antag-Start
+    /// <summary>
+    /// Category of the station event, used for pacing and limits.
+    /// </summary>
+    [DataField]
+    public StationEventCategory Category = StationEventCategory.Default;
+    // Stories-Antag-End
 }
+
+// Stories-Antag-Start
+public enum StationEventCategory : byte
+{
+    Default,
+    Minor,
+    MajorAntag,
+    MinorAntag,
+}
+// Stories-Antag-End

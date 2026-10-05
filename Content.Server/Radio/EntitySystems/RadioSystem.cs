@@ -1,5 +1,8 @@
 using System.Linq;
+using System.Threading.Tasks;
+using Content.Server._Stories.Language.Systems;
 using Content.Server._Stories.TTS;
+using Content.Shared._Stories.Language.Components;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
@@ -9,25 +12,26 @@ using Content.Shared._Stories.SCCVars;
 using Content.Shared._Stories.TTS;
 using Content.Shared.Chat;
 using Content.Shared.Database;
+using Content.Shared.Ghost.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
+using Content.Shared.Radio.EntitySystems;
 using Content.Shared.Speech;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
 using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Radio.EntitySystems;
 
-/// <summary>
-///     This system handles intrinsic radios and the general process of converting radio messages into chat messages.
-/// </summary>
-public sealed partial class RadioSystem : EntitySystem
+/// <inheritdoc/>
+public sealed partial class RadioSystem : SharedRadioSystem
 {
     [Dependency] private INetManager _netMan = default!;
     [Dependency] private IReplayRecordingManager _replay = default!;
@@ -37,6 +41,8 @@ public sealed partial class RadioSystem : EntitySystem
     [Dependency] private IChatManager _chatManager = default!;
     [Dependency] private GhostSystem _ghost = default!;
     [Dependency] private EntityQuery<TelecomExemptComponent> _exemptQuery = default!;
+    [Dependency] private LanguageSystem _language = default!; // Stories-Language
+    [Dependency] private MobStateSystem _mobState = default!;
 
     // Stories-TTS Start
     [Dependency] private TTSSystem _tts = default!;
@@ -91,22 +97,38 @@ public sealed partial class RadioSystem : EntitySystem
     }
 
     // Stories-TTS Start
-    private async void ProcessAndSendRadioTts(EntityUid messageSource, string message, RadioChannelPrototype channel, IEnumerable<ICommonSession> recipients)
+    private async void ProcessAndSendRadioTts(EntityUid messageSource, string message, RadioChannelPrototype channel, IEnumerable<ICommonSession> recipients, string voiceId, TimeSpan? delay = null)
     {
         if (!_cfg.GetCVar(SCCVars.TTSEnabled))
             return;
 
-        var voiceId = GetVoiceId(messageSource);
-        var soundData = await _tts.GenerateTTS(message, voiceId);
+        var recipientList = recipients.ToList();
+        if (recipientList.Count == 0)
+            return;
+
+        if (delay != null && delay.Value > TimeSpan.Zero)
+        {
+            await Task.Delay(delay.Value);
+        }
+
+        recipientList.RemoveAll(s => s.Status != SessionStatus.InGame);
+        if (recipientList.Count == 0)
+            return;
+
+        var speaker = voiceId;
+        if (ProtoMan.TryIndex<TTSVoicePrototype>(voiceId, out var protoVoice))
+            speaker = protoVoice.Speaker;
+
+        var soundData = await _tts.GenerateTTS(message, speaker);
 
         if (soundData == null)
             return;
 
-        byte[] processedSoundData = await _ttsProcessing.ApplyRadioEffect(soundData);
+        byte[] processedSoundData = await _ttsProcessing.ProcessRadioAudio(messageSource, soundData);
 
-        var ttsEvent = new PlayTTSEvent(processedSoundData, sourceUid: null, isWhisper: false, originalSourceUid: GetNetEntity(messageSource));
+        var ttsEvent = new PlayTTSEvent(processedSoundData, message, sourceUid: null, isWhisper: false, originalSourceUid: GetNetEntity(messageSource), isRadio: true, radioChannel: channel.ID);
 
-        var filter = Filter.Empty().AddPlayers(recipients.ToList());
+        var filter = Filter.Empty().AddPlayers(recipientList);
         RaiseNetworkEvent(ttsEvent, filter);
     }
 
@@ -117,24 +139,20 @@ public sealed partial class RadioSystem : EntitySystem
         {
             return protoVoice.Speaker;
         }
-        return "father_grigori";
+        return "glados";
     }
     // Stories-TTS End
 
-    /// <summary>
-    /// Send radio message to all active radio listeners
-    /// </summary>
-    public void SendRadioMessage(EntityUid messageSource, string message, ProtoId<RadioChannelPrototype> channel, EntityUid radioSource, bool escapeMarkup = true)
+    // Stories-TTS-Start
+    /// <inheritdoc/>
+    public override void SendRadioMessage(EntityUid messageSource, string message, RadioChannelPrototype channel, EntityUid radioSource, bool escapeMarkup = true)
     {
-        SendRadioMessage(messageSource, message, ProtoMan.Index(channel), radioSource, escapeMarkup: escapeMarkup);
+        SendRadioMessage(messageSource, message, channel, radioSource, GetVoiceId(messageSource), null, escapeMarkup);
     }
 
-    /// <summary>
-    /// Send radio message to all active radio listeners
-    /// </summary>
-    /// <param name="messageSource">Entity that spoke the message</param>
-    /// <param name="radioSource">Entity that picked up the message and will send it, e.g. headset</param>
-    public void SendRadioMessage(EntityUid messageSource, string message, RadioChannelPrototype channel, EntityUid radioSource, bool escapeMarkup = true)
+    /// <inheritdoc/>
+    public override void SendRadioMessage(EntityUid messageSource, string message, RadioChannelPrototype channel, EntityUid radioSource, string? ttsVoice, TimeSpan? ttsDelay = null, bool escapeMarkup = true)
+    // Stories-TTS-End
     {
         // TODO if radios ever garble / modify messages, feedback-prevention needs to be handled better than this.
         if (!_messages.Add(message))
@@ -152,6 +170,16 @@ public sealed partial class RadioSystem : EntitySystem
         else
             speech = _chat.GetSpeechVerb(messageSource, message);
 
+        // Stories-Language-Start
+        var language = _language.GetCurrentLanguage(messageSource);
+
+        if (ProtoMan.TryIndex(language, out var languageProto) && !languageProto.CanUseRadio)
+        {
+            _messages.Remove(message);
+            return;
+        }
+        // Stories-Language-End
+
         var content = escapeMarkup
             ? FormattedMessage.EscapeText(message)
             : message;
@@ -163,7 +191,7 @@ public sealed partial class RadioSystem : EntitySystem
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
-            ("message", content));
+            ("message", _language.ColorizeMessage(content, language)));
 
         // most radios are relayed to chat, so lets parse the chat message beforehand
         var chat = new ChatMessage(
@@ -184,7 +212,8 @@ public sealed partial class RadioSystem : EntitySystem
         var hasActiveServer = HasActiveServer(sourceMapId, channel.ID);
         var sourceServerExempt = _exemptQuery.HasComp(radioSource);
 
-        var recipientUids = new List<EntityUid>(); // Stories-TTS
+        var ttsUnderstood = new List<EntityUid>(); // Stories-TTS
+        var ttsConfused = new List<EntityUid>(); // Stories-TTS
 
         var radioQuery = EntityQueryEnumerator<ActiveRadioComponent, TransformComponent>();
         while (canSend && radioQuery.MoveNext(out var receiver, out var radio, out var transform))
@@ -212,32 +241,61 @@ public sealed partial class RadioSystem : EntitySystem
                 continue;
 
             // send the message
-            RaiseLocalEvent(receiver, ref ev);
+            // Stories-Language-Start
+            float comprehension;
 
-            recipientUids.Add(receiver); // Stories-TTS
+            if (IsRelaySpeaker(receiver))
+            {
+                _language.SetRelayLanguage(receiver, language);
+                comprehension = 1f;
+            }
+            else
+            {
+                var listener = ResolveLanguageListener(receiver);
+                comprehension = listener is null ? 1f : _language.GetComprehension(listener.Value, language);
+            }
+
+            if (comprehension >= 1f)
+            {
+                RaiseLocalEvent(receiver, ref ev);
+                ttsUnderstood.Add(receiver); // Stories-TTS
+            }
+            else
+            {
+                var listenerMessage = _language.ObfuscateMessage(message, language, comprehension);
+                var listenerContent = escapeMarkup
+                    ? FormattedMessage.EscapeText(listenerMessage)
+                    : listenerMessage;
+                var listenerWrapped = Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
+                    ("color", channel.Color),
+                    ("fontType", speech.FontId),
+                    ("fontSize", speech.FontSize),
+                    ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
+                    ("channel", $"\\[{channel.LocalizedName}\\]"),
+                    ("name", name),
+                    ("message", _language.ColorizeMessage(listenerContent, language)));
+                var listenerChat = new ChatMessage(ChatChannel.Radio, listenerMessage, listenerWrapped, NetEntity.Invalid, null);
+                var listenerChatMsg = new MsgChatMessage { Message = listenerChat };
+                var evListener = new RadioReceiveEvent(listenerMessage, messageSource, channel, radioSource, listenerChatMsg);
+                RaiseLocalEvent(receiver, ref evListener);
+                ttsConfused.Add(receiver); // Stories-TTS
+            }
+            // Stories-Language-End
         }
 
         // Stories-TTS Start
-        if (canSend && recipientUids.Count > 0)
+        if (canSend && !string.IsNullOrEmpty(ttsVoice))
         {
-            var sessions = new List<ICommonSession>();
             var actorQuery = GetEntityQuery<ActorComponent>();
-            foreach (var uid in recipientUids)
-            {
-                var parent = Transform(uid).ParentUid;
-                var target = actorQuery.HasComponent(uid) ? uid : (actorQuery.HasComponent(parent) ? parent : (EntityUid?)null);
 
-                if (target.HasValue && actorQuery.TryGetComponent(target.Value, out var actor))
-                {
-                    if (actor.PlayerSession.Status == SessionStatus.InGame)
-                        sessions.Add(actor.PlayerSession);
-                }
-            }
+            var understoodSessions = ResolveTtsSessions(ttsUnderstood, actorQuery);
+            if (understoodSessions.Count > 0)
+                ProcessAndSendRadioTts(messageSource, message, channel, understoodSessions, ttsVoice, ttsDelay);
 
-            if (sessions.Count > 0)
-            {
-                ProcessAndSendRadioTts(messageSource, message, channel, sessions);
-            }
+            var confusedSessions = ResolveTtsSessions(ttsConfused, actorQuery);
+            confusedSessions.ExceptWith(understoodSessions);
+            if (confusedSessions.Count > 0)
+                ProcessAndSendRadioTts(messageSource, _language.ObfuscateMessage(message, language), channel, confusedSessions, ttsVoice, ttsDelay);
         }
         // Stories-TTS End
 
@@ -249,6 +307,63 @@ public sealed partial class RadioSystem : EntitySystem
         _replay.RecordServerMessage(chat);
         _messages.Remove(message);
     }
+
+    // Stories-Language-Start
+    private bool IsRelaySpeaker(EntityUid receiver)
+    {
+        return HasComp<RadioSpeakerComponent>(receiver);
+    }
+
+
+    private EntityUid? ResolveLanguageListener(EntityUid receiver)
+    {
+        if (HasComp<LanguageComponent>(receiver))
+            return receiver;
+
+        var wearer = Transform(receiver).ParentUid;
+        if (wearer.IsValid() && TryComp<WearingHeadsetComponent>(wearer, out var wearing) && wearing.Headset == receiver)
+            return wearer;
+
+        return null;
+    }
+
+    private HashSet<ICommonSession> ResolveTtsSessions(IReadOnlyList<EntityUid> recipients, EntityQuery<ActorComponent> actorQuery)
+    {
+        var sessions = new HashSet<ICommonSession>();
+        foreach (var uid in recipients)
+        {
+            EntityUid? target = null;
+            if (actorQuery.HasComponent(uid))
+            {
+                target = uid;
+            }
+            else
+            {
+                var parent = Transform(uid).ParentUid;
+                if (parent.IsValid() &&
+                    TryComp<WearingHeadsetComponent>(parent, out var wearing) &&
+                    wearing.Headset == uid &&
+                    actorQuery.HasComponent(parent))
+                {
+                    target = parent;
+                }
+            }
+
+            if (target.HasValue && actorQuery.TryGetComponent(target.Value, out var actor))
+            {
+                if (actor.PlayerSession.Status != SessionStatus.InGame)
+                    continue;
+
+                if (!HasComp<GhostComponent>(target.Value) && _mobState.IsDead(target.Value))
+                    continue;
+
+                sessions.Add(actor.PlayerSession);
+            }
+        }
+
+        return sessions;
+    }
+    // Stories-Language-End
 
     /// <inheritdoc cref="TelecomServerComponent"/>
     private bool HasActiveServer(MapId mapId, string channelId)

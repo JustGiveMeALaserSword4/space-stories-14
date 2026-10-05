@@ -1,4 +1,5 @@
 using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Hands;
 using Content.Shared.Interaction.Events;
@@ -7,6 +8,7 @@ using Content.Shared.Item;
 using Content.Shared.Prying.Components;
 using Content.Shared.Timing;
 using Robust.Shared.Physics.Events;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Stories.Holy;
 
@@ -40,7 +42,6 @@ public abstract partial class SharedHolySystem
 
         while (query.MoveNext(out var uid, out var holy, out var useDelay))
         {
-            // Защита от случаев, когда святой предмет взяли пока он был на кд.
             if (!_useDelay.IsDelayed((uid, useDelay), HolyDelay))
             {
                 if (_container.TryGetContainingContainer((uid, null, null), out var container) &&
@@ -110,7 +111,7 @@ public abstract partial class SharedHolySystem
 
         if (TryComp<UseDelayComponent>(entity, out var useDelay))
         {
-            if (_useDelay.TryGetDelayInfo((entity, useDelay), out _, HolyDelay)) // Если Delay настроен
+            if (_useDelay.TryGetDelayInfo((entity, useDelay), out _, HolyDelay))
             {
                 if (!_useDelay.TryResetDelay((entity, useDelay), true, HolyDelay))
                     return;
@@ -122,30 +123,28 @@ public abstract partial class SharedHolySystem
 
         var coefficient = 1 + (1 - unholy.ResistanceCoefficient);
 
-        // У меня есть некоторые сомнения насчет кода ниже
-
         var protectionDamageDamageModifierSet = _prototype.Index(entity.Comp.ProtectionDamageDamageModifierSet);
 
         var damageModifierSet = new DamageModifierSet
         {
-            Coefficients = new Dictionary<string, float>(protectionDamageDamageModifierSet.Coefficients),
-            FlatReduction = new Dictionary<string, float>(protectionDamageDamageModifierSet.FlatReduction),
+            Coefficients = new Dictionary<ProtoId<DamageTypePrototype>, float>(protectionDamageDamageModifierSet.Coefficients),
+            FlatReductions = new Dictionary<ProtoId<DamageTypePrototype>, float>(protectionDamageDamageModifierSet.FlatReductions),
         };
 
-        Dictionary<string, float> newCoefficients = new();
+        Dictionary<ProtoId<DamageTypePrototype>, float> newCoefficients = new();
         foreach (var c in damageModifierSet.Coefficients)
         {
             newCoefficients.Add(c.Key, c.Value * coefficient);
         }
 
-        Dictionary<string, float> newFlatReductions = new();
-        foreach (var r in damageModifierSet.FlatReduction)
+        Dictionary<ProtoId<DamageTypePrototype>, float> newFlatReductions = new();
+        foreach (var r in damageModifierSet.FlatReductions)
         {
             newFlatReductions.Add(r.Key, r.Value * coefficient);
         }
 
         damageModifierSet.Coefficients = newCoefficients;
-        damageModifierSet.FlatReduction = newFlatReductions;
+        damageModifierSet.FlatReductions = newFlatReductions;
 
         args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, damageModifierSet);
     }

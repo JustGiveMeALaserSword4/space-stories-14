@@ -1,26 +1,16 @@
 - type: antag
-  id: EmpireMember
-  name: Имперец
+  id: STEmpireMember
+  name: stories-roles-antag-empire-member-name
   antagonist: true
   setPreference: false
-  objective: Выполняйте приказы императора.
+  objective: stories-roles-antag-empire-member-objective
   requirements:
-  - !type:RoleTimeRequirement
-    role: JobHeadOfSecurity
-    time: 36000 # 10 hours
-  - !type:RoleTimeRequirement
-    role: JobCaptain
-    time: 36000 # 10 hours
-  - !type:RoleTimeRequirement
-    role: JobIAA
-    time: 36000 # 10 hours
-  - !type:RoleTimeRequirement
-    role: JobDetective
-    time: 18000 # 5 hours
+  - !type:OverallPlaytimeRequirement
+    time: 5h
 
 - type: antag
-  id: HypnotizedEmpireMember
-  name: Гипнотизированный Имперец
+  id: STHypnotizedEmpireMember
+  name: stories-roles-antag-hypnotized-empire-member-name
   antagonist: true
   setPreference: false
-  objective: Выполняйте приказы императора.
+  objective: stories-roles-antag-hypnotized-empire-member-objective

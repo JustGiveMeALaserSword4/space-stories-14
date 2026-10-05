@@ -15,8 +15,8 @@ public interface ISpafAction
 
 public sealed partial class SpafCreateEntityEvent : InstantActionEvent, ISpafAction
 {
-    [DataField("proto", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string Prototype;
+    [DataField("proto", required: true)]
+    public EntProtoId Prototype;
 
     [DataField("cost")]
     public float HungerCost { get; set; } = 20f;
@@ -49,7 +49,7 @@ public sealed partial class SpafStealthEvent : InstantActionEvent, ISpafAction
     public float HungerCost { get; set; } = 15f;
 }
 
-[Serializable, NetSerializable]
+[Serializable, NetSerializable] 
 public sealed partial class SpafStealthDoAfterEvent : SimpleDoAfterEvent
 {
 }

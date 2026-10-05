@@ -1,17 +1,19 @@
 - type: job
-  id: IAA
+  id: STIAA
   name: job-name-iaa
   description: job-description-iaa
-  playTimeTracker: JobIAA
+  playTimeTracker: STJobIAA
   requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 10h
   - !type:DepartmentTimeRequirement
     department: Command
-    time: 72000
+    time: 5h
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 36000
-  startingGear: IAAGear
-  icon: "JobIconIAA"
+    time: 5h
+  startingGear: STIAAGear
+  icon: "STJobIconIAA"
   supervisors: job-supervisors-centcom
   access:
   - Brig
@@ -26,20 +28,20 @@
   maxBankBalance: 300
 
 - type: startingGear
-  id: IAAGear
+  id: STIAAGear
   equipment:
-    id: IAAPDA
+    id: STIAAPDA
     eyes: ClothingEyesGlassesSunglasses
-    ears: ClothingHeadsetIAA
+    ears: STClothingHeadsetIAA
   inhand:
     - BriefcaseBrown
   storage:
     back:
-    - RubberStampIAA
+    - STRubberStampIAA
 
 - type: chameleonOutfit
-  id: IAAChameleonOutfit
-  job: IAA
+  id: STIAAChameleonOutfit
+  job: STIAA
   hasMindShield: true
   equipment:
     head: ClothingHeadHatBowlerHat

@@ -1,27 +1,25 @@
 # Prison-Jobs
 
 - type: playTimeTracker
-  id: JobPrisoner
+  id: STJobPrisoner
 
 - type: playTimeTracker
-  id: JobHeadOfSpacePrison
+  id: STJobHeadOfSpacePrison
 
 - type: playTimeTracker
-  id: JobSpacePrisonOfficer
+  id: STJobSpacePrisonOfficer
 
 - type: playTimeTracker
-  id: JobSpacePrisonEngineer
+  id: STJobSpacePrisonEngineer
 
 - type: playTimeTracker
-  id: JobSpacePrisonMedic
-
-# Event-Restricted-Jobs
+  id: STJobSpacePrisonMedic
 
 - type: playTimeTracker
-  id: JobSTSecurityClown
+  id: STJobIAA
 
 - type: playTimeTracker
-  id: JobSTCommandMaid
+  id: STJobGuardianNt
 
 - type: playTimeTracker
   id: JobSTPartyMaker
@@ -66,12 +64,17 @@
 - type: playTimeTracker
   id: STJobJudge
 
-# DSO-Jobs
+- type: playTimeTracker
+  id: STJobSecurityClown
 
 - type: playTimeTracker
   id: STJobSpecialOfficer
 
-# Other-Jobs
+- type: playTimeTracker
+  id: STJobCommandMaid
 
 - type: playTimeTracker
-  id: STJobBrigmedic
+  id: STJobPartyMaker
+
+- type: playTimeTracker
+  id: STJobBlueshield

@@ -1,47 +1,55 @@
 - type: entity
   parent: ClothingHeadHelmetHardsuitMedical
-  id: PRISONClothingHeadHelmetHardsuitMedic
+  id: STPRISONClothingHeadHelmetHardsuitMedic
   categories: [ HideSpawnMenu ]
   name: prison medic hardsuit helmet
   description: Space suit helmet providing minor protection from most damage sources.
   components:
     - type: Sprite
       sprite: _Stories/Clothing/Head/Hardsuits/medicsp.rsi
+      layers:
+      - state: icon
     - type: Clothing
       sprite: _Stories/Clothing/Head/Hardsuits/medicsp.rsi
 
 - type: entity
   parent: ClothingHeadHelmetHardsuitMedical
-  id: PRISONClothingHeadHelmetHardsuitEngi
+  id: STPRISONClothingHeadHelmetHardsuitEngi
   categories: [ HideSpawnMenu ]
   name: prison engineer hardsuit helmet
   description: Space suit helmet providing minor protection from most damage sources.
   components:
     - type: Sprite
       sprite: _Stories/Clothing/Head/Hardsuits/engisp.rsi
+      layers:
+      - state: icon
     - type: Clothing
       sprite: _Stories/Clothing/Head/Hardsuits/engisp.rsi
 
 - type: entity
   parent: ClothingHeadHelmetHardsuitSecurity
-  id: PRISONClothingHeadHelmetHardsuitOfficer
+  id: STPRISONClothingHeadHelmetHardsuitOfficer
   categories: [ HideSpawnMenu ]
   name: prison staff hardsuit helmet
   description: Space suit helmet providing protection from most damage sources.
   components:
     - type: Sprite
       sprite: _Stories/Clothing/Head/Hardsuits/securitysp.rsi
+      layers:
+      - state: icon
     - type: Clothing
       sprite: _Stories/Clothing/Head/Hardsuits/securitysp.rsi
 
 - type: entity
   parent: ClothingHeadHelmetHardsuitSecurityRed
-  id: PRISONClothingHeadHelmetHardsuitHeadOfPrison
+  id: STPRISONClothingHeadHelmetHardsuitHeadOfPrison
   categories: [ HideSpawnMenu ]
   name: head of prison hardsuit helmet
   description: Space suit helmet providing protection from most damage sources.
   components:
     - type: Sprite
       sprite: _Stories/Clothing/Head/Hardsuits/hospsp.rsi
+      layers:
+      - state: icon
     - type: Clothing
       sprite: _Stories/Clothing/Head/Hardsuits/hospsp.rsi

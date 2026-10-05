@@ -1,23 +1,23 @@
 - type: accessLevel
-  id: HeadOfPrison
-  name: Начальник тюрьмы
+  id: STHeadOfPrison
+  name: stories-id-card-access-level-head-of-prison
 
 - type: accessLevel
-  id: PrisonBrig
-  name: Бриг тюрьмы
+  id: STPrisonBrig
+  name: stories-id-card-access-level-space-prison-brig
 
 - type: accessLevel
   id: Prison
-  name: Тюрьма
+  name: stories-id-card-access-level-space-prison
 
 - type: accessLevel
-  id: PrisonMed
-  name: Медицинский тюрьма
+  id: STPrisonMed
+  name: stories-id-card-access-level-space-prison-medical
 
 - type: accessLevel
-  id: PrisonEng
-  name: Инженерный тюрьма
+  id: STPrisonEng
+  name: stories-id-card-access-level-space-prison-engineering
 
 - type: accessLevel
   id: Prisoner
-  name: Заключенный
+  name: stories-id-card-access-level-prisoner

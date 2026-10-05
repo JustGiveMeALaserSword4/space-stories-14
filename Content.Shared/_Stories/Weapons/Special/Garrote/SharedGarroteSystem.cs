@@ -1,15 +1,15 @@
 using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Speech.Muting;
-using Content.Shared.StatusEffect;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Stunnable;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Stories.Weapons.Special.Garrote;
 
 public abstract partial class SharedGarroteSystem : EntitySystem
 {
-    private static readonly string MutedStatusEffect = "Muted";
+    private static readonly EntProtoId MutedStatusEffect = "StatusEffectMuted";
 
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private StatusEffectsSystem _statusEffect = default!;
@@ -34,17 +34,11 @@ public abstract partial class SharedGarroteSystem : EntitySystem
         _damageable.TryChangeDamage(args.Target.Value, comp.Damage, origin: args.User);
 
         _stun.TryAddStunDuration(args.Target.Value, comp.DurationStatusEffects);
-        _statusEffect.TryAddStatusEffect<MutedComponent>(args.Target.Value, MutedStatusEffect, comp.DurationStatusEffects, true);
+        _statusEffect.TrySetStatusEffectDuration(args.Target.Value, MutedStatusEffect, comp.DurationStatusEffects);
 
         args.Repeat = true;
     }
 
-    /// <summary>
-    /// Checking whether the distance from the user to the target is set correctly.
-    /// </summary>
-    /// <remarks>
-    /// Does not check for the presence of TransformComponent.
-    /// </remarks>
     public bool IsRightTargetDistance(TransformComponent user, TransformComponent target, float maxUseDistance)
     {
         var userPosition = _transformSystem.GetWorldPositionRotation(user).WorldPosition;
@@ -54,14 +48,10 @@ public abstract partial class SharedGarroteSystem : EntitySystem
                && Math.Abs(userPosition.Y - targetPosition.Y) <= maxUseDistance;
     }
 
-    /// <remarks>
-    /// Does not check for the presence of TransformComponent.
-    /// </remarks>
     public Direction GetEntityDirection(TransformComponent entityTransform)
     {
         double entityLocalRotation;
 
-        // Checking that the number is positive
         if (entityTransform.LocalRotation.Degrees < 0)
             entityLocalRotation = 360 - Math.Abs(entityTransform.LocalRotation.Degrees);
         else

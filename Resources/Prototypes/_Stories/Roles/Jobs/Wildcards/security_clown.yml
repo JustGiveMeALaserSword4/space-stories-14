@@ -2,15 +2,15 @@
   id: STSecurityClown
   name: stories-job-name-security-clown
   description: stories-job-description-security-clown
-  playTimeTracker: JobSTSecurityClown
+  playTimeTracker: STJobSecurityClown
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 36000 #10 hrs
+    time: 2h
   - !type:RoleTimeRequirement
     role: JobClown
-    time: 3600 #1 hr
+    time: 1h
   startingGear: STSecurityClownGear
-  icon: "JobIconSTSecurityClown"
+  icon: "STJobIconSecurityClown"
   supervisors: job-supervisors-security
   setPreference: false
   access:
@@ -24,13 +24,9 @@
   special:
   - !type:AddComponentSpecial
     components:
-    - type: Clumsy
-      clumsyDamage:
-        types: #literally just picked semi random valus. i tested this once and tweaked it.
-          Blunt: 5
-          Piercing: 4
-        groups:
-          Burn: 3
+    - type: PermanentStatusEffects
+      statusEffects:
+      - StatusEffectClumsyClown
     - type: SleepEmitSound
       snore: /Audio/Voice/Misc/silly_snore.ogg
       interval: 10

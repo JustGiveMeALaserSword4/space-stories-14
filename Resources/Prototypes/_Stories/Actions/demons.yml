@@ -1,0 +1,73 @@
+- type: entity
+  parent: BaseAction
+  id: STActionBloodCrawl
+  name: Blood Crawl
+  description: Sink into a pool of blood to become intangible and emerge elsewhere.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 1
+  - type: Sprite
+    sprite: _Stories/Actions/demons.rsi
+    layers:
+    - state: bloodcrawl
+      map: ["enum.ActionVisuals.Icon"]
+  - type: InstantAction
+    event: !type:DemonPhaseActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: STActionShadowCrawl
+  name: Shadow Crawl
+  description: Dissolve into darkness to become intangible and emerge elsewhere.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 1
+  - type: Sprite
+    sprite: _Stories/Actions/demons.rsi
+    layers:
+    - state: shadow_crawl
+      map: ["enum.ActionVisuals.Icon"]
+  - type: InstantAction
+    event: !type:DemonPhaseActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: STActionShadowGrapple
+  name: Shadow Grapple
+  description: Pull a living target towards yourself, or pull yourself to a structure. Extinguishes nearby light sources.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 10
+  - type: Sprite
+    sprite: _Stories/Actions/demons.rsi
+    layers:
+    - state: shadow_grapple
+      map: ["enum.ActionVisuals.Icon"]
+  - type: TargetAction
+    range: 6
+  - type: WorldTargetAction
+    event: !type:ProjectileSpellEvent
+      prototype: STProjectileShadowHand
+      projectileSpeed: 20
+
+- type: entity
+  parent: BaseAction
+  id: STActionDemonWhisper
+  name: Demonic Whisper
+  description: Send a chilling thought to a living target — only they can hear it.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 3
+  - type: Sprite
+    sprite: Interface/Actions/voice-mask.rsi
+    layers:
+    - state: icon
+      map: ["enum.ActionVisuals.Icon"]
+  - type: TargetAction
+    range: 7
+  - type: EntityTargetAction
+    event: !type:DemonWhisperActionEvent

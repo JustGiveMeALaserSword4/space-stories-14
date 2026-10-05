@@ -1,4 +1,40 @@
 - type: entity
+  id: STAfterburnerImplanter
+  name: afterburner implanter
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+  - type: Implanter
+    implant: STAfterburnerImplant
+
+- type: entity
+  id: STAdrenocorImplanter
+  name: adrenocor implanter
+  parent: BaseImplantOnlyImplanter
+  components:
+  - type: Implanter
+    implant: STAdrenocorImplant
+
+- type: entity
+  id: STShieldBladeImplanterLeft
+  name: shield blade implanter
+  parent: BaseImplantOnlyImplanter
+  description: A sterile implanter containing a left arm defense blade implant.
+  components:
+  - type: Implanter
+    implant: STShieldBladeImplantLeft
+    allowMultipleImplants: true
+
+- type: entity
+  id: STShieldBladeImplanterRight
+  name: shield blade implanter
+  parent: BaseImplantOnlyImplanter
+  description: A sterile implanter containing a right arm defense blade implant.
+  components:
+  - type: Implanter
+    implant: STShieldBladeImplantRight
+    allowMultipleImplants: true
+
+- type: entity
   parent: BaseImplantOnlyImplanter
   id: STDeathRattleImplanterDSO
   name: DSO death rattle implanter

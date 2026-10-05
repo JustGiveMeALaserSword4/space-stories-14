@@ -1,12 +1,19 @@
-﻿- type: entity
+- type: entity
   name: basic slime
   id: BaseMobAdultSlimes
-  parent: [ BaseMobSlimes, SimpleMobBase, MobCombat, BaseSlicingRefinable, MobNightVision ]
+  parent: [ BaseMobSlimes, SimpleMobBase, MobCombat, BaseSlicingRefinable, MobNightVision, BaseMobDestructible ]
   abstract: true
   description: It looks so much like jelly. I wonder what it tastes like?
   components:
   - type: TTS # Stories-TTS
     voice: charlotte
+  - type: Language # Stories-Language
+    currentLanguage: Slime
+    defaultLanguage: Slime
+    spokenLanguages:
+    - Slime
+    understoodLanguages:
+    - Slime
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/slimes.rsi
@@ -98,7 +105,6 @@
     damage:
       types:
         Blunt: 6
-        Structural: 4
         Caustic: 4
   - type: InteractionPopup
     successChance: 0.5
@@ -189,7 +195,6 @@
       damage:
         types:
           Blunt: 6
-          Structural: 4
           Caustic: 1
           Poison: 4
 
@@ -229,7 +234,6 @@
       damage:
         types:
           Blunt: 6
-          Structural: 4
           Caustic: 4
 
 - type: entity

@@ -1,27 +1,27 @@
-﻿- type: entity
-  parent: [ ClothingShoesBaseButcherable, ClothingShoesBootsSecFilled ]
+- type: entity
+  parent: ClothingShoesBaseButcherable
   id: ClothingShoesInquisitor
-  name: ботинки инквизитора
-  description: Обычные черные ботинки.
+  name: inquisitor boots
+  description: Ordinary black boots.
   components:
   - type: NoSlip
   - type: Tag
     tags:
-      - ForceRecallEquipment
+      - STForceRecallEquipment
   - type: Sprite
     sprite: Clothing/Shoes/Specific/swat.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Specific/swat.rsi
 
 - type: entity
-  parent: [ ClothingShoesBootsJack, ClothingShoesBootsSecFilled ]
-  id: ClothingShoesBootsJackGuardian
+  parent: ClothingShoesBootsJack
+  id: STClothingShoesBootsJackGuardian
   name: jedi jackboots
   description: Designed to keep your feet dry on distant planets.
   components:
     - type: Tag
       tags:
-        - ForceRecallEquipment
+        - STForceRecallEquipment
     - type: NoSlip
     - type: Sprite
       sprite: _Stories/Clothing/Shoes/Boots/guardian.rsi
@@ -29,14 +29,14 @@
       sprite: _Stories/Clothing/Shoes/Boots/guardian.rsi
 
 - type: entity
-  parent: [ ClothingShoesBootsJack, ClothingShoesBootsSecFilled ]
-  id: ClothingShoesBootsJackGuardianNt
+  parent: ClothingShoesBootsJack
+  id: STClothingShoesBootsJackGuardianNt
   name: blade guardian jackboots
   description: They were planned to be more comfortable than standard ones.
   components:
     - type: Tag
       tags:
-        - ForceRecallEquipment
+        - STForceRecallEquipment
         - WhitelistChameleon
     - type: NoSlip
     - type: Sprite
@@ -45,14 +45,14 @@
       sprite: _Stories/Clothing/Shoes/Boots/guardian_nt.rsi
 
 - type: entity
-  parent: [ ClothingShoesBootsJack, ClothingShoesBootsSecFilled ]
-  id: ClothingShoesBootsJackGuardianNomad
+  parent: ClothingShoesBootsJack
+  id: STClothingShoesBootsJackGuardianNomad
   name: traveler's boots
   description: They were planned to be more comfortable than standard ones.
   components:
     - type: Tag
       tags:
-        - ForceRecallEquipment
+        - STForceRecallEquipment
     - type: NoSlip
     - type: Sprite
       sprite: _Stories/Clothing/Shoes/Boots/guardian_nomad.rsi
@@ -60,14 +60,14 @@
       sprite: _Stories/Clothing/Shoes/Boots/guardian_nomad.rsi
 
 - type: entity
-  parent: [ ClothingShoesBootsJack, ClothingShoesBootsSecFilled ]
-  id: ClothingShoesBootsExe
+  parent: ClothingShoesBootsJack
+  id: STClothingShoesBootsExe
   name: guardian's boots
   description: Advanced footwear ensuring wearer comfort and perfect grip on any surface.
   components:
   - type: Tag
     tags:
-    - ForceRecallEquipment
+    - STForceRecallEquipment
   - type: NoSlip
   - type: Sprite
     sprite: _Stories/Clothing/Shoes/Boots/exe_boots.rsi
