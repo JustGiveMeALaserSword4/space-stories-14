@@ -22,44 +22,7 @@
   id: STJobGuardianNt
 
 - type: playTimeTracker
-  id: JobSTPartyMaker
-
-# Centcom-Jobs
-
-- type: playTimeTracker
-  id: JobSTChiefCentcom
-
-- type: playTimeTracker
-  id: JobSTOperatorCentcom
-
-- type: playTimeTracker
-  id: JobSTRepresentativeCentcom
-
-- type: playTimeTracker
-  id: JobSTHeadOfSecurityCentcom
-
-- type: playTimeTracker
-  id: JobGuardianNt
-
-- type: playTimeTracker
-  id: JobSTSecurityOfficerCentcom
-
-- type: playTimeTracker
-  id: JobSTMedicCentcom
-
-- type: playTimeTracker
-  id: JobSTEngineerCentcom
-
-- type: playTimeTracker
-  id: JobSTWorkerCentcom
-
-# Juridical-Jobs
-
-- type: playTimeTracker
-  id: JobSTMagistrate
-
-- type: playTimeTracker
-  id: JobIAA
+  id: STJobBrigmedic
 
 - type: playTimeTracker
   id: STJobJudge
@@ -78,3 +41,33 @@
 
 - type: playTimeTracker
   id: STJobBlueshield
+
+- type: playTimeTracker
+  id: STJobChiefCentcom
+
+- type: playTimeTracker
+  id: STJobOperatorCentcom
+
+- type: playTimeTracker
+  id: STJobRepresentativeCentcom
+
+- type: playTimeTracker
+  id: STJobHeadOfSecurityCentcom
+
+- type: playTimeTracker
+  id: JobGuardianNt
+
+- type: playTimeTracker
+  id: STJobSecurityOfficerCentcom
+
+- type: playTimeTracker
+  id: STJobMedicCentcom
+
+- type: playTimeTracker
+  id: STJobEngineerCentcom
+
+- type: playTimeTracker
+  id: STJobWorkerCentcom
+
+- type: playTimeTracker
+  id: STJobMagistrate

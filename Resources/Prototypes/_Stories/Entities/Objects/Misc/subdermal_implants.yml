@@ -12,10 +12,70 @@
   parent: BaseSubdermalImplant
   id: STRadioImplantDSO
   name: radio implant DSO
-  description: This implant grants access to the Syndicate channel without a headset.
+  description: This implant grants access to the DSO channel without a headset.
   categories: [ HideSpawnMenu ]
   components:
   - type: SubdermalImplant
   - type: RadioImplant
     radioChannels:
     - STDSO
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: STAfterburnerImplant
+  name: afterburner implant
+  description: Injects a limited dose of stimulants into the body.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: STActionActivateAfterburnerImplant
+  - type: TriggerOnActivateImplant
+  - type: AddSolutionOnTrigger
+    addedSolution:
+      maxVol: 20
+      reagents:
+      - ReagentId: Stimulants
+        Quantity: 20
+    solution: bloodstream
+    targetUser: true
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: STAdrenocorImplant
+  name: adrenocor implant
+  description: Injects a solution of combat stimulants and medical drugs into the body.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: STActionActivateAdrenocorImplant
+  - type: TriggerOnActivateImplant
+  - type: AddSolutionOnTrigger
+    addedSolution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Desoxyephedrine
+        Quantity: 15
+      - ReagentId: Omnizine
+        Quantity: 15
+    solution: bloodstream
+    targetUser: true
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: STShieldBladeImplantLeft
+  name: shield blade implant
+  description: A high-tech cybernetic implant that installs a retractable defense shield blade into your left arm.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: STActionToggleShieldBladeLeft
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: STShieldBladeImplantRight
+  name: shield blade implant
+  description: A high-tech cybernetic implant that installs a retractable defense shield blade into your right arm.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    implantAction: STActionToggleShieldBladeRight
