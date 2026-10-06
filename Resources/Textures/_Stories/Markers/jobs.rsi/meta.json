@@ -20,6 +20,9 @@
       "name": "prisoner"
     },
     {
+      "name": "guardiannt"
+    },
+    {
       "name": "security_officer"
     },
     {
@@ -29,7 +32,22 @@
       "name": "doctor"
     },
     {
-      "name": "guardiannt"
+      "name": "chief_centcom"
+    },
+    {
+      "name": "centcom"
+    },
+    {
+      "name": "security_centcom"
+    },
+    {
+      "name": "doctor_centcom"
+    },
+    {
+      "name": "engineer_centcom"
+    },
+    {
+      "name": "worker_centcom"
     }
   ]
 }

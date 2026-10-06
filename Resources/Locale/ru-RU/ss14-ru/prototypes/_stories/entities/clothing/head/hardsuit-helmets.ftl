@@ -6,3 +6,6 @@ ent-STPRISONClothingHeadHelmetHardsuitOfficer = шлем скафандра пе
     .desc = Шлем скафандра, обеспечивающий защиту от большинства источников повреждений.
 ent-STPRISONClothingHeadHelmetHardsuitHeadOfPrison = шлем скафандра начальника тюрьмы
     .desc = Шлем скафандра, обеспечивающий защиту от большинства источников повреждений.
+
+ent-STClothingHeadHelmetHardsuitCentcomSecurity = шлем скафандра безопасности Центком
+    .desc = Шлем скафандра, обеспечивающий защиту от большинства источников повреждений.

@@ -16,7 +16,6 @@
   icon: "STJobIconIAA"
   supervisors: job-supervisors-centcom
   access:
-  - Service
   - Brig
   - Maintenance
   - Command

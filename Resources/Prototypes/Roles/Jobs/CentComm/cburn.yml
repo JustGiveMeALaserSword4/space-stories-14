@@ -12,6 +12,7 @@
   - STPrisonAllAccess # Stories
   access:
   - CentralCommand
+  - STDSO # Stories
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantCentcomm, STAdrenocorImplant ] # Stories-AdrenocorImplant

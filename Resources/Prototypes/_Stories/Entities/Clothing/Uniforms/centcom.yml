@@ -1,0 +1,65 @@
+- type: entity
+  parent: [ ClothingUniformBase, BaseCentcommContraband ]
+  id: STClothingUniformJumpsuitChiefCentcom
+  name: Centcom chief's uniform
+  description: The casual yet elegant bureauz-colored uniform worn by the Chief of Staff of the Central Command. It has a hint of aloe.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/Uniforms/Jumpsuit/cos.rsi
+  - type: Clothing
+    sprite: _Stories/Clothing/Uniforms/Jumpsuit/cos.rsi
+
+- type: entity
+  parent: [ ClothingUniformBase, BaseCentcommContraband ]
+  id: STClothingUniformJumpsuitHeadOfSecurityCentcom
+  name: jumpsuit of the head of security of the Central Committee
+  description: This is the jumpsuit worn by senior Central Command officers.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/Uniforms/Jumpsuit/hos_centcomm.rsi
+  - type: Clothing
+    sprite: _Stories/Clothing/Uniforms/Jumpsuit/hos_centcomm.rsi
+
+- type: entity
+  parent: [ ClothingUniformBase, BaseCentcommContraband ]
+  id: STClothingUniformJumpsuitSecurityOfficerCentcom
+  name: Centcom security officer's jumpsuit
+  description: This is a jumpsuit worn by highly trained security officers.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/Uniforms/Jumpsuit/officer_centcomm.rsi
+  - type: Clothing
+    sprite: _Stories/Clothing/Uniforms/Jumpsuit/officer_centcomm.rsi
+
+- type: entity
+  parent: [ ClothingUniformBase, BaseCentcommContraband ]
+  id: STClothingUniformJumpsuitMedicCentcom
+  name: Centcom medic's overalls
+  description: This is a suit worn by highly trained doctors.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/Uniforms/Jumpsuit/medic_centcomm.rsi
+  - type: Clothing
+    sprite: _Stories/Clothing/Uniforms/Jumpsuit/medic_centcomm.rsi
+
+- type: entity
+  parent: [ ClothingUniformBase, BaseCentcommContraband ]
+  id: STClothingUniformJumpsuitEngineerCentcom
+  name: Centcom engineer's overalls
+  description: This is a jumpsuit worn by highly trained engineers.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/Uniforms/Jumpsuit/eng_centcomm.rsi
+  - type: Clothing
+    sprite: _Stories/Clothing/Uniforms/Jumpsuit/eng_centcomm.rsi
+
+- type: entity
+  parent: [ ClothingUniformBase, BaseCentcommContraband ]
+  id: STClothingUniformJumpsuitSpecialOfficer
+  name: special operations officer uniform
+  description: A form that strikes fear into the eyes of NanoTraizen's enemies.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/Uniforms/Jumpsuit/special_officer.rsi
+  - type: Clothing
+    sprite: _Stories/Clothing/Uniforms/Jumpsuit/special_officer.rsi

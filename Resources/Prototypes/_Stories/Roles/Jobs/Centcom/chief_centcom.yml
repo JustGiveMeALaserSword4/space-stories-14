@@ -1,0 +1,37 @@
+- type: job
+  id: STChiefCentcom
+  name: stories-job-name-chief-centcom
+  description: stories-job-description-chief-centcom
+  playTimeTracker: STJobChiefCentcom
+  setPreference: false
+  startingGear: STChiefCentcomGear
+  icon: "STJobIconChiefCentcom"
+  supervisors: stories-job-supervisors-sector-management
+  accessGroups:
+  - AllAccess
+  - STPrisonAllAccess # Stories
+  access:
+  - CentralCommand
+  - STDSO
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm, STRadioImplantDSO ]
+
+- type: startingGear
+  id: STChiefCentcomGear
+  equipment:
+    head: STClothingHeadHatChiefCentcom
+    jumpsuit: STClothingUniformJumpsuitChiefCentcom
+    back: ClothingBackpackSatchelHolding
+    eyes: STClothingEyesGlassesCentcom
+    ears: ClothingHeadsetAltCentCom
+    gloves: STClothingHandsGlovesChiefCentcom
+    shoes: ClothingShoesBootsLaceup
+    id: STChiefCentcomPDA
+    outerClothing: ClothingOuterArmorCentcommCarapace
+    neck: STClothingNeckCloakChiefCentcom
+    pocket1: BoxFolderCentComClipboardThreePapers
+    belt: ClothingBeltSheathFilled
+  storage:
+    back:
+    - BoxSurvival

@@ -1,0 +1,39 @@
+- type: job
+  id: STSpecialOfficer
+  name: stories-job-name-special-officer
+  description: stories-job-description-special-officer
+  playTimeTracker: STJobSpecialOfficer
+  setPreference: false
+  startingGear: STSpecialOfficerGear
+  icon: "JobIconNanotrasen"
+  supervisors: stories-job-supervisors-sector-management
+  accessGroups:
+  - AllAccess
+  - STPrisonAllAccess # Stories
+  access:
+  - CentralCommand
+  - STDSO
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, STDeathRattleImplantDSO, RadioImplantCentcomm, STRadioImplantDSO ]
+
+- type: startingGear
+  id: STSpecialOfficerGear
+  equipment:
+    head: STClothingHeadHatBeretSpecialOfficer
+    jumpsuit: STClothingUniformJumpsuitSpecialOfficer
+    back: ClothingBackpackSatchelHolding
+    mask: ClothingMaskGasDeathSquad
+    eyes: STClothingEyesGlassesCentcom
+    ears: ClothingHeadsetAltCentCom
+    gloves: ClothingHandsGlovesCombat
+    shoes: STClothingShoesBootsJackGuardianNt
+    id: STSpecialOfficaerPDA
+    outerClothing: ClothingOuterHardsuitDeathsquad
+    neck: STClothingNeckCloakSpecialOfficer
+    pocket1: Flash
+    pocket2: WeaponDisabler
+    belt: ClothingBeltSecurityFilled
+  storage:
+    back:
+    - BoxSurvivalSecurity

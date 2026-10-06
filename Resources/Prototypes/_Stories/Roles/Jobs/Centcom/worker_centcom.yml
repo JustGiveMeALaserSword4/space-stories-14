@@ -1,0 +1,41 @@
+- type: job
+  id: STWorkerCentcom
+  name: stories-job-name-worker-centcom
+  description: stories-job-description-worker-centcom
+  playTimeTracker: STJobWorkerCentcom
+  setPreference: false
+  startingGear: STWorkerCentcomGear
+  icon: "STJobIconWorkerCentcom"
+  supervisors: job-supervisors-centcom
+  access:
+  - Theatre
+  - Cargo
+  - Janitor
+  - Chapel
+  - Service
+  - Bar
+  - Kitchen
+  - Hydroponics
+  - Maintenance
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, RadioImplantCentcomm ]
+
+- type: startingGear
+  id: STWorkerCentcomGear
+  equipment:
+    head: ClothingHeadBandGreen
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficer
+    back: ClothingBackpackSatchelHydroponics
+    eyes: ClothingEyesHudBeer
+    ears: ClothingHeadsetService
+    gloves: ClothingHandsGlovesHop
+    shoes: ClothingShoesColorBlack
+    id: STWorkerCentcomPDA
+    outerClothing: ClothingOuterArmorBasicSlim
+    neck: ClothingNeckCargomedal
+    belt: ClothingBeltChefFilled
+  storage:
+    back:
+    - BoxSurvival

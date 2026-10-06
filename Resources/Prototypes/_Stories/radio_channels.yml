@@ -58,3 +58,12 @@
   color: "#556b2f"
   longRange: true
   ttsCategory: stories-tts-category-radio-other
+
+- type: radioChannel
+  id: STDSO
+  name: stories-chat-radio-DCO
+  keycode: "в"
+  frequency: 1311
+  color: "#0a5fad"
+  longRange: true
+  ttsCategory: stories-tts-category-radio-other
