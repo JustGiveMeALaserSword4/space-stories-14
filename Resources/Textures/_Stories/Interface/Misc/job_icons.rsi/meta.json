@@ -90,6 +90,9 @@
     },
     {
         "name": "CentcomService"
+    },
+    {
+        "name": "OSO"
     }
   ]
 }

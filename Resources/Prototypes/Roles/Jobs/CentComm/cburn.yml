@@ -6,7 +6,7 @@
   setPreference: false
   startingGear: CBURNGear
   icon: "JobIconCBURN"
-  supervisors: job-supervisors-centcom
+  supervisors: stories-job-supervisors-special-officer
   accessGroups:
   - AllAccess
   - STPrisonAllAccess # Stories

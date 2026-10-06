@@ -7,7 +7,7 @@
   setPreference: false
   startingGear: ERTLeaderGearEVA
   icon: "JobIconERTLeader"
-  supervisors: job-supervisors-centcom
+  supervisors: stories-job-supervisors-special-officer
   accessGroups:
   - AllAccess
   - STPrisonAllAccess # Stories
@@ -107,7 +107,7 @@
   setPreference: false
   startingGear: ERTChaplainGear
   icon: "JobIconERTChaplain"
-  supervisors: job-supervisors-centcom
+  supervisors: stories-job-supervisors-special-officer
   accessGroups:
   - AllAccess
   - STPrisonAllAccess # Stories
@@ -188,7 +188,7 @@
   setPreference: false
   startingGear: ERTEngineerGearEVA
   icon: "JobIconERTEngineer"
-  supervisors: job-supervisors-centcom
+  supervisors: stories-job-supervisors-special-officer
   accessGroups:
   - AllAccess
   - STPrisonAllAccess # Stories
@@ -283,7 +283,7 @@
   setPreference: false
   startingGear: ERTSecurityGearEVA
   icon: "JobIconERTSecurity"
-  supervisors: job-supervisors-centcom
+  supervisors: stories-job-supervisors-special-officer
   accessGroups:
   - AllAccess
   - STPrisonAllAccess # Stories
@@ -471,7 +471,7 @@
   setPreference: false
   startingGear: ERTMedicalGearEVA
   icon: "JobIconERTMedic"
-  supervisors: job-supervisors-centcom
+  supervisors: stories-job-supervisors-special-officer
   accessGroups:
   - AllAccess
   - STPrisonAllAccess # Stories
@@ -572,7 +572,7 @@
   setPreference: false
   startingGear: ERTJanitorGearEVA
   icon: "JobIconERTJanitor"
-  supervisors: job-supervisors-centcom
+  supervisors: stories-job-supervisors-special-officer
   accessGroups:
   - AllAccess
   - STPrisonAllAccess # Stories

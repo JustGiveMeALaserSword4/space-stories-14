@@ -6,7 +6,7 @@
   setPreference: false
   startingGear: DeathSquadGear
   icon: "JobIconDeathSquad"
-  supervisors: job-supervisors-centcom
+  supervisors: stories-job-supervisors-special-officer
   accessGroups:
   - AllAccess
   - STPrisonAllAccess # Stories

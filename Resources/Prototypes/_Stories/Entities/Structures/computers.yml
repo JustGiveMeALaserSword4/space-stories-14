@@ -62,9 +62,23 @@
   name: Department of Special Operations communications console
   description: A computer used to make world wide announcements via keyboard. The superior cousin of the regular communications computer.
   components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      sprite: _Stories/Structures/Machines/computers.rsi
+      state: comm_DSO
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
   - type: CommunicationsConsole
     title: stories-comms-console-announcement-title-DSO
     color: "#1d8bad"
+    announceSentBy: false
     canShuttle: false
     global: true
   - type: Computer
@@ -81,17 +95,18 @@
   description: Terminal for programming Nanotrasen employee ID cards to access parts of the centcom.
   components:
   - type: Sprite
-    sprite: _Stories/Structures/Machines/computers_sp.rsi
     layers:
-        - map: ["computerLayerBody"]
-          state: computer_sp
-        - map: ["computerLayerKeyboard"]
-          state: generic_keyboard_sp
-        - map: ["computerLayerScreen"]
-          state: id_sp
-        - map: ["computerLayerKeys"]
-          state: generic_keys_sp
-  - type: IdCardConsole
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      sprite: _Stories/Structures/Machines/computers.rsi
+      state: id_cent-comm
+    - map: ["computerLayerKeys"]
+      state: id_key
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
     accessLevels:
     - Armory
     - Atmospherics

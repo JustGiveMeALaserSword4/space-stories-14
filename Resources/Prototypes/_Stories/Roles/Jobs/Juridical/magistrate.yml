@@ -30,6 +30,6 @@
     gloves: ClothingHandsGlovesColorBlack
     shoes: ClothingShoesBootsLaceup
     id: STMagistratePDA
-    outerClothing: ClothingOuterRobesJudge #верхняя
+    outerClothing: STClothingOuterRobesJudgeWorn #верхняя
 #    pocket1: STRubberStampSTMagistrate
     belt: BoxFolderCentComClipboard

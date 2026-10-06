@@ -6,7 +6,7 @@
   setPreference: false
   startingGear: STChiefCentcomGear
   icon: "STJobIconChiefCentcom"
-  supervisors: stories-job-supervisors-sector-management
+  supervisors: stories-job-supervisors-quadrant-management
   accessGroups:
   - AllAccess
   - STPrisonAllAccess # Stories

@@ -136,3 +136,11 @@
     sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
     state: CentcomService
   jobName: stories-job-name-worker-centcom
+
+- type: jobIcon
+  parent: JobIcon
+  id: STJobIconSpecialOfficer
+  icon:
+    sprite: /Textures/_Stories/Interface/Misc/job_icons.rsi
+    state: OSO
+  jobName: stories-job-name-special-officer

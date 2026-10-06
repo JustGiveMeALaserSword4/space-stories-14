@@ -5,8 +5,8 @@
   playTimeTracker: STJobSpecialOfficer
   setPreference: false
   startingGear: STSpecialOfficerGear
-  icon: "JobIconNanotrasen"
-  supervisors: stories-job-supervisors-sector-management
+  icon: "STJobIconSpecialOfficer"
+  supervisors: stories-job-supervisors-admiralty
   accessGroups:
   - AllAccess
   - STPrisonAllAccess # Stories
@@ -28,7 +28,7 @@
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
     shoes: STClothingShoesBootsJackGuardianNt
-    id: STSpecialOfficaerPDA
+    id: STSpecialOfficerPDA
     outerClothing: ClothingOuterHardsuitDeathsquad
     neck: STClothingNeckCloakSpecialOfficer
     pocket1: Flash
