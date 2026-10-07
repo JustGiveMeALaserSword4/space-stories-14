@@ -137,3 +137,22 @@
     - Recyclable
     - WhitelistChameleon
     - HamsterWearable
+
+- type: entity
+  parent: [ ClothingHeadBase, BaseCentcommContraband ]
+  id: STClothingHeadHatMagistrate
+  name: Magistrate hat
+  description: a stiff, round cap with a small brim, a dangling tassel, and gold trim.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/Head/Hats/magistrate.rsi
+  - type: Clothing
+    sprite: _Stories/Clothing/Head/Hats/magistrate.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - HamsterWearable

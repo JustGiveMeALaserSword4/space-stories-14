@@ -199,3 +199,14 @@
     sprite: _Stories/Clothing/Neck/Cloaks/special_officer.rsi
   - type: StealTarget
     stealGroup: HeadCloak
+
+- type: entity
+  parent: [ ClothingNeckBase, BaseCentcommContraband ]
+  id: STClothingNeckCloakMagistrate
+  name: magistrate's cloak
+  description: The mere sight of that cloak is enough to realize what an important person stands before you. Oh wait-no, it’s just a magistrate.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/Neck/Cloaks/magistrate.rsi
+  - type: StealTarget
+    stealGroup: HeadCloak

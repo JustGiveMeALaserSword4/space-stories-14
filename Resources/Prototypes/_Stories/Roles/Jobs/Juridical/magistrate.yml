@@ -7,29 +7,32 @@
   startingGear: STMagistrateGear
   icon: "STJobIconMagistrate"
   supervisors: stories-job-supervisors-management-juridical-department
+  accessGroups:
+  - AllAccess
+  - STPrisonAllAccess # Stories
   access:
   - CentralCommand
-  - Command
-  - Brig
-  - Lawyer
-  - Cryogenics
-  - External
-  - Maintenance
+  - STDSO
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+    implants: [ MindShieldImplant, STDeathRattleImplantDSO, RadioImplantCentcomm, STRadioImplantDSO ]
 
 - type: startingGear
   id: STMagistrateGear
   equipment:
-    head: ClothingHeadHatTophat
-    jumpsuit: ClothingUniformJumpsuitCentcomAgent
-    back: ClothingBackpackSatchelLeather
-    eyes: ClothingEyesGlassesSunglasses
-    ears: STClothingHeadsetIAA
-    gloves: ClothingHandsGlovesColorBlack
+    head: STClothingHeadHatMagistrate
+    jumpsuit: STClothingUniformJumpsuitProsecutorBlack
+    back: ClothingBackpackSatchelHolding
+    eyes: STClothingEyesGlassesCentcom
+    ears: ClothingHeadsetAltCentCom
+    gloves: ClothingHandsGlovesHop
     shoes: ClothingShoesBootsLaceup
     id: STMagistratePDA
-    outerClothing: STClothingOuterRobesJudgeWorn #верхняя
-#    pocket1: STRubberStampSTMagistrate
-    belt: BoxFolderCentComClipboard
+    outerClothing: STClothingOuterRobesMagistrate
+    neck: STClothingNeckCloakMagistrate
+    pocket1: ToyHammer
+    pocket2: STRubberStampMagistrate
+    belt: BoxFolderCentComClipboardThreePapers
+  storage:
+    back:
+    - BoxSurvival

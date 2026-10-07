@@ -31,6 +31,7 @@
     outerClothing: ClothingOuterArmorCentcommCarapace
     neck: STClothingNeckCloakChiefCentcom
     pocket1: BoxFolderCentComClipboardThreePapers
+    pocket2: STRubberStampChiefCentcom
     belt: ClothingBeltSheathFilled
   storage:
     back:

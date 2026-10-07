@@ -44,7 +44,7 @@ ent-STWorkerCentcomIDCard = ID-карта работника Центком
 ent-GuardianNtIDCard = ID-карта стража клинка
     .desc = { ent-IDCardStandard.desc }
 
-ent-STSpecialOfficaerIDCard = ID-карта офицера спецопераций
+ent-STSpecialOfficerIDCard = ID-карта офицера спецопераций
     .desc = { ent-IDCardStandard.desc }
 ent-STBlueshieldIDCard = ID-карта офицера синего щита
     .desc = { ent-IDCardStandard.desc }

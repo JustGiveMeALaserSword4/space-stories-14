@@ -23,16 +23,16 @@
     head: STClothingHeadHatBeretSpecialOfficer
     jumpsuit: STClothingUniformJumpsuitSpecialOfficer
     back: ClothingBackpackSatchelHolding
-    mask: ClothingMaskGasDeathSquad
+    mask: ClothingMaskNeckGaiter
     eyes: STClothingEyesGlassesCentcom
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
     shoes: STClothingShoesBootsJackGuardianNt
     id: STSpecialOfficerPDA
-    outerClothing: ClothingOuterHardsuitDeathsquad
+    outerClothing: ClothingOuterVestWeb
     neck: STClothingNeckCloakSpecialOfficer
-    pocket1: Flash
-    pocket2: WeaponDisabler
+    pocket1: WeaponDisabler
+    pocket2: STRubberStampSpecialOfficer
     belt: ClothingBeltSecurityFilled
   storage:
     back:
