@@ -160,7 +160,7 @@
   parent: [ ClothingNeckBase, BaseCentcommContraband ]
   id: STClothingNeckCloakChiefCentcom
   name: centcom chief's cloak
-  description: A pompous and elite turquoise cloak, tailored especially for the head of the central committee.
+  description: A pompous and elite turquoise cloak, tailored especially for the head of the central command.
   components:
   - type: Sprite
     sprite: _Stories/Clothing/Neck/Cloaks/cos.rsi
@@ -181,8 +181,8 @@
 - type: entity
   parent: [ ClothingNeckBase, BaseCentcommContraband ]
   id: STClothingNeckCloakHeadOfSecurityCentcom
-  name: cloak of the head of security of the Central Committee
-  description: A pompous and elite green cloak, tailored especially for the head of security at the Central Committee.
+  name: cloak of the head of security of the Central Command
+  description: A pompous and elite green cloak, tailored especially for the head of security at the Central Command.
   components:
   - type: Sprite
     sprite: _Stories/Clothing/Neck/Cloaks/hos_centcomm.rsi

@@ -48,6 +48,12 @@
     },
     {
       "name": "worker_centcom"
+    },
+    {
+      "name": "special_officer"
+    },
+    {
+      "name": "magistrate"
     }
   ]
 }

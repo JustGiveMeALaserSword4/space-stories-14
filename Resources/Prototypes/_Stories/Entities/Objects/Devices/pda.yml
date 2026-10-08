@@ -237,7 +237,7 @@
 - type: entity
   parent: STOperatorCentcomPDA
   id: STRepresentativeCentcomPDA
-  name: PDA representative of the Central Committee
+  name: PDA representative of the Central Command
   description: Light green sign of walking bureaucracy.
   suffix: RCC
   components:
@@ -247,7 +247,7 @@
 - type: entity
   parent: STOperatorCentcomPDA
   id: STHeadOfSecurityCentcomPDA
-  name: PDA of the head of security of the Central Committee
+  name: PDA of the head of security of the Central Command
   description: Green means powerful.
   suffix: HSCC
   components:
@@ -339,7 +339,7 @@
 - type: entity
   parent: BasePDA
   id: STWorkerCentcomPDA
-  name: Central Committee employee's PDA
+  name: Central Command employee's PDA
   description: Gray does not exist.
   suffix: WCC
   components:

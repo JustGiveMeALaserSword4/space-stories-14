@@ -108,7 +108,7 @@
 
 - type: entity
   id: STRandomHumanoidSpawnerHeadOfSecurityCentcom
-  name: head of security of the Central Committee
+  name: head of security of the Central Command
   suffix: HScc
   components:
     - type: Sprite
@@ -143,7 +143,7 @@
 
 - type: entity
   id: STRandomHumanoidSpawnerSecurityOfficerCentcom
-  name: Central Committee security officer
+  name: Central Command security officer
   suffix: SOcc
   components:
     - type: Sprite
@@ -285,7 +285,7 @@
   components:
     - type: Sprite
       sprite: _Stories/Markers/jobs.rsi
-      state: lawyer
+      state: magistrate
     - type: RandomHumanoidSpawner
       settings: STMagistrate
 
@@ -322,7 +322,7 @@
   components:
     - type: Sprite
       sprite: _Stories/Markers/jobs.rsi
-      state: chief_centcom #увы
+      state: special_officer
     - type: RandomHumanoidSpawner
       settings: STSpecialOfficer
 

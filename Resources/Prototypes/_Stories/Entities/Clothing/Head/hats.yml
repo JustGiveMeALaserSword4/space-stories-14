@@ -84,7 +84,7 @@
 - type: entity
   parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: STClothingHeadHatChiefCentcom
-  name: cap of the head of the central committee
+  name: cap of the head of the central command
   description: An extravagant, bizarre cap worn by the Chief of Staff of the Central Command.
   components:
   - type: Sprite
@@ -103,7 +103,7 @@
 - type: entity
   parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: STClothingHeadHatBeretHeadOfSecurityCentcom
-  name: takes the head of security of the Central Committee
+  name: takes the head of security of the Central Command
   description: A cap for real commanders.
   components:
   - type: Sprite

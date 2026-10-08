@@ -35,7 +35,7 @@
 - type: entity
   parent: [ ClothingHandsBase, BaseCentcommContraband ]
   id: STClothingHandsGlovesChiefCentcom
-  name: gloves of the head of the central committee
+  name: gloves of the head of the central command
   description: Luxurious turquoise gloves with gold trim.
   components:
   - type: Sprite
