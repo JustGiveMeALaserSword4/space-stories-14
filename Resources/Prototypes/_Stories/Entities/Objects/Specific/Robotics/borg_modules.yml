@@ -145,7 +145,7 @@
   parent: [ STBaseBorgModuleSecurity, BaseProviderBorgModule, BaseSecurityContraband ]
   id: STBorgModuleSecurityLaser
   name: overload laser cyborg module
-  description: An legal security upgrade module providing a lethal laser weapon.
+  description: A legal security upgrade module providing a lethal laser weapon.
   components:
   - type: Sprite
     layers:
