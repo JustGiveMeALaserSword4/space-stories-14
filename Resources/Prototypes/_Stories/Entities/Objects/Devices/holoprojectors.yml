@@ -31,7 +31,7 @@
   id: STHoloconeProjectorBorg
   name: integrated holocone
   description: Cyborg warning-holocone projector version. It recharges over time.
-  suffix: borg
+  suffix: Borg
   components:
   - type: ItemSlots
     slots:
