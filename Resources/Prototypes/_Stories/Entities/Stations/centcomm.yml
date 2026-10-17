@@ -1,0 +1,27 @@
+- type: entity
+  id: STNanotrasenCentralCommand
+  parent:
+  - BaseStation
+  - BaseStationNanotrasen
+  - BaseStationAlertLevels
+
+  #- BaseStationNews
+  - BaseStationCargo
+  - BaseStationJobsSpawning
+  - BaseStationRecords
+  ##- BaseStationArrivals
+  ##- BaseStationShuttles
+  ##- BaseStationCentcomm
+  ##- BaseStationEvacuation
+  - BaseStationMagnet
+  - BaseStationExpeditions
+  - BaseStationSalvageJobs
+  - BaseStationDeliveries
+  - BaseStationSiliconLawCrewsimov
+  ##- BaseStationAllEventsEligible
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+  - type: StationCargoOrderDatabase
+    orders:
+      Cargo: [ ]

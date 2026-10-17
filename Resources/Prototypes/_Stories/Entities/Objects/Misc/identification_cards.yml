@@ -219,6 +219,8 @@
   - type: PresetIdCard
     job: STPartyMaker
 
+# Centcom-Jobs
+
 - type: entity
   parent: IDCardStandard
   id: STBlueshieldIDCard
@@ -277,7 +279,6 @@
   - type: PresetIdCard
     job: STRepresentativeCentcom
 
-
 - type: entity
   parent: IDCardStandard
   id: STMagistrateIDCard
@@ -290,7 +291,6 @@
       - state: idmagistrate
   - type: PresetIdCard
     job: STMagistrate
-
 
 - type: entity
   parent: IDCardStandard
@@ -359,24 +359,62 @@
 
 - type: entity
   parent: IDCardStandard
-  id: GuardianNtIDCard
-  name: ID карта стража клинка
-  description: Карта, необходимая для доступа в различные области станции.
+  id: STSpecialAssignmentsIDCard
+  name: ID card of the officer of special assignment
   components:
-    - type: Sprite
-      layers:
-        - state: centcom
-        - state: idguardiannt
-          sprite: _Stories/Objects/Misc/id_cards.rsi
-    - type: Item
-      heldPrefix: blue
-    - type: PresetIdCard
-      job: STGuardianNt
+  - type: Sprite
+    sprite: _Stories/Objects/Misc/id_cards.rsi
+    layers:
+      - state: default_centcom
+      - state: idOSA
+  - type: PresetIdCard
+    job: STOfficerSpecialAssignments
+
+- type: entity
+  parent: IDCardStandard
+  id: STLogistIDCard
+  name: ID card of the logist
+  components:
+  - type: Sprite
+    sprite: _Stories/Objects/Misc/id_cards.rsi
+    layers:
+      - state: default_centcom
+      - state: idlogist
+  - type: PresetIdCard
+    job: STLogist
+
+- type: entity
+  parent: IDCardStandard
+  id: STAccountantIDCard
+  name: ID card of the accountant
+  components:
+  - type: Sprite
+    sprite: _Stories/Objects/Misc/id_cards.rsi
+    layers:
+      - state: default_centcom
+      - state: idaccountant
+  - type: PresetIdCard
+    job: STAccountant
+
+- type: entity
+  parent: IDCardStandard
+  id: STInternalInspectorIDCard
+  name: ID card of the internal inspector
+  components:
+  - type: Sprite
+    sprite: _Stories/Objects/Misc/id_cards.rsi
+    layers:
+      - state: default_centcom
+      - state: idseniorinspector
+  - type: PresetIdCard
+    job: STInternalInspector
+
+# DSO-Jobs
 
 - type: entity
   parent: IDCardStandard
   id: STSpecialOfficerIDCard
-  name: command officer ID card
+  name: Special Officer ID card
   components:
   - type: Sprite
     layers:
@@ -386,9 +424,28 @@
     - state: stripe_bottom
       color: "#0d304d"
     - sprite: _Stories/Objects/Misc/id_cards.rsi
-#      offset: -0.09375, 0.0625
       state: idOSO
   - type: Item
     heldPrefix: blue
   - type: PresetIdCard
     job: STSpecialOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: STCBURNCommanderIDcard
+  name: CBURN Commander ID card
+  suffix: CBURN Commander
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: stripe_top
+      color: "#134975"
+    - state: stripe_bottom
+      color: "#0d304d"
+    - sprite: _Stories/Objects/Misc/id_cards.rsi
+      state: idertleader
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: STCBURNCommander

@@ -3,6 +3,16 @@
   name: stories-job-name-special-officer
   description: stories-job-description-special-officer
   playTimeTracker: STJobSpecialOfficer
+  # requirements:
+  # - !type:DepartmentTimeRequirement
+  #   department: STDSO
+  #   time: 40h
+  # - !type:DepartmentTimeRequirement
+  #   department: CentralCommand
+  #   time: 20h
+  # - !type:RoleTimeRequirement
+  #   role: JobHeadOfSecurity
+  #   time: 20h
   setPreference: false
   startingGear: STSpecialOfficerGear
   icon: "STJobIconSpecialOfficer"
@@ -15,25 +25,28 @@
   - STDSO
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, STDeathRattleImplantDSO, RadioImplantCentcomm, STRadioImplantDSO ]
+    implants: [ MindShieldImplant, STAdrenocorImplant, STDeathRattleImplantDSO, RadioImplantCentcomm, STRadioImplantDSO ]
+  whitelisted: true
+  minBankBalance: 750
+  maxBankBalance: 900
 
 - type: startingGear
   id: STSpecialOfficerGear
   equipment:
-    head: STClothingHeadHatBeretSpecialOfficer
+    head: STClothingHeadHatSpecialOfficer
     jumpsuit: STClothingUniformJumpsuitSpecialOfficer
     back: ClothingBackpackSatchelHolding
     mask: ClothingMaskNeckGaiter
     eyes: STClothingEyesGlassesCentcom
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
-    shoes: STClothingShoesBootsJackGuardianNt
+    shoes: STClothingShoesBootsSpecialOfficer
     id: STSpecialOfficerPDA
-    outerClothing: ClothingOuterVestWeb
+    outerClothing: ClothingOuterArmorBulletproof
     neck: STClothingNeckCloakSpecialOfficer
-    pocket1: WeaponDisabler
-    pocket2: STRubberStampSpecialOfficer
     belt: ClothingBeltSecurityFilled
-  storage:
-    back:
-    - BoxSurvivalSecurity
+
+- type: roleLoadout
+  id: JobSTSpecialOfficer
+  groups:
+  - GroupSpeciesBreathTool

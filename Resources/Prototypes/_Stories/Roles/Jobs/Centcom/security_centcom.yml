@@ -3,6 +3,16 @@
   name: stories-job-name-officer-security-centcom
   description: stories-job-description-officer-security-centcom
   playTimeTracker: STJobSecurityOfficerCentcom
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 20h
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 10h
+  - !type:DepartmentTimeRequirement
+    department: CentralCommand
+    time: 5h
   setPreference: false
   startingGear: STSecurityOfficerCentcomGear
   icon: "STJobIconSecurityOfficerCentcom"
@@ -21,6 +31,8 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, RadioImplantCentcomm ]
+  minBankBalance: 450
+  maxBankBalance: 500
 
 - type: startingGear
   id: STSecurityOfficerCentcomGear
@@ -34,10 +46,10 @@
     shoes: ClothingShoesBootsJackFilled
     id: STSecurityOfficerCentcomPDA
     outerClothing: ClothingOuterArmorBasic
-    pocket1: Flash
-    pocket2: WeaponDisabler
     neck: ClothingNeckSecuritymedal
     belt: ClothingBeltSecurityFilled
-  storage:
-    back:
-    - BoxSurvivalSecurity
+
+- type: roleLoadout
+  id: JobSTSecurityOfficerCentcom
+  groups:
+  - GroupSpeciesBreathTool

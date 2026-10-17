@@ -51,3 +51,20 @@
     modifiers:
       coefficients:
         Slash: 0.95
+
+- type: entity
+  parent: ClothingHandsBase
+  id: STClothingHandsGlovesMagistrate
+  name: magistrate's gloves
+  description: Premium cut-resistant gloves made from ultra-durable synthetic fabrics. They leave no fingerprints or lint, provide electrical insulation, and feature a gold-plated NT logo on the back.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/Hands/Gloves/magistrate_gloves.rsi
+  - type: Clothing
+    sprite: _Stories/Clothing/Hands/Gloves/magistrate_gloves.rsi
+  - type: Insulated
+  - type: FingerprintMask
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95

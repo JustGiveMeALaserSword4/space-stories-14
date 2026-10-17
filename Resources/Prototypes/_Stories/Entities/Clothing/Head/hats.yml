@@ -121,7 +121,7 @@
 
 - type: entity
   parent: [ ClothingHeadBase, BaseCentcommContraband ]
-  id: STClothingHeadHatBeretSpecialOfficer
+  id: STClothingHeadHatSpecialOfficer
   name: Special Operations Officer cap
   description: She instills fear and hunger in you.
   components:
@@ -141,7 +141,7 @@
 - type: entity
   parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: STClothingHeadHatMagistrate
-  name: Magistrate hat
+  name: magistrate hat
   description: a stiff, round cap with a small brim, a dangling tassel, and gold trim.
   components:
   - type: Sprite
@@ -156,3 +156,19 @@
     - Recyclable
     - WhitelistChameleon
     - HamsterWearable
+
+- type: entity
+  parent: [ ClothingHeadBase, BaseCentcommContraband ]
+  id: STClothingHeadHatSpecialAssignments
+  name: officer of special assignment hat
+  description: Glory to Cargonia! Oops, wrong text.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/Head/Hats/OSA.rsi
+  - type: Clothing
+    sprite: _Stories/Clothing/Head/Hats/OSA.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon

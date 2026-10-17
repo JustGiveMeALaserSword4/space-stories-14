@@ -3,19 +3,38 @@
   name: stories-job-name-chief-centcom
   description: stories-job-description-chief-centcom
   playTimeTracker: STJobChiefCentcom
+  # requirements:
+  # - !type:DepartmentTimeRequirement
+  #   department: CentralCommand
+  #   time: 40h
+  # - !type:RoleTimeRequirement
+  #   role: STJobOperatorCentcom
+  #   time: 10h
+  # - !type:RoleTimeRequirement
+  #   role: STJobRepresentativeCentcom
+  #   time: 10h
+  # - !type:RoleTimeRequirement
+  #   role: STJobHeadOfSecurityCentcom
+  #   time: 10h
+  # - !type:RoleTimeRequirement
+  #   role: JobCaptain
+  #   time: 20h
   setPreference: false
   startingGear: STChiefCentcomGear
   icon: "STJobIconChiefCentcom"
   supervisors: stories-job-supervisors-quadrant-management
   accessGroups:
   - AllAccess
-  - STPrisonAllAccess # Stories
+  - STPrisonAllAccess
   access:
   - CentralCommand
   - STDSO
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm, STRadioImplantDSO ]
+  whitelisted: true
+  minBankBalance: 750
+  maxBankBalance: 900
 
 - type: startingGear
   id: STChiefCentcomGear
@@ -30,9 +49,9 @@
     id: STChiefCentcomPDA
     outerClothing: ClothingOuterArmorCentcommCarapace
     neck: STClothingNeckCloakChiefCentcom
-    pocket1: BoxFolderCentComClipboardThreePapers
-    pocket2: STRubberStampChiefCentcom
     belt: ClothingBeltSheathFilled
-  storage:
-    back:
-    - BoxSurvival
+
+- type: roleLoadout
+  id: JobSTChiefCentcom
+  groups:
+  - GroupSpeciesBreathTool

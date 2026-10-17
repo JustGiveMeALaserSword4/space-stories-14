@@ -75,12 +75,15 @@
       state: generic_keys
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
+  - type: AccessReader
+    access: [[ "STDSO" ]]
   - type: CommunicationsConsole
     title: stories-comms-console-announcement-title-DSO
     color: "#1d8bad"
-    announceSentBy: false
-    canShuttle: false
-    global: true
+    sound:
+      path: /Audio/_Stories/Announcements/DSO_announce.ogg
+      params:
+        volume: -4
   - type: Computer
     board: CentcommCommsComputerCircuitboard
   - type: PointLight
@@ -107,6 +110,7 @@
       state: id_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
+  - type: IdCardConsole
     accessLevels:
     - Armory
     - Atmospherics

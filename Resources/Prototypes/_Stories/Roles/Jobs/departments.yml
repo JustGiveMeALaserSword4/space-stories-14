@@ -28,7 +28,7 @@
   description: stories-department-DSO-description
   color: "#0a5fad"
   roles:
-  - CentralCommandOfficial
+  - STSpecialOfficer
   - CBURN
   - ERTLeader
   - ERTChaplain
@@ -54,5 +54,30 @@
   - STMedicCentcom
   - STEngineerCentcom
   - STWorkerCentcom
-  editorHidden: true
+  - STGuardianNt
+  # Non-Centcomm Personnel
+  - STMagistrate
+  - STOfficerSpecialAssignments
+  - STLogist
+  - STAccountant
+  editorHidden: false #true
   weight: 120
+
+- type: department
+  id: STLogisticsAndSupply
+  name: stories-department-LogisticsAndSupply
+  description: stories-department-LogisticsAndSupply-description
+  color: "#1f3a3dff"
+  roles:
+  - STOfficerSpecialAssignments
+  - STLogist
+  editorHidden: true
+
+- type: department
+  id: STFinance
+  name: stories-department-Finance
+  description: stories-department-Finance-description
+  color: "#6e3613"
+  roles:
+  - STAccountant
+  editorHidden: true

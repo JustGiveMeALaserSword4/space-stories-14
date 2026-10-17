@@ -3,6 +3,13 @@
   name: stories-job-name-engineer-centcom
   description: stories-job-description-engineer-centcom
   playTimeTracker: STJobEngineerCentcom
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Engineering
+    time: 20h
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 10h
   setPreference: false
   startingGear: STEngineerCentcomGear
   icon: "STJobIconEngineerCentcom"
@@ -16,6 +23,8 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, RadioImplantCentcomm ]
+  minBankBalance: 400
+  maxBankBalance: 450
 
 - type: startingGear
   id: STEngineerCentcomGear
@@ -30,6 +39,8 @@
     id: STEngineerCentcomPDA
     neck: ClothingNeckEngineermedal
     belt: ClothingBeltUtilityEngineering
-  storage:
-    back:
-    - BoxSurvivalEngineering
+
+- type: roleLoadout
+  id: JobSTEngineerCentcom
+  groups:
+  - GroupSpeciesBreathTool

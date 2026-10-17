@@ -554,8 +554,8 @@
   name: CBURN Agent
   suffix: ERTRole
   components:
-    - type: Sprite
-      sprite: Markers/jobs.rsi
+    - type: Sprite # Stories-Sprite
+      sprite: _Stories/Markers/jobs.rsi
       state: cburn
     - type: RandomHumanoidSpawner
       settings: CBURNAgent

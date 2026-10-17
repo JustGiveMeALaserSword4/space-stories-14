@@ -112,11 +112,11 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: stamp-inhand-left
+      - state: stamp-gold-inhand-left
       - state: handle-inhand-left
         color: "#20B2AA"
       right:
-      - state: stamp-inhand-right
+      - state: stamp-gold-inhand-right
       - state: handle-inhand-right
         color: "#20B2AA"
 
@@ -136,11 +136,11 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: stamp-inhand-left
+      - state: stamp-gold-inhand-left
       - state: handle-inhand-left
         color: "#1F3A3D"
       right:
-      - state: stamp-inhand-right
+      - state: stamp-gold-inhand-right
       - state: handle-inhand-right
         color: "#1F3A3D"
 
@@ -153,17 +153,119 @@
   components:
   - type: Stamp
     stampedName: stories-stamp-component-stamped-name-magistrate
-    stampedColor: "#1E241E"
+    stampedColor: "#3F3A33"
     stampState: "paper_stamp-magistrate"
   - type: Sprite
     state: stamp-magistrate
   - type: Item
     inhandVisuals:
       left:
-      - state: stamp-inhand-left
+      - state: stamp-gold-inhand-left
       - state: handle-inhand-left
-        color: "#1E241E"
+        color: "#3F3A33"
       right:
-      - state: stamp-inhand-right
+      - state: stamp-gold-inhand-right
       - state: handle-inhand-right
-        color: "#1E241E"
+        color: "#3F3A33"
+
+- type: entity
+  parent: RubberStampBase
+  id: STRubberStampAdmirality
+  name: admirality's rubber stamp
+  categories: [ DoNotMap ]
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stories-stamp-component-stamped-name-admirality
+    stampedColor: "#000000"
+    stampState: "paper_stamp-admirality"
+  - type: Sprite
+    state: stamp-admirality
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: stamp-gold-inhand-left
+      - state: handle-inhand-left
+        color: "#000000"
+      right:
+      - state: stamp-gold-inhand-right
+      - state: handle-inhand-right
+        color: "#000000"
+
+- type: entity
+  parent: RubberStampBase
+  id: STRubberStampSpecialAssignments
+  name: officer of special assignment's rubber stamp
+  categories: [ DoNotMap ]
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stories-stamp-component-stamped-name-OSA
+    stampedColor: "#1E453A"
+    stampState: "paper_stamp-OSA"
+  - type: Sprite
+    state: stamp-OSA
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: stamp-gold-inhand-left
+      - state: handle-inhand-left
+        color: "#1E453A"
+      right:
+      - state: stamp-gold-inhand-right
+      - state: handle-inhand-right
+        color: "#1E453A"
+
+- type: entity
+  parent: RubberStampBase
+  id: STRubberStampQuadrantManagement
+  name: quadrant management's rubber stamp
+  categories: [ DoNotMap ]
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stories-stamp-component-stamped-name-quadrant-management
+    stampedColor: "#136863"
+    stampState: "paper_stamp-quadrant-management"
+  - type: Sprite
+    state: stamp-quadrant-management
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: stamp-gold-inhand-left
+      - state: handle-inhand-left
+        color: "#136863"
+      right:
+      - state: stamp-gold-inhand-right
+      - state: handle-inhand-right
+        color: "#136863"
+
+- type: entity
+  parent: STRubberStampSpecialOfficer
+  id: STRubberStampSpecialOperationsDepartment
+  name: department of special operations's rubber stamp
+  categories: [ DoNotMap ]
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stories-stamp-component-stamped-name-special-operations-department
+
+- type: entity
+  parent: STRubberStampMagistrate
+  id: STRubberStampJusticeDepartment
+  name: department of justice's rubber stamp
+  categories: [ DoNotMap ]
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stories-stamp-component-stamped-name-justice-department
+
+- type: entity
+  parent: STRubberStampQuadrantManagement
+  id: STRubberStampInternalInspector
+  name: internal inspector's rubber stamp
+  categories: [ DoNotMap ]
+  suffix: DO NOT MAP
+  components:
+  - type: Stamp
+    stampedName: stories-stamp-component-stamped-name-internal-inspector

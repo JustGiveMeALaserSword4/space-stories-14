@@ -18,6 +18,8 @@
   supervisors: job-supervisors-centcom
   accessGroups:
   - AllAccess
+  access:
+  - CentralCommand
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -32,10 +34,23 @@
 - type: startingGear
   id: STGuardianNtGear
   equipment:
-    id: STGuardianNtPDA
+    head: STClothingHeadHatBeretGuardianNt
+    jumpsuit: STClothingUniformJumpsuitGuardianNt
+    back: STClothingBackpackSatchelGuardianNt
+    eyes: STClothingEyesGlassesCentcom
     ears: STClothingHeadsetGuardianNtAlt
     gloves: ClothingHandsGlovesCombat
-    eyes: ClothingEyesGlassesSecurity
+    shoes: STClothingShoesBootsJackGuardianNt
+    id: STGuardianNtPDA
+    outerClothing: STClothingOuterVestGuardianNt
+    neck: STClothingNeckMantleGuardianNt
+    belt: ClothingBeltSecurityFilled
+    pocket1: STLightsaberWhite
+  # equipment:
+  #   id: STGuardianNtPDA
+  #   ears: STClothingHeadsetGuardianNtAlt
+  #   gloves: ClothingHandsGlovesCombat
+  #   eyes: ClothingEyesGlassesSecurity
 
 - type: chameleonOutfit
   id: STGuardianNtChameleonOutfit
@@ -49,3 +64,8 @@
     jumpsuit: STClothingUniformJumpsuitGuardianNt
     back: STClothingBackpackGuardianNt
     shoes: STClothingShoesBootsJackGuardianNt
+
+- type: roleLoadout
+  id: JobSTGuardianNt
+  groups:
+  - GroupSpeciesBreathTool

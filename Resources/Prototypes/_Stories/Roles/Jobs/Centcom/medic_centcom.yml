@@ -3,6 +3,13 @@
   name: stories-job-name-medic-centcom
   description: stories-job-description-medic-centcom
   playTimeTracker: STJobMedicCentcom
+  requirements:
+  - !type:DepartmentTimeRequirement
+    department: Medical
+    time: 20h
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 10h
   setPreference: false
   startingGear: STMedicCentcomGear
   icon: "STJobIconMedicCentcom"
@@ -15,6 +22,8 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, RadioImplantCentcomm ]
+  minBankBalance: 400
+  maxBankBalance: 450
 
 - type: startingGear
   id: STMedicCentcomGear
@@ -28,9 +37,10 @@
     shoes: ClothingShoesColorWhite
     id: STMedicCentcomPDA
     outerClothing: ClothingOuterCoatLabViro
-    pocket1: AdvancedJetInjector
     neck: ClothingNeckMedicalmedal
     belt: ClothingBeltMedicalFilled
-  storage:
-    back:
-    - BoxSurvivalMedical
+
+- type: roleLoadout
+  id: JobSTMedicCentcom
+  groups:
+  - GroupSpeciesBreathTool

@@ -79,3 +79,135 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: STClothingHeadHelmetHardsuitCentcomSecurity
+
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseCentcommContraband]
+  id: STClothingOuterHardsuitCentcomPersonnel
+  name: lightweight centcom hardsuit
+  description: An elite modular spacesuit designed to protect Centcomm personnel from hazardous, low pressure environments.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/OuterClothing/Hardsuits/centcom_personnel.rsi
+  - type: Clothing
+    sprite: _Stories/Clothing/OuterClothing/Hardsuits/centcom_personnel.rsi
+  - type: Item
+    size: Huge
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.8
+        Heat: 0.9
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetHardsuitCentcomPersonnel
+
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseCentcommContraband]
+  id: STClothingOuterHardsuitChiefCentcom
+  name: commanding officer's hardsuit
+  description: A spacesuit for the boss of bosses.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/OuterClothing/Hardsuits/centcom_chief.rsi
+  - type: Clothing
+    sprite: _Stories/Clothing/OuterClothing/Hardsuits/centcom_chief.rsi
+  - type: Item
+    size: Huge
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.55
+        Heat: 0.65
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetHardsuitChiefCentcom
+
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseCentcommContraband]
+  id: STClothingOuterHardsuitSpecialOfficer
+  name: special officer's hardsuit
+  description: A cool spacesuit for a cool guy.
+  components:
+  - type: Sprite
+    sprite: _Stories/Clothing/OuterClothing/Hardsuits/special_officer.rsi
+  - type: Clothing
+    sprite: _Stories/Clothing/OuterClothing/Hardsuits/special_officer.rsi
+  - type: Item
+    size: Huge
+  - type: PressureProtection
+    highPressureMultiplier: 0.5
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.25
+  - type: StaminaResistance
+    damageCoefficient: 0.3
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.3
+        Heat: 0.4
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetHardsuitSpecialOfficer
+
+- type: entity
+  parent: [ BaseCentcommContraband, ClothingOuterHardsuitBase ]
+  id: STClothingOuterHardsuitCBURNCommander
+  name: CBURN commander's hardsuit
+  description: A lightweight yet strong exosuit used for special cleanup operations. This one belongs to the squad leader.
+  components:
+  - type: Sprite
+    sprite: _Corvax/Clothing/OuterClothing/Hardsuits/cburn_commander.rsi
+  - type: Clothing
+    sprite: _Corvax/Clothing/OuterClothing/Hardsuits/cburn_commander.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: StaminaResistance
+    damageCoefficient: 0.4
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.5
+        Heat: 0.1
+        Cold: 0.1
+        Shock: 0.1
+        Radiation: 0.1
+        Caustic: 0.1
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.1
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetCBURNCommander
