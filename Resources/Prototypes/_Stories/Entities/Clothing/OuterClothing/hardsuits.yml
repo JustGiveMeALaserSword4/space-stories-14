@@ -79,6 +79,18 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: STClothingHeadHelmetHardsuitCentcomSecurity
+  - type: BioCode
+  - type: TimerTrigger
+    delay: 3
+  - type: ExplodeOnTrigger
+    keysIn:
+    - timer
+  - type: Explosive
+    explosionType: PowerSink
+    maxIntensity: 18
+    intensitySlope: 15
+    totalIntensity: 15
+    canCreateVacuum: false
 
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCentcommContraband]
@@ -110,6 +122,18 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: STClothingHeadHelmetHardsuitCentcomPersonnel
+  - type: BioCode
+  - type: TimerTrigger
+    delay: 3
+  - type: ExplodeOnTrigger
+    keysIn:
+    - timer
+  - type: Explosive
+    explosionType: PowerSink
+    maxIntensity: 8
+    intensitySlope: 5
+    totalIntensity: 5
+    canCreateVacuum: false
 
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCentcommContraband]
@@ -141,6 +165,20 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: STClothingHeadHelmetHardsuitChiefCentcom
+  - type: BioCode
+    autoRecordDNA: true
+    hardDefense: true
+  - type: TimerTrigger
+    delay: 3
+  - type: ExplodeOnTrigger
+    keysIn:
+    - timer
+  - type: Explosive
+    explosionType: PowerSink
+    maxIntensity: 11
+    intensitySlope: 8
+    totalIntensity: 8
+    canCreateVacuum: false
 
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCentcommContraband]
@@ -174,6 +212,20 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: STClothingHeadHelmetHardsuitSpecialOfficer
+  - type: BioCode
+    autoRecordDNA: true
+    hardDefense: true
+  - type: TimerTrigger
+    delay: 3
+  - type: ExplodeOnTrigger
+    keysIn:
+    - timer
+  - type: Explosive
+    explosionType: PowerSink
+    maxIntensity: 38
+    intensitySlope: 35
+    totalIntensity: 35
+    canCreateVacuum: false
 
 - type: entity
   parent: [ BaseCentcommContraband, ClothingOuterHardsuitBase ]
@@ -211,3 +263,16 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: STClothingHeadHelmetCBURNCommander
+  - type: BioCode
+    hardDefense: true
+  - type: TimerTrigger
+    delay: 3
+  - type: ExplodeOnTrigger
+    keysIn:
+    - timer
+  - type: Explosive
+    explosionType: PowerSink
+    maxIntensity: 18
+    intensitySlope: 15
+    totalIntensity: 15
+    canCreateVacuum: false

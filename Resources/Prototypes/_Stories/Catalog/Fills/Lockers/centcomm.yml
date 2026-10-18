@@ -8,10 +8,7 @@
     - id: BoxFolderQmClipboard
     - id: CigarGoldCase
     - id: ClothingHeadsetAltCentCom
-    - id: DeathRattleImplanterCentcomm
-    - id: MindShieldImplanter
     - id: OxygenTankFilled
-    - id: RadioImplanterCentcomm
     - id: RubberStampApproved
     - id: RubberStampDenied
     - id: STBoxPrinter
@@ -19,7 +16,6 @@
     - id: STClothingOuterHardsuitCentcomPersonnel
     - id: STClothingShoesBootsMagCentcomm
     - id: STRubberStampSpecialOfficer
-    - id: TrackingImplanter
     - id: WeaponDisabler
     - id: WeaponPistolN1984
 
@@ -34,13 +30,9 @@
     - id: ClothingBeltUtility
     - id: ClothingHeadsetCargo
     - id: ClothingOuterWinterCentcom
-    - id: DeathRattleImplanterCentcomm
-    - id: MindShieldImplanter
     - id: OxygenTankFilled
-    - id: RadioImplanterCentcomm
     - id: STClothingOuterHardsuitCentcomPersonnel
     - id: STClothingShoesBootsMagCentcomm
-    - id: TrackingImplanter
     - id: WeaponDisabler
 
 - type: entity
@@ -53,14 +45,10 @@
     - id: ClothingHandsGlovesHop
     - id: ClothingHeadsetCentCom
     - id: ClothingOuterWinterCentcom
-    - id: DeathRattleImplanterCentcomm
-    - id: MindShieldImplanter
     - id: OxygenTankFilled
-    - id: RadioImplanterCentcomm
     - id: SpaceCash1000000
     - id: STBoxPrinter
     - id: STClothingOuterHardsuitCentcomPersonnel
-    - id: TrackingImplanter
     - id: WeaponDisabler
 
 - type: entity
@@ -75,12 +63,8 @@
     - id: ClothingBeltMedicalFilled
     - id: ClothingEyesHudMedical
     - id: ClothingHeadsetMedical
-    - id: DeathRattleImplanterCentcomm
-    - id: MindShieldImplanter
     - id: OxygenTankFilled
-    - id: RadioImplanterCentcomm
     - id: STClothingOuterHardsuitCentcomPersonnel
-    - id: TrackingImplanter
 
 - type: entity
   id: STLockerEngineerCentcommFilled
@@ -92,16 +76,12 @@
     - id: ClothingHandsGlovesColorYellow
     - id: ClothingHeadsetEngineering
     - id: ClothingMaskGas
-    - id: DeathRattleImplanterCentcomm
     - id: MetalFoamGrenade
-    - id: MindShieldImplanter
     - id: OxygenTankFilled
-    - id: RadioImplanterCentcomm
     - id: RCD
     - id: RCDAmmo
     - id: STClothingOuterHardsuitCentcomPersonnel
     - id: STClothingShoesBootsMagCentcomm
-    - id: TrackingImplanter
     - id: trayScanner
 
 - type: entity
@@ -117,14 +97,10 @@
     - id: ClothingHandsGlovesHop
     - id: ClothingHeadsetService
     - id: ClothingOuterArmorBasicSlim
-    - id: DeathRattleImplanterCentcomm
-    - id: MindShieldImplanter
     - id: OxygenTankFilled
     - id: PlantBag
-    - id: RadioImplanterCentcomm
     - id: STClothingOuterHardsuitCentcomPersonnel
     - id: SynthesizerInstrument
-    - id: TrackingImplanter
 
 - type: entity
   id: STLockerSecurityOfficerCentcommFilled
@@ -141,18 +117,14 @@
     - id: ClothingHeadsetSecurity
     - id: ClothingOuterArmorBasic
     - id: ClothingShoesBootsJack
-    - id: DeathRattleImplanterCentcomm
     - id: Flash
     - id: FlashlightSeclite
     - id: HoloprojectorSecurity
-    - id: MindShieldImplanter
     - id: OxygenTankFilled
-    - id: RadioImplanterCentcomm
     - id: SecurityBola
       amount: 2
     - id: STClothingOuterHardsuitCentcomSecutiry
     - id: STClothingShoesBootsMagSec
-    - id: TrackingImplanter
     - id: WeaponDisabler
     - id: WeaponMeleeNeedle
 
@@ -169,19 +141,15 @@
     - id: ClothingMaskGasSwat
     - id: ClothingOuterArmorCentcommCarapace
     - id: ClothingShoesBootsJack
-    - id: DeathRattleImplanterCentcomm
     - id: Flash
     - id: FlashlightSeclite
     - id: HoloprojectorSecurity
-    - id: MindShieldImplanter
     - id: OxygenTankFilled
-    - id: RadioImplanterCentcomm
     - id: RubberStampCentcom
     - id: STClothingOuterHardsuitCentcomSecutiry
     - id: STClothingOuterHardsuitCentcomPersonnel
     - id: STClothingShoesBootsMagCentcomm
     - id: STClothingShoesBootsMagSec
-    - id: TrackingImplanter
     - id: WeaponDisabler
     - id: WeaponEnergyMagnum
 
@@ -196,10 +164,7 @@
     - id: CigarGoldCase
     - id: ClothingHeadsetAltCentCom
     - id: ClothingOuterArmorCentcommCarapace
-    - id: DeathRattleImplanterCentcomm
-    - id: MindShieldImplanter
     - id: OxygenTankFilled
-    - id: RadioImplanterCentcomm
     - id: RubberStampApproved
     - id: RubberStampCentcom
     - id: RubberStampDenied
@@ -208,7 +173,6 @@
     - id: STClothingNeckCloakOperatorCentcom
     - id: STClothingOuterHardsuitCentcomPersonnel
     - id: STClothingShoesBootsMagCentcomm
-    - id: TrackingImplanter
     - id: WeaponDisabler
     - id: WeaponPistolN1984
 
@@ -224,10 +188,7 @@
     - id: ClothingHeadsetAltCentCom
     - id: ClothingNeckCloakCentcom
     - id: ClothingOuterArmorCentcommCarapace
-    - id: DeathRattleImplanterCentcomm
-    - id: MindShieldImplanter
     - id: OxygenTankFilled
-    - id: RadioImplanterCentcomm
     - id: RubberStampApproved
     - id: RubberStampCentcom
     - id: RubberStampDenied
@@ -236,7 +197,6 @@
     - id: STClothingEyesGlassesCentcom
     - id: STClothingOuterHardsuitCentcomPersonnel
     - id: STClothingShoesBootsMagCentcomm
-    - id: TrackingImplanter
     - id: WeaponDisabler
     - id: WeaponPistolN1984
 
@@ -253,13 +213,10 @@
     - id: ClothingHeadsetAltCentCom
     - id: ClothingOuterArmorCentcommCarapace
     - id: ClothingShoesBootsMagAdv
-    - id: DeathRattleImplanterCentcomm
     - id: DoorRemoteCustom
     - id: MedalCase
-    - id: MindShieldImplanter
     - id: NukeDisk
     - id: OxygenTankFilled
-    - id: RadioImplanterCentcomm
     - id: RubberStampApproved
     - id: RubberStampCentcom
     - id: RubberStampDenied
@@ -268,9 +225,7 @@
     - id: STClothingHandsGlovesChiefCentcom
     - id: STClothingNeckCloakChiefCentcom
     - id: STClothingOuterHardsuitChiefCentcom
-    - id: STRadioImplanterDSO
     - id: STRubberStampChiefCentcom
-    - id: TrackingImplanter
     - id: WeaponPistolN1984
     - id: WeaponTaser
 
@@ -287,22 +242,17 @@
     - id: CigarGoldCase
     - id: ClothingHeadsetAltCentCom
     - id: ClothingShoesBootsMagAdv
-    - id: DeathRattleImplanterCentcomm
     - id: DoorRemoteCustom
     - id: MagazineBoxLightRifleIncendiary
-    - id: MindShieldImplanter
     - id: OxygenTankFilled
-    - id: RadioImplanterCentcomm
     - id: RubberStampApproved
     - id: RubberStampDenied
     - id: STBoxPrinter
     - id: STClothingEyesGlassesCentcom
     - id: STClothingNeckCloakSpecialOfficer
     - id: STClothingOuterHardsuitSpecialOfficer
-    - id: STRadioImplanterDSO
     - id: STRubberStampSpecialOfficer
     - id: STWeaponDerozer
-    - id: TrackingImplanter
     - id: WeaponEnergyShotgun
     - id: WeaponRifleAk
     - id: WeaponPulsePistol
@@ -319,11 +269,8 @@
     - id: CigarGoldCase
     - id: ClothingHeadsetAltCentCom
     - id: ClothingShoesBootsMagAdv
-    - id: DeathRattleImplanterCentcomm
     - id: DoorRemoteCustom
-    - id: MindShieldImplanter
     - id: OxygenTankFilled
-    - id: RadioImplanterCentcomm
     - id: RubberStampApproved
     - id: RubberStampDenied
     - id: STBoxPrinter
@@ -335,9 +282,7 @@
     - id: STClothingOuterRobesMagistrate
     - id: STClothingUniformJumpsuitMagistrate
     - id: STGavel
-    - id: STRadioImplanterDSO
     - id: STRubberStampMagistrate
-    - id: TrackingImplanter
     - id: WeaponPistolN1984
     - id: WeaponTaser
 
@@ -354,22 +299,17 @@
     - id: ClothingHeadsetAltCentCom
     - id: ClothingShoesBootsLaceup
     - id: ClothingShoesBootsMagAdv
-    - id: DeathRattleImplanterCentcomm
     - id: DoorRemoteAll
     - id: MagazinePistolSubMachineGunIncendiary
       amount: 3
-    - id: MindShieldImplanter
     - id: OxygenTankFilled
-    - id: RadioImplanterCentcomm
     - id: RubberStampApproved
     - id: RubberStampDenied
     - id: STBoxPrinter
     - id: STClothingEyesGlassesCentcom
     - id: STClothingOuterHardsuitChiefCentcom
     - id: STClothingUniformJumpsuitInternalInspector
-    - id: STRadioImplanterDSO
     - id: STRubberStampInternalInspector
-    - id: TrackingImplanter
     - id: WeaponPulsePistol
     - id: WeaponSubMachineGunAtreides
     - id: WeaponTaser
