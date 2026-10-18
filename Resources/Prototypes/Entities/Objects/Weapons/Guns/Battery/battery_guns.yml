@@ -58,9 +58,15 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+  # Stories-Balance-Start
   - type: BatteryAmmoProvider
-    proto: RedLaser
-    fireCost: 62.5
+    proto: RedMediumLaser
+    fireCost: 50
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 3
+    pvsIncrease: 0.3
+  # Stories-Balance-End
   - type: StaticPrice
     price: 420
   - type: Tag
@@ -429,6 +435,15 @@
     fireRate: 1.5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  # Stories-Balance-Start
+  - type: Battery
+    maxCharge: 1400
+    startingCharge: 1400
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 3
+    pvsIncrease: 0.3
+  # Stories-Balance-End
   - type: BatteryAmmoProvider
     proto: RedHeavyLaser
     fireCost: 100
@@ -719,10 +734,10 @@
   id: WeaponAdvancedLaser
   description: An experimental high-energy laser pistol with a self-charging nuclear battery.
   components:
-  - type: Item
-    size: Normal
-    shape:
-    - 0,0,1,1
+  # - type: Item # Stories-Balance
+  #   size: Normal
+  #   shape:
+  #   - 0,0,1,1
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/advancedlasergun.rsi
     layers:
