@@ -4,24 +4,15 @@
   - BaseStation
   - BaseStationNanotrasen
   - BaseStationAlertLevels
-
-  #- BaseStationNews
   - BaseStationCargo
+  - BaseStationNews
   - BaseStationJobsSpawning
   - BaseStationRecords
-  ##- BaseStationArrivals
-  ##- BaseStationShuttles
-  ##- BaseStationCentcomm
-  ##- BaseStationEvacuation
   - BaseStationMagnet
   - BaseStationExpeditions
   - BaseStationSalvageJobs
   - BaseStationDeliveries
   - BaseStationSiliconLawCrewsimov
-  ##- BaseStationAllEventsEligible
   categories: [ HideSpawnMenu ]
   components:
   - type: Transform
-  - type: StationCargoOrderDatabase
-    orders:
-      Cargo: [ ]

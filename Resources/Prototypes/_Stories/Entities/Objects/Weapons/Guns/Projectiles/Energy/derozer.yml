@@ -23,6 +23,8 @@
   - type: PointLight
     enabled: true
     color: "#ff4300"
+  - type: IgniteOnCollide
+    fireStacks: 0.25
   - type: Projectile
     impactEffect: BulletImpactEffectOrangeDisabler
     damage:

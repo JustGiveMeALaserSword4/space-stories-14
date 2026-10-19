@@ -27,7 +27,7 @@
     ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
     outerClothing: STClothingOuterHardsuitCBURNCommander
-    shoes: ClothingShoesBootsCombatFilled
+    shoes: ClothingShoesBootsMagERT
     id: STCBURNCommanderPDA
     pocket2: WeaponAdvancedLaser
     belt: ClothingBeltBandolier

@@ -23,7 +23,7 @@
           STHeadOfSecurityCentcom: [ 1, 1 ]
           STOperatorCentcom: [ 1, 1 ]
           STRepresentativeCentcom: [ 1, 1 ]
-          # Centcomm Personnel (12)
+          # Centcomm Personnel (13)
           STEngineerCentcom: [ 3, 3 ]
           STMedicCentcom: [ 3, 3 ]
           STSecurityOfficerCentcom: [ 3, 3 ]
@@ -36,4 +36,4 @@
           # Silicon (3) # TODO: Make CentComm silicons
           #StationAi: [ 1, 1 ]
           #Borg: [ 2, 2 ]
-          # Total: 26 roles
+          # Total: 27 roles

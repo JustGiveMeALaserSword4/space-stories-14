@@ -604,9 +604,9 @@
     - timer
   - type: Explosive
     explosionType: PowerSink
-    maxIntensity: 18
-    intensitySlope: 15
-    totalIntensity: 15
+    maxIntensity: 8
+    intensitySlope: 5
+    totalIntensity: 5
     canCreateVacuum: false
   # Stories-ClothingWhitelist-End
 
@@ -684,9 +684,9 @@
     - timer
   - type: Explosive
     explosionType: PowerSink
-    maxIntensity: 18
-    intensitySlope: 15
-    totalIntensity: 15
+    maxIntensity: 8
+    intensitySlope: 5
+    totalIntensity: 5
     canCreateVacuum: false
   # Stories-ClothingWhitelist-End
 
@@ -740,9 +740,9 @@
     - timer
   - type: Explosive
     explosionType: PowerSink
-    maxIntensity: 18
-    intensitySlope: 15
-    totalIntensity: 15
+    maxIntensity: 8
+    intensitySlope: 5
+    totalIntensity: 5
     canCreateVacuum: false
   # Stories-ClothingWhitelist-End
 
@@ -1151,9 +1151,9 @@
     - timer
   - type: Explosive
     explosionType: PowerSink
-    maxIntensity: 158
-    intensitySlope: 155
-    totalIntensity: 155
+    maxIntensity: 8
+    intensitySlope: 5
+    totalIntensity: 5
     canCreateVacuum: false
   # Stories-BioCode-End
 
@@ -1198,6 +1198,7 @@
     clothingPrototype: ClothingHeadHelmetCBURN
   # Stories-BioCode-Start
   - type: BioCode
+    hardDefense: true
   - type: TimerTrigger
     delay: 3
   - type: ExplodeOnTrigger
@@ -1205,9 +1206,9 @@
     - timer
   - type: Explosive
     explosionType: PowerSink
-    maxIntensity: 18
-    intensitySlope: 15
-    totalIntensity: 15
+    maxIntensity: 8
+    intensitySlope: 5
+    totalIntensity: 5
     canCreateVacuum: false
   # Stories-BioCode-End
 

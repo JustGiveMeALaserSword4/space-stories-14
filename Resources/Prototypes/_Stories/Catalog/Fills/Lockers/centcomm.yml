@@ -238,15 +238,14 @@
     contents:
     - id: BoxFolderCentComClipboard
     - id: BoxFolderNuclearCodes
-    - id: BoxMagazineLightRifle
     - id: CigarGoldCase
     - id: ClothingHeadsetAltCentCom
     - id: ClothingShoesBootsMagAdv
     - id: DoorRemoteCustom
-    - id: MagazineBoxLightRifleIncendiary
     - id: OxygenTankFilled
     - id: RubberStampApproved
     - id: RubberStampDenied
+    - id: SpeedLoaderMagnumAP
     - id: STBoxPrinter
     - id: STClothingEyesGlassesCentcom
     - id: STClothingNeckCloakSpecialOfficer
@@ -254,9 +253,8 @@
     - id: STRubberStampSpecialOfficer
     - id: STWeaponDerozer
     - id: WeaponEnergyShotgun
-    - id: WeaponRifleAk
     - id: WeaponPulsePistol
-    - id: WeaponTaser
+    - id: WeaponRevolverMatebaAP
 
 - type: entity
   id: STLockerMagistrateFilled

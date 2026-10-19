@@ -1,26 +1,21 @@
-using Content.Shared._Stories.BioCode;
 using Content.Shared.Damage.Systems;
-using Content.Shared.Clothing.EntitySystems;
-using Content.Shared.DoAfter;
 using Content.Shared.Emag.Systems;
 using Content.Shared.Forensics.Components;
 using Content.Shared.Hands;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Popups;
 using Content.Shared.Trigger.Components;
 using Content.Shared.Trigger.Systems;
 using Content.Shared.Verbs;
+using Robust.Shared.Containers;
 
 namespace Content.Server._Stories.BioCode;
 
 public sealed partial class BioCodeSystem : EntitySystem
 {
     [Dependency] private DamageableSystem _damageable = default!;
-    [Dependency] private ClothingSystem _clothing = default!;
-    [Dependency] private SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private TriggerSystem _trigger = default!;
 
@@ -33,8 +28,6 @@ public sealed partial class BioCodeSystem : EntitySystem
         SubscribeLocalEvent<BioCodeComponent, GotEquippedHandEvent>(OnHandEquipped);
         SubscribeLocalEvent<BioCodeComponent, GotUnequippedHandEvent>(OnHandUnequipped);
         SubscribeLocalEvent<BioCodeComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
-        SubscribeLocalEvent<DnaComponent, BioCodeRecordDnaDoAfterEvent>(OnRecordDnaComplete);
-        SubscribeLocalEvent<DnaComponent, BioCodeDeleteDnaDoAfterEvent>(OnDeleteDnaComplete);
         SubscribeLocalEvent<BioCodeComponent, GotEmaggedEvent>(OnEmagged);
     }
 
@@ -147,7 +140,17 @@ public sealed partial class BioCodeSystem : EntitySystem
 
     private void OnGetVerbs(EntityUid uid, BioCodeComponent comp, GetVerbsEvent<Verb> args)
     {
-        if (!_clothing.IsEquipped(uid) && !(comp.ItemBioCode && _hands.IsHolding(args.User, uid)))
+        if (comp.RecordedDNA != null &&
+            TryComp<DnaComponent>(args.User, out var dnaComp) &&
+            comp.RecordedDNA != dnaComp.DNA)
+            return;
+
+        if (_container.TryGetContainingContainer(uid, out var container))
+        {
+            if (container.Owner != args.User)
+                return;
+        }
+        else
             return;
 
         if (comp.RecordedDNA != null && comp.AllowOverwriting)
@@ -156,29 +159,13 @@ public sealed partial class BioCodeSystem : EntitySystem
             {
                 Text = Loc.GetString("stories-biocode-delete-dna-verb"),
                 Act = () => {
-                    var doAfterArgs = new DoAfterArgs(EntityManager,
-                        args.User,
-                        TimeSpan.FromSeconds(comp.Delay + 1),
-                        new BioCodeDeleteDnaDoAfterEvent(),
-                        args.User,
-                        used: uid)
-                    {
-                        BreakOnMove = true,
-                        BreakOnDamage = true,
-                        NeedHand = true,
-                        DistanceThreshold = 0.1f,
-                    };
-
-                    _doAfter.TryStartDoAfter(doAfterArgs);
+                    comp.RecordedDNA = null;
+                    _popup.PopupEntity(Loc.GetString("stories-biocode-successful-deletion"), uid);
                 }
             };
 
             args.Verbs.Add(deleteDnaVerb);
-            return;
         }
-
-        if (comp.RecordedDNA != null)
-            return;
 
         var recordDnaVerb = new Verb
         {
@@ -190,53 +177,18 @@ public sealed partial class BioCodeSystem : EntitySystem
                     return;
                 }
 
-                var doAfterArgs = new DoAfterArgs(EntityManager,
-                    args.User,
-                    TimeSpan.FromSeconds(comp.Delay + 1),
-                    new BioCodeRecordDnaDoAfterEvent(),
-                    args.User,
-                    used: uid)
-                {
-                    BreakOnMove = true,
-                    BreakOnDamage = true,
-                    NeedHand = true,
-                    DistanceThreshold = 0.1f,
-                };
-
-                _doAfter.TryStartDoAfter(doAfterArgs);
+                _damageable.TryChangeDamage(args.User, comp.DamagePerRecord, true, true);
+                comp.RecordedDNA = dnaComp.DNA;
+                _popup.PopupEntity(Loc.GetString("stories-biocode-successful-recording"), uid);
             },
         };
         args.Verbs.Add(recordDnaVerb);
-    }
-
-    private void OnDeleteDnaComplete(EntityUid uid, DnaComponent comp, BioCodeDeleteDnaDoAfterEvent args)
-    {
-        if (args.Cancelled)
-            return;
-
-        if (!TryComp<BioCodeComponent>(args.Used, out var bioCodeComp))
-            return;
-
-        bioCodeComp.RecordedDNA = null;
-        _popup.PopupEntity(Loc.GetString("stories-biocode-successful-deletion"), uid);
-    }
-
-    private void OnRecordDnaComplete(EntityUid uid, DnaComponent comp, BioCodeRecordDnaDoAfterEvent args)
-    {
-        if (args.Cancelled)
-            return;
-
-        if (!TryComp<BioCodeComponent>(args.Used, out var bioCodeComp))
-            return;
-
-        _damageable.TryChangeDamage(args.User, bioCodeComp.DamagePerRecord, true, true);
-        bioCodeComp.RecordedDNA = comp.DNA;
-        _popup.PopupEntity(Loc.GetString("stories-biocode-successful-recording"), uid);
     }
 
     private void OnEmagged(EntityUid uid, BioCodeComponent comp, GotEmaggedEvent args)
     {
         _popup.PopupEntity(Loc.GetString("stories-biocode-defense-emagged"), uid);
         RemComp<BioCodeComponent>(uid);
+        args.Handled = true;
     }
 }

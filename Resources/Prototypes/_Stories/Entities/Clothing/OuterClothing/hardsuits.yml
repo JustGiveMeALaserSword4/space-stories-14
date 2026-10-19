@@ -87,9 +87,9 @@
     - timer
   - type: Explosive
     explosionType: PowerSink
-    maxIntensity: 18
-    intensitySlope: 15
-    totalIntensity: 15
+    maxIntensity: 8
+    intensitySlope: 5
+    totalIntensity: 5
     canCreateVacuum: false
 
 - type: entity
@@ -151,14 +151,20 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.6
+    damageCoefficient: 0.2
+  - type: StaminaResistance
+    damageCoefficient: 0.4
+  - type: FireProtection
+    reduction: 0.75
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.7
-        Slash: 0.7
-        Piercing: 0.55
-        Heat: 0.65
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.3
+        Heat: 0.4
+        Radiation: 0.2
+        Caustic: 0.2
   - type: ClothingSpeedModifier
     walkModifier: 0.90
     sprintModifier: 0.90
@@ -175,9 +181,9 @@
     - timer
   - type: Explosive
     explosionType: PowerSink
-    maxIntensity: 11
-    intensitySlope: 8
-    totalIntensity: 8
+    maxIntensity: 8
+    intensitySlope: 5
+    totalIntensity: 5
     canCreateVacuum: false
 
 - type: entity
@@ -196,16 +202,20 @@
     highPressureMultiplier: 0.5
     lowPressureMultiplier: 1000
   - type: ExplosionResistance
-    damageCoefficient: 0.25
+    damageCoefficient: 0.15
   - type: StaminaResistance
-    damageCoefficient: 0.3
+    damageCoefficient: 0.2
+  - type: FireProtection
+    reduction: 0.8
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.4
-        Slash: 0.4
-        Piercing: 0.3
-        Heat: 0.4
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.15
+        Heat: 0.3
+        Radiation: 0.1
+        Caustic: 0.1
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
@@ -222,9 +232,9 @@
     - timer
   - type: Explosive
     explosionType: PowerSink
-    maxIntensity: 38
-    intensitySlope: 35
-    totalIntensity: 35
+    maxIntensity: 8
+    intensitySlope: 5
+    totalIntensity: 5
     canCreateVacuum: false
 
 - type: entity
@@ -272,7 +282,7 @@
     - timer
   - type: Explosive
     explosionType: PowerSink
-    maxIntensity: 18
-    intensitySlope: 15
-    totalIntensity: 15
+    maxIntensity: 8
+    intensitySlope: 5
+    totalIntensity: 5
     canCreateVacuum: false
