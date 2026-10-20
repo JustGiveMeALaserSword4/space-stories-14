@@ -1,7 +1,14 @@
 - type: species
-  id: Felinid
+  id: STFelinid
   name: species-name-felinid
   roundStart: true
-  prototype: MobFelinid
-  dollPrototype: AppearanceFelinid
+  prototype: STMobFelinid
+  dollPrototype: STAppearanceFelinid
   skinColoration: HumanToned
+  defaultSoundsBySex:
+  - STMaleFelinid
+  - STFemaleFelinid
+  - STMaleFelinid
+  voices:
+  - STMaleFelinid
+  - STFemaleFelinid

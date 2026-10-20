@@ -7,3 +7,11 @@ job-description-STBrigmedic = Обследуйте и лечите сотруд�
 stories-job-description-command-maid = Очистите мостик, командные помещения и все остальное, что вам прикажет Капитан.
 stories-job-description-security-clown = Выполняйте работу службы безопасности, но не забывайте делать это со своей клоунской изюминкой.
 stories-job-description-party-maker = Устройте самую грандиозную вечеринку за всю историю этой станции!
+stories-job-description-blueshield = Защищайте глав отделов ценой своей жизни. Вы не офицер службы безопасности и не проводите аресты.
+
+stories-job-description-guardian-nt = Встань на защиту командования станции со своим крутым мечом и способностями!
+stories-job-description-head-of-prison = Охраняйте это место используя все возможное и невозможно, иначе на свободу вырвутся самые опасные обитатели вселенной.
+stories-job-description-prison-engineer = Обслуживайте тюрьму, ибо сбежавшие зеки придут за вами в первую очередь.
+stories-job-description-prison-medic = Лечите самых опасных преступников космических просторов.
+stories-job-description-prison-officer = Ограждать станцию от преступного элемента - это ваша наивысшая миссия на смену, не подведите.
+stories-job-description-prisoner = Как я сюда попал?

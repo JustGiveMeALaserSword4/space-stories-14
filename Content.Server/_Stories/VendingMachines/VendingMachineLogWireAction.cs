@@ -1,5 +1,6 @@
 using Content.Server.Wires;
 using Content.Shared.VendingMachines;
+using Content.Shared.VendingMachines.Components;
 using Content.Shared.Wires;
 
 namespace Content.Server.VendingMachines;
@@ -31,6 +32,7 @@ public sealed partial class VendingMachineLogWireAction : BaseToggleWireAction
 
     public override bool GetValue(EntityUid owner)
     {
-        return EntityManager.TryGetComponent(owner, out VendingMachineComponent? vending) && !vending.DisableFinancialLogging;
+        return EntityManager.TryGetComponent(owner, out VendingMachineComponent? vending) &&
+               !vending.DisableFinancialLogging;
     }
 }

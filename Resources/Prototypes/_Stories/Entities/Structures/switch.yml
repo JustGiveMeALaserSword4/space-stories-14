@@ -1,39 +1,39 @@
 - type: entity
-  id: PRISONLockableButtonPrisonBrig
-  suffix: PrisonBrig
-  name: кнопка с замком
+  id: STPRISONLockableButtonPrisonBrig
+  suffix: STPrisonBrig
+  name: lockable button
   description: This button activates something.
   parent: LockableButton
   components:
   - type: AccessReader
-    access: [["PrisonBrig"]]
+    access: [["STPrisonBrig"]]
 
 - type: entity
-  id: PRISONLockableButtonHeadOfPrison
-  suffix: HeadOfPrison
-  name: кнопка с замком
+  id: STPRISONLockableButtonHeadOfPrison
+  suffix: STHeadOfPrison
+  name: lockable button
   description: This button activates something.
   parent: LockableButton
   components:
   - type: AccessReader
-    access: [["HeadOfPrison"]]
+    access: [["STHeadOfPrison"]]
 
 - type: entity
-  id: PRISONLockableButtonPrisonMed
-  suffix: PrisonMed
-  name: кнопка с замком
+  id: STPRISONLockableButtonPrisonMed
+  suffix: STPrisonMed
+  name: lockable button
   description: This button activates something.
   parent: LockableButton
   components:
   - type: AccessReader
-    access: [["PrisonMed"]]
+    access: [["STPrisonMed"]]
 
 - type: entity
-  id: PRISONLockableButtonPrisonEng
-  suffix: PrisonEng
-  name: кнопка с замком
+  id: STPRISONLockableButtonPrisonEng
+  suffix: STPrisonEng
+  name: lockable button
   description: This button activates something.
   parent: LockableButton
   components:
   - type: AccessReader
-    access: [["PrisonEng"]]
+    access: [["STPrisonEng"]]

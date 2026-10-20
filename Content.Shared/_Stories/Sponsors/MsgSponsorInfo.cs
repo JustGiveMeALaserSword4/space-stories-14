@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using System.Text.Json.Serialization;
 using Lidgren.Network;
 using Robust.Shared.Network;
@@ -7,7 +7,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._Stories.Sponsors;
 
-[Serializable, NetSerializable]
+[Serializable, NetSerializable] 
 public sealed class SponsorInfo
 {
     public static readonly TimeSpan TimeAdvantage = TimeSpan.FromMinutes(3);
@@ -24,8 +24,11 @@ public sealed class SponsorInfo
     [JsonPropertyName("priorityJoin")]
     public bool HavePriorityJoin { get; set; } = false;
 
-    [JsonPropertyName("allowedMarkings")] // TODO: Rename API field in separate PR as breaking change!
+    [JsonPropertyName("allowedMarkings")]
     public string[] AllowedMarkings { get; set; } = Array.Empty<string>();
+
+    [JsonPropertyName("allowedTTSVoices")]
+    public string[] AllowedTTSVoices { get; set; } = Array.Empty<string>();
 
     [JsonPropertyName("allowedLoadouts")]
     public string[] AllowedLoadouts { get; set; } = Array.Empty<string>();
@@ -33,8 +36,18 @@ public sealed class SponsorInfo
     [JsonPropertyName("roleTimeBypass")]
     public bool RoleTimeBypass { get; set; } = false;
 
-    [JsonPropertyName("ghost_skin")]
-    public string GhostSkin { get; set; } = "MobObserver";
+    [JsonPropertyName("allowedGhostSkins")]
+    public string[] AllowedGhostSkins { get; set; } = Array.Empty<string>();
+
+    [JsonPropertyName("allowedGhostSkin")]
+    private string[]? LegacyAllowedGhostSkin
+    {
+        set
+        {
+            if (value != null && value.Length > 0 && AllowedGhostSkins.Length == 0)
+                AllowedGhostSkins = value;
+        }
+    }
 
     [JsonPropertyName("stationRolePriority")]
     public float StationRolePriority { get; set; } = 1.0f;
@@ -46,9 +59,6 @@ public sealed class SponsorInfo
     public float GhostRolePriority { get; set; } = 1.0f;
 }
 
-/// <summary>
-/// Server sends sponsoring info to client on connect only if user is sponsor
-/// </summary>
 public sealed class MsgSponsorInfo : NetMessage
 {
     public SponsorInfo? Info;

@@ -8,9 +8,10 @@
     useDelay: 140
     itemIconStyle: BigAction
     priority: -20
-    icon:
-      sprite: Objects/Specific/Medical/medipen.rsi
-      state: stimpen
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: stimpen
 
 - type: entity
   parent: BaseImplantAction
@@ -22,6 +23,55 @@
     useDelay: 120
     itemIconStyle: BigAction
     priority: -20
-    icon:
-      sprite: Objects/Specific/Medical/medipen.rsi
-      state: morphen
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: morphen
+
+- type: entity
+  parent: BaseAction
+  id: STActionToggleShieldBladeLeft
+  name: Toggle Left Blade
+  description: Extend or retract your cybernetic defense shield blade on your left arm.
+  components:
+  - type: Action
+    useDelay: 1
+    raiseOnAction: true
+    itemIconStyle: BigAction
+  - type: Sprite
+    sprite: _Stories/Objects/Weapons/Melee/shield_blade.rsi
+    layers:
+    - state: action_left
+  - type: InstantAction
+    event: !type:OnRetractableItemActionEvent
+  - type: RetractableItemAction
+    spawnedPrototype: STWeaponShieldBladeLeft
+    targetHandLocation: Left
+    summonSounds:
+      path: /Audio/_Stories/Weapons/bladeslice.ogg
+    retractSounds:
+      path: /Audio/_Stories/Weapons/bladeslice.ogg
+
+- type: entity
+  parent: BaseAction
+  id: STActionToggleShieldBladeRight
+  name: Toggle Right Blade
+  description: Extend or retract your cybernetic defense shield blade on your right arm.
+  components:
+  - type: Action
+    useDelay: 1
+    raiseOnAction: true
+    itemIconStyle: BigAction
+  - type: Sprite
+    sprite: _Stories/Objects/Weapons/Melee/shield_blade.rsi
+    layers:
+    - state: action_right
+  - type: InstantAction
+    event: !type:OnRetractableItemActionEvent
+  - type: RetractableItemAction
+    spawnedPrototype: STWeaponShieldBladeRight
+    targetHandLocation: Right
+    summonSounds:
+      path: /Audio/_Stories/Weapons/bladeslice.ogg
+    retractSounds:
+      path: /Audio/_Stories/Weapons/bladeslice.ogg

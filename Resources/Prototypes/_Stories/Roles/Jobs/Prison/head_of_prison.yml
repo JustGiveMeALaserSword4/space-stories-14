@@ -1,22 +1,24 @@
 - type: job
-  id: PRISONHeadOfPrison
-  name: начальник космической тюрьмы
-  description: Охраняйте это место используя все возможное и невозможно, иначе на свободу вырвутся самые опасные обитатели вселенной.
-  playTimeTracker: JobHeadOfSpacePrison
+  id: STPRISONHeadOfPrison
+  name: stories-job-name-head-of-prison
+  description: stories-job-description-head-of-prison
+  playTimeTracker: STJobHeadOfSpacePrison
+  setPreference: false
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobWarden
-      time: 18000 # 5 hours
+    - !type:OverallPlaytimeRequirement
+      time: 20h
     - !type:DepartmentTimeRequirement
       department: Prison
-      time: 18000 # 5 hours
-  weight: 10
-  startingGear: PRISONHeadOfPrisonGear
-  icon: "JobIconHeadOfSpacePrison"
+      time: 10h
+    - !type:RoleTimeRequirement
+      role: STJobSpacePrisonOfficer
+      time: 2h
+  startingGear: STPRISONHeadOfPrisonGear
+  icon: "STJobIconHeadOfSpacePrison"
   requireAdminNotify: true
   supervisors: job-supervisors-centcom
   accessGroups:
-  - PrisonAllAccess
+  - STPrisonAllAccess
   access:
   - Command
   - Armory
@@ -32,23 +34,23 @@
   maxBankBalance: 350
 
 - type: startingGear
-  id: PRISONHeadOfPrisonGear
+  id: STPRISONHeadOfPrisonGear
   storage:
     back:
     - WeaponPistolMk58
     - Flash
     - MagazinePistol
   equipment:
-    jumpsuit: PRISONClothingUniformJumpsuitHeadOfPrison
-    id: PRISONPDAHeadOfPrison
-    ears: PRISONClothingHeadsetAlt
-    outerClothing: PRISONClothingOuterCoatHeadOfPrison
-    eyes: PRISONClothingEyesGlasses
-    belt: PRISONClothingBeltSheathFilled
+    jumpsuit: STPRISONClothingUniformJumpsuitHeadOfPrison
+    id: STPRISONPDAHeadOfPrison
+    ears: STPRISONClothingHeadsetAlt
+    outerClothing: STPRISONClothingOuterCoatHeadOfPrison
+    eyes: STPRISONClothingEyesGlasses
+    belt: STPRISONClothingBeltSheathFilled
 
 - type: chameleonOutfit
-  id: PRISONHeadOfPrisonChameleonOutfit
-  job: PRISONHeadOfPrison
+  id: STPRISONHeadOfPrisonChameleonOutfit
+  job: STPRISONHeadOfPrison
   hasMindShield: true
   equipment:
     mask: ClothingMaskGasSecurity

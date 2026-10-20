@@ -1,6 +1,9 @@
 using System.Linq;
 using Content.Server._Stories.Conversion;
+using Content.Server._Stories.Language.Systems;
 using Content.Shared._Stories.Conversion;
+using Content.Shared._Stories.Language;
+using Content.Shared._Stories.Language.Prototypes;
 using Content.Shared._Stories.Mindshield;
 using Content.Shared._Stories.Shadowling;
 using Content.Shared._Stories.Vision.Components;
@@ -10,23 +13,28 @@ using Content.Shared.Body;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Stories.Shadowling;
 
 public sealed partial class ShadowlingSystem : EntitySystem
 {
     [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private ConversionSystem _conversion = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedVisionSystem _vision = default!;
-    [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedVisualBodySystem _visualBody = default!;
+    [Dependency] private LanguageSystem _language = default!;
+
+    private static readonly ProtoId<LanguagePrototype> ShadowtongueLanguage = "Shadowtongue";
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<ShadowlingComponent, ComponentInit>(OnInit);
+        SubscribeLocalEvent<ShadowlingComponent, ComponentRemove>(OnShadowlingRemoved);
         SubscribeLocalEvent<ShadowlingComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<ShadowlingComponent, MindShieldImplantedEvent>(OnMindShieldImplanted);
 
@@ -37,6 +45,8 @@ public sealed partial class ShadowlingSystem : EntitySystem
 
     private void OnInit(EntityUid uid, ShadowlingComponent component, ComponentInit args)
     {
+        _language.AddLanguage(uid, ShadowtongueLanguage, source: LanguageSource.Shadowling);
+
         RefreshActions(uid, component);
 
         if (!HasComp<VisionProviderComponent>(uid))
@@ -54,6 +64,14 @@ public sealed partial class ShadowlingSystem : EntitySystem
             Dirty(uid, vision);
             _vision.UpdateVision(uid);
         }
+    }
+
+    private void OnShadowlingRemoved(EntityUid uid, ShadowlingComponent component, ComponentRemove args)
+    {
+        if (TerminatingOrDeleted(uid))
+            return;
+
+        _language.RemoveLanguage(uid, ShadowtongueLanguage, source: LanguageSource.Shadowling);
     }
 
     private void OnMobStateChanged(EntityUid uid, ShadowlingComponent component, MobStateChangedEvent args)
@@ -78,6 +96,8 @@ public sealed partial class ShadowlingSystem : EntitySystem
         if (args.Handled)
             return;
 
+        _language.AddLanguage(uid, ShadowtongueLanguage, source: LanguageSource.Shadowling);
+
         _appearance.SetData(uid, ShadowlingThrallVisuals.IsThrall, true);
 
         if (_visualBody.TryGatherMarkingsData(uid, null, out var profiles, out _, out _) && profiles.Count > 0)
@@ -100,6 +120,8 @@ public sealed partial class ShadowlingSystem : EntitySystem
     {
         if (args.Handled)
             return;
+
+        _language.RemoveLanguage(uid, ShadowtongueLanguage, source: LanguageSource.Shadowling);
 
         _appearance.SetData(uid, ShadowlingThrallVisuals.IsThrall, false);
 
@@ -148,7 +170,8 @@ public sealed partial class ShadowlingSystem : EntitySystem
                 if (actionId != null)
                     component.GrantedActions[action] = actionId.Value;
             }
-            else if (aliveThrallsAmount < requiredAmount && component.GrantedActions.TryGetValue(action, out var actionId))
+            else if (aliveThrallsAmount < requiredAmount &&
+                     component.GrantedActions.TryGetValue(action, out var actionId))
             {
                 _actions.RemoveAction(uid, actionId);
                 component.GrantedActions.Remove(action);

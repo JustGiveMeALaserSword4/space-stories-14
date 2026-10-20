@@ -3,8 +3,8 @@ using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
-using Content.Server.Speech.EntitySystems;
 using Content.Server.Station.Systems;
+using Content.Server._Stories.Language.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
@@ -15,8 +15,10 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Examine;
 using Content.Shared.Ghost;
+using Content.Shared.Ghost.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Players.RateLimiting;
+using Content.Shared.Speech.EntitySystems;
 using Robust.Server.Player;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Configuration;
@@ -49,6 +51,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private ReplacementAccentSystem _wordreplacement = default!;
     [Dependency] private ExamineSystemShared _examineSystem = default!;
     [Dependency] private EntityQuery<GhostHearingComponent> _ghostHearingQuery = default!;
+    [Dependency] private LanguageSystem _language = default!; // Stories-Language
 
     public new const int VoiceRange = 10; // how far voice goes in world units
     public new const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units

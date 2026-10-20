@@ -3,9 +3,9 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.FixedPoint;
-using Robust.Shared.Prototypes;
 using Content.Shared.Speech.Muting;
 using Content.Shared.Stunnable;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Stories.Pontific;
 
@@ -25,7 +25,7 @@ public sealed partial class PontificSystem
             _appearance.SetData(entity, PontificVisuals.State, PontificState.Prayer);
 
         EnsureComp<ForceComponent>(entity).PassiveVolume = 10;
-        EnsureComp<PassiveDamageComponent>(entity).Damage = new()
+        EnsureComp<PassiveDamageComponent>(entity).Damage = new DamageSpecifier
         {
             DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
             {
@@ -42,7 +42,7 @@ public sealed partial class PontificSystem
         };
 
         EnsureComp<StunnedComponent>(entity);
-        EnsureComp<MutedComponent>(entity);
+        EnsureComp<MutedStatusEffectComponent>(entity);
     }
 
     private void OnPrayerShutdown(Entity<PontificPrayerComponent> entity, ref ComponentShutdown args)
@@ -54,7 +54,7 @@ public sealed partial class PontificSystem
         }
 
         EnsureComp<ForceComponent>(entity).PassiveVolume = 0.01f;
-        EnsureComp<PassiveDamageComponent>(entity).Damage = new()
+        EnsureComp<PassiveDamageComponent>(entity).Damage = new DamageSpecifier
         {
             DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
             {
@@ -71,7 +71,7 @@ public sealed partial class PontificSystem
         };
 
         RemComp<StunnedComponent>(entity);
-        RemComp<MutedComponent>(entity);
-        _movementSpeed.RefreshMovementSpeedModifiers(entity);
+        RemComp<MutedStatusEffectComponent>(entity);
+        _movementSpeed.RefreshMovementSpeedModifiers(entity.Owner);
     }
 }

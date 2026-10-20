@@ -1,22 +1,23 @@
 - type: job
-  id: PRISONMedic
-  name: медик космической тюрьмы
-  description: Лечите самых опасных преступников космических просторов.
-  playTimeTracker: JobSpacePrisonMedic
+  id: STPRISONMedic
+  name: stories-job-name-prison-medic
+  description: stories-job-description-prison-medic
+  playTimeTracker: STJobSpacePrisonMedic
+  setPreference: false
   requirements:
     - !type:DepartmentTimeRequirement
-      department: Security
-      time: 18000 # 5 hours
-    - !type:DepartmentTimeRequirement
       department: Medical
-      time: 18000 # 5 hours
-  startingGear: PRISONMedicGear
-  icon: "JobIconSpacePrisonMedic"
+      time: 2h
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 1h
+  startingGear: STPRISONMedicGear
+  icon: "STJobIconSpacePrisonMedic"
   supervisors: stories-job-supervisors-headofprison
   access:
   - Prisoner
   - Prison
-  - PrisonMed
+  - STPrisonMed
   - Maintenance
   # special:
   # - !type:AddImplantSpecial
@@ -25,15 +26,15 @@
   maxBankBalance: 250
 
 - type: startingGear
-  id: PRISONMedicGear
+  id: STPRISONMedicGear
   equipment:
-    jumpsuit: PRISONClothingUniformJumpsuitMedic
-    id: PRISONPDAMedic
-    ears: PRISONClothingHeadsetMedic
+    jumpsuit: STPRISONClothingUniformJumpsuitMedic
+    id: STPRISONPDAMedic
+    ears: STPRISONClothingHeadsetMedic
 
 - type: chameleonOutfit
-  id: PRISONMedicChameleonOutfit
-  job: PRISONMedic
+  id: STPRISONMedicChameleonOutfit
+  job: STPRISONMedic
   equipment:
     head: ClothingHeadHatBeretMedic
     gloves: ClothingHandsGlovesLatex

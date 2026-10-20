@@ -1,69 +1,39 @@
 - type: entity
-  parent: MobObserver
-  id: SponsorObserverTier1
-  name: observer
-  description: This ghost is suspicious.
+  id: STSponsorObserverTier1
   components:
-  - type: Sprite
-    overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.
-    drawdepth: Ghosts
-    sprite: _Stories/Mobs/Ghosts/sponsor.rsi
-    layers:
-    - state: tier1
-      shader: unshaded
+  - type: SponsorGhostSkinInfo
+    sprite:
+      sprite: _Stories/Mobs/Ghosts/sponsor.rsi
+      state: tier1
 
 - type: entity
-  parent: MobObserver
-  id: SponsorObserverTier2
-  name: observer
-  description: This ghost is suspicious.
+  id: STSponsorObserverTier2
   components:
-  - type: Sprite
-    overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.
-    drawdepth: Ghosts
-    sprite: _Stories/Mobs/Ghosts/sponsor.rsi
-    layers:
-    - state: tier2
-      shader: unshaded
+  - type: SponsorGhostSkinInfo
+    sprite:
+      sprite: _Stories/Mobs/Ghosts/sponsor.rsi
+      state: tier2
 
 - type: entity
-  parent: MobObserver
-  id: SponsorObserverTier3
-  name: observer
-  description: This ghost is suspicious.
+  id: STSponsorObserverTier3
   components:
-  - type: Sprite
-    overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.
-    drawdepth: Ghosts
-    sprite: _Stories/Mobs/Ghosts/sponsor.rsi
-    layers:
-    - state: tier3
-      shader: unshaded
+  - type: SponsorGhostSkinInfo
+    sprite:
+      sprite: _Stories/Mobs/Ghosts/sponsor.rsi
+      state: tier3
 
 - type: entity
-  parent: MobObserver
-  id: SponsorObserverTier4
-  name: observer
-  description: This ghost is suspicious.
+  id: STSponsorObserverTier4
   components:
-  - type: Sprite
-    overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.
-    drawdepth: Ghosts
-    sprite: _Stories/Mobs/Ghosts/sponsor.rsi
-    layers:
-    - state: tier4
-      shader: unshaded
+  - type: SponsorGhostSkinInfo
+    sprite:
+      sprite: _Stories/Mobs/Ghosts/sponsor.rsi
+      state: tier4
 
 - type: entity
-  parent: MobObserver
-  id: SponsorObserverTier5
-  name: observer
-  description: This ghost is suspicious.
+  id: STSponsorObserverTier5
   components:
-  - type: Sprite
-    overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.
-    drawdepth: Ghosts
-    sprite: _Stories/Mobs/Ghosts/sponsor.rsi
-    layers:
-    - state: tier5
-      shader: unshaded
+  - type: SponsorGhostSkinInfo
+    sprite:
+      sprite: _Stories/Mobs/Ghosts/sponsor.rsi
+      state: tier5
