@@ -16,7 +16,6 @@
   # - !type:RoleTimeRequirement
   #   role: STJobJudge
   #   time: 10h
-  setPreference: false
   startingGear: STMagistrateGear
   icon: "STJobIconMagistrate"
   supervisors: stories-job-supervisors-management-juridical-department
@@ -38,17 +37,8 @@
   equipment:
     head: STClothingHeadHatMagistrate
     jumpsuit: STClothingUniformJumpsuitMagistrate
-    back: ClothingBackpackSatchelHolding
-    eyes: STClothingEyesGlassesCentcom
-    ears: ClothingHeadsetAltCentCom
     gloves: STClothingHandsGlovesMagistrate
-    shoes: ClothingShoesBootsLaceup
     id: STMagistratePDA
     outerClothing: STClothingOuterRobesMagistrate
     neck: STClothingNeckCloakMagistrate
     belt: BoxFolderCentComClipboardThreePapers
-
-- type: roleLoadout
-  id: JobSTMagistrate
-  groups:
-  - GroupSpeciesBreathTool

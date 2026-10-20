@@ -27,6 +27,7 @@
   - type: StationCargoOrderDatabase
     orders:
       STCentComm: [ ]
+      Cargo: [ ]
     markets:
     - market
     - SalvageJobReward2

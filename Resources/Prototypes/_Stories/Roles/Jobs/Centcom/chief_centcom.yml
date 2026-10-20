@@ -19,7 +19,6 @@
   # - !type:RoleTimeRequirement
   #   role: JobCaptain
   #   time: 20h
-  setPreference: false
   startingGear: STChiefCentcomGear
   icon: "STJobIconChiefCentcom"
   supervisors: stories-job-supervisors-quadrant-management
@@ -31,7 +30,7 @@
   - STDSO
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm, STRadioImplantDSO ]
+    implants: [ MindShieldImplant, TrackingImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm, STRadioImplantDSO ]
   whitelisted: true
   minBankBalance: 750
   maxBankBalance: 900
@@ -41,17 +40,7 @@
   equipment:
     head: STClothingHeadHatChiefCentcom
     jumpsuit: STClothingUniformJumpsuitChiefCentcom
-    back: ClothingBackpackSatchelHolding
-    eyes: STClothingEyesGlassesCentcom
-    ears: ClothingHeadsetAltCentCom
     gloves: STClothingHandsGlovesChiefCentcom
-    shoes: ClothingShoesBootsLaceup
     id: STChiefCentcomPDA
-    outerClothing: ClothingOuterArmorCentcommCarapace
     neck: STClothingNeckCloakChiefCentcom
     belt: ClothingBeltSheathFilled
-
-- type: roleLoadout
-  id: JobSTChiefCentcom
-  groups:
-  - GroupSpeciesBreathTool

@@ -1,18 +1,18 @@
-#- type: roleLoadout
-#  id: JobSTGuardianNt
-#  groups:
-#  - STGuardianNtHead
-#  - STGuardianNtMask
-#  - STGuardianNtNeck
-#  - STGuardianNtJumpsuit
-#  - STGuardianNtBelt
-#  - STGuardianNtBackpack
-#  - STGuardianNtOuterClothing
-#  - STGuardianNtShoes
-#  - STGuardianNtLightsaber
-#  - SurvivalSecurity
-#  - Trinkets
-#  - GroupSpeciesBreathTool
+- type: roleLoadout
+  id: JobSTGuardianNt
+  groups:
+  - STGuardianNtHead
+  - STGuardianNtMask
+  - STGuardianNtNeck
+  - STGuardianNtJumpsuit
+  - STGuardianNtBelt
+  - STGuardianNtBackpack
+  - STGuardianNtOuterClothing
+  - STGuardianNtShoes
+  - STGuardianNtLightsaber
+  - AssistiveItems
+  - SurvivalSecurity
+  - GroupSpeciesBreathTool
 
 - type: loadoutGroup
   id: STGuardianNtHead

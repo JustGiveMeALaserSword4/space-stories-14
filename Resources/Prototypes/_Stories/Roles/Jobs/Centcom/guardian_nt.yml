@@ -3,16 +3,16 @@
   name: stories-job-name-guardian-nt
   description: stories-job-description-guardian-nt
   playTimeTracker: STJobGuardianNt
-  setPreference: false
   requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 10h
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 5h
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 3h
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 15h
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 10h
+  - !type:DepartmentTimeRequirement
+    department: CentralCommand
+    time: 5h
   startingGear: STGuardianNtGear
   icon: "STJobIconGuardianNt"
   supervisors: job-supervisors-centcom
@@ -22,7 +22,7 @@
   - CentralCommand
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, TrackingImplant, TrackingImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm ]
   - !type:AddComponentSpecial
     components:
     - type: Force
@@ -34,23 +34,10 @@
 - type: startingGear
   id: STGuardianNtGear
   equipment:
-    head: STClothingHeadHatBeretGuardianNt
-    jumpsuit: STClothingUniformJumpsuitGuardianNt
-    back: STClothingBackpackSatchelGuardianNt
-    eyes: STClothingEyesGlassesCentcom
+    id: STGuardianNtPDA
     ears: STClothingHeadsetGuardianNtAlt
     gloves: ClothingHandsGlovesCombat
-    shoes: STClothingShoesBootsJackGuardianNt
-    id: STGuardianNtPDA
-    outerClothing: STClothingOuterVestGuardianNt
-    neck: STClothingNeckMantleGuardianNt
-    belt: ClothingBeltSecurityFilled
-    pocket1: STLightsaberWhite
-  # equipment:
-  #   id: STGuardianNtPDA
-  #   ears: STClothingHeadsetGuardianNtAlt
-  #   gloves: ClothingHandsGlovesCombat
-  #   eyes: ClothingEyesGlassesSecurity
+    eyes: ClothingEyesGlassesSecurity
 
 - type: chameleonOutfit
   id: STGuardianNtChameleonOutfit
@@ -64,8 +51,3 @@
     jumpsuit: STClothingUniformJumpsuitGuardianNt
     back: STClothingBackpackGuardianNt
     shoes: STClothingShoesBootsJackGuardianNt
-
-- type: roleLoadout
-  id: JobSTGuardianNt
-  groups:
-  - GroupSpeciesBreathTool

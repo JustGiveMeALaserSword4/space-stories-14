@@ -25,7 +25,7 @@
   - STDSO
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm, STRadioImplantDSO ]
+    implants: [ MindShieldImplant, TrackingImplant, STAdrenocorImplant, DeathRattleImplantCentcomm, STDeathRattleImplantDSO, RadioImplantCentcomm, STRadioImplantDSO ]
   whitelisted: true
   minBankBalance: 1800
   maxBankBalance: 2000
@@ -42,8 +42,3 @@
     id: STInternalInspectorPDA
     pocket1: STRubberStampInternalInspector
     belt: BoxFolderCentComThreePapers
-
-- type: roleLoadout
-  id: JobSTInternalInspector
-  groups:
-  - GroupSpeciesBreathTool

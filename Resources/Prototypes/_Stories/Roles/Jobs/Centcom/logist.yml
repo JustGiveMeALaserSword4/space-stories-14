@@ -13,7 +13,6 @@
   - !type:RoleTimeRequirement
     role: JobCargoTechnician
     time: 10h
-  setPreference: false
   startingGear: STLogistGear
   icon: "STJobIconLogist"
   supervisors: stories-job-supervisors-special-assignments
@@ -25,24 +24,15 @@
   - CentralCommand
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm ]
+    implants: [ MindShieldImplant, TrackingImplant, RadioImplantCentcomm ]
   minBankBalance: 400
   maxBankBalance: 450
 
 - type: startingGear
   id: STLogistGear
   equipment:
-    head: ClothingHeadHatCargosoft
-    jumpsuit: ClothingUniformJumpsuitCargo
-    back: ClothingBackpackSatchelCargo
+    jumpsuit: ClothingUniformOveralls
     eyes: ClothingEyesHudCommand
     ears: ClothingHeadsetCargo
     gloves: ClothingHandsGlovesFingerless
-    shoes: ClothingShoesBootsWinterCargo
     id: STLogistPDA
-    outerClothing: ClothingOuterWinterCentcom
-
-- type: roleLoadout
-  id: JobSTLogist
-  groups:
-  - GroupSpeciesBreathTool

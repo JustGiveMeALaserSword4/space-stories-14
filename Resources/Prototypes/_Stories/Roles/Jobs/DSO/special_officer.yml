@@ -13,7 +13,6 @@
   # - !type:RoleTimeRequirement
   #   role: JobHeadOfSecurity
   #   time: 20h
-  setPreference: false
   startingGear: STSpecialOfficerGear
   icon: "STJobIconSpecialOfficer"
   supervisors: stories-job-supervisors-admiralty
@@ -25,7 +24,7 @@
   - STDSO
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, STAdrenocorImplant, STDeathRattleImplantDSO, RadioImplantCentcomm, STRadioImplantDSO ]
+    implants: [ MindShieldImplant, TrackingImplant, STAdrenocorImplant, STDeathRattleImplantDSO, RadioImplantCentcomm, STRadioImplantDSO ]
   whitelisted: true
   minBankBalance: 750
   maxBankBalance: 900
@@ -35,18 +34,9 @@
   equipment:
     head: STClothingHeadHatSpecialOfficer
     jumpsuit: STClothingUniformJumpsuitSpecialOfficer
-    back: ClothingBackpackSatchelHolding
     mask: ClothingMaskNeckGaiter
-    eyes: STClothingEyesGlassesCentcom
-    ears: ClothingHeadsetAltCentCom
     gloves: ClothingHandsGlovesCombat
     shoes: STClothingShoesBootsSpecialOfficer
     id: STSpecialOfficerPDA
     outerClothing: ClothingOuterArmorBulletproof
     neck: STClothingNeckCloakSpecialOfficer
-    belt: ClothingBeltSecurityFilled
-
-- type: roleLoadout
-  id: JobSTSpecialOfficer
-  groups:
-  - GroupSpeciesBreathTool

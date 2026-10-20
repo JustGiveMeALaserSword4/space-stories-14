@@ -10,7 +10,6 @@
   # - !type:RoleTimeRequirement
   #   role: JobCaptain
   #   time: 10h
-  setPreference: false
   startingGear: STRepresentativeCentcomGear
   icon: "STJobIconCentcom"
   supervisors: stories-job-supervisors-chief-centcom
@@ -21,7 +20,7 @@
   - CentralCommand
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm ]
+    implants: [ MindShieldImplant, TrackingImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm ]
   whitelisted: true
   minBankBalance: 500
   maxBankBalance: 600
@@ -29,19 +28,5 @@
 - type: startingGear
   id: STRepresentativeCentcomGear
   equipment:
-    head: ClothingHeadHatCentcomcap
-    jumpsuit: ClothingUniformJumpsuitCentcomOfficial
-    back: ClothingBackpackSatchelLeather
-    eyes: STClothingEyesGlassesCentcom
-    ears: ClothingHeadsetAltCentCom
-    gloves: ClothingHandsGlovesCombat
-    shoes: ClothingShoesBootsLaceup
     id: STRepresentativeCentcomPDA
-    outerClothing: ClothingOuterArmorCentcommCarapace
-    neck: ClothingNeckCloakCentcom
     belt: BoxFolderCentComClipboard
-
-- type: roleLoadout
-  id: JobSTRepresentativeCentcom
-  groups:
-  - GroupSpeciesBreathTool

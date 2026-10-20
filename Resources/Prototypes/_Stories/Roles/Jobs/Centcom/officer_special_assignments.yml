@@ -13,7 +13,6 @@
   # - !type:RoleTimeRequirement
   #   role: STJobLogist
   #   time: 15h
-  setPreference: false
   startingGear: STSpecialAssignmentsGear
   icon: "STJobIconSpecialAssignments"
   supervisors: stories-job-supervisors-quadrant-management
@@ -29,7 +28,7 @@
   - CentralCommand
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm ]
+    implants: [ MindShieldImplant, TrackingImplant, DeathRattleImplantCentcomm, RadioImplantCentcomm ]
   whitelisted: true
   minBankBalance: 500
   maxBankBalance: 600
@@ -39,14 +38,5 @@
   equipment:
     head: STClothingHeadHatSpecialAssignments
     jumpsuit: STClothingUniformJumpsuitSpecialAssignments
-    back: ClothingBackpackSatchelHolding
-    eyes: STClothingEyesGlassesCentcom
-    ears: ClothingHeadsetAltCentCom
-    gloves: ClothingHandsGlovesCombat
     shoes: ClothingShoesBootsJackFilled
     id: STSpecialAssignmentsPDA
-
-- type: roleLoadout
-  id: JobSTOfficerSpecialAssignments
-  groups:
-  - GroupSpeciesBreathTool

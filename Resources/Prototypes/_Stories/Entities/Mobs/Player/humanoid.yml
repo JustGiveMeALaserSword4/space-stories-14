@@ -15,6 +15,13 @@
   id: STChiefCentcom
   parent: EventHumanoidMindShielded
   components:
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - TrackingImplant
+      - DeathRattleImplantCentcomm
+      - STRadioImplantDSO
+      - RadioImplantCentcomm
     - type: GhostRole
       name: stories-job-name-chief-centcom
       description: stories-job-description-chief-centcom
@@ -24,6 +31,7 @@
       job: STChiefCentcom
     - type: Loadout
       prototypes: [ STChiefCentcomGear ]
+      roleLoadout: [ JobSTChiefCentcom ]
     - type: RandomMetadata
       nameSegments:
       - NamesFirst
@@ -45,6 +53,12 @@
   id: STOperatorCentcom
   parent: EventHumanoidMindShielded
   components:
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - TrackingImplant
+      - DeathRattleImplantCentcomm
+      - RadioImplantCentcomm
     - type: GhostRole
       name: stories-job-name-operator-centcom
       description: stories-job-description-operator-centcom
@@ -54,6 +68,7 @@
       job: STOperatorCentcom
     - type: Loadout
       prototypes: [ STOperatorCentcomGear ]
+      roleLoadout: [ JobSTOperatorCentcom ]
     - type: RandomMetadata
       nameSegments:
       - NamesFirst
@@ -75,6 +90,12 @@
   id: STRepresentativeCentcom
   parent: EventHumanoidMindShielded
   components:
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - TrackingImplant
+      - DeathRattleImplantCentcomm
+      - RadioImplantCentcomm
     - type: GhostRole
       name: stories-job-name-representative-centcom
       description: stories-job-description-representative-centcom
@@ -84,6 +105,7 @@
       job: STRepresentativeCentcom
     - type: Loadout
       prototypes: [ STRepresentativeCentcomGear ]
+      roleLoadout: [ JobSTRepresentativeCentcom ]
     - type: RandomMetadata
       nameSegments:
       - NamesFirst
@@ -105,6 +127,12 @@
   id: STHeadOfSecurityCentcom
   parent: EventHumanoidMindShielded
   components:
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - TrackingImplant
+      - DeathRattleImplantCentcomm
+      - RadioImplantCentcomm
     - type: GhostRole
       name: stories-job-name-head-of-security-centcom 
       description: stories-job-description-head-of-security-centcom 
@@ -114,6 +142,7 @@
       job: STHeadOfSecurityCentcom
     - type: Loadout
       prototypes: [ STHeadOfSecurityCentcomGear ]
+      roleLoadout: [ JobSTHeadOfSecurityCentcom ]
     - type: RandomMetadata
       nameSegments:
       - NamesFirst
@@ -135,6 +164,11 @@
   id: STSecurityOfficerCentcom
   parent: EventHumanoidMindShielded
   components:
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - TrackingImplant
+      - RadioImplantCentcomm
     - type: GhostRole
       name: stories-job-name-officer-security-centcom
       description: stories-job-description-officer-security-centcom
@@ -144,6 +178,7 @@
       job: STSecurityOfficerCentcom
     - type: Loadout
       prototypes: [ STSecurityOfficerCentcomGear ]
+      roleLoadout: [ JobSTSecurityOfficerCentcom ]
     - type: RandomMetadata
       nameSegments:
       - NamesFirst
@@ -164,6 +199,11 @@
 - type: randomHumanoidSettings
   id: STMedicCentcom
   components:
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - TrackingImplant
+      - RadioImplantCentcomm
     - type: GhostRole
       name: stories-job-name-medic-centcom
       description: stories-job-description-medic-centcom
@@ -173,6 +213,7 @@
       job: STMedicCentcom
     - type: Loadout
       prototypes: [ STMedicCentcomGear ]
+      roleLoadout: [ JobSTMedicCentcom ]
     - type: RandomMetadata
       nameSegments:
       - NamesFirst
@@ -193,6 +234,11 @@
 - type: randomHumanoidSettings
   id: STEngineerCentcom
   components:
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - TrackingImplant
+      - RadioImplantCentcomm
     - type: GhostRole
       name: stories-job-name-engineer-centcom
       description: stories-job-description-engineer-centcom
@@ -202,6 +248,7 @@
       job: STEngineerCentcom
     - type: Loadout
       prototypes: [ STEngineerCentcomGear ]
+      roleLoadout: [ JobSTEngineerCentcom ]
     - type: RandomMetadata
       nameSegments:
       - NamesFirst
@@ -222,6 +269,11 @@
 - type: randomHumanoidSettings
   id: STWorkerCentcom
   components:
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - TrackingImplant
+      - RadioImplantCentcomm
     - type: GhostRole
       name: stories-job-name-worker-centcom
       description: stories-job-description-worker-centcom
@@ -231,6 +283,7 @@
       job: STWorkerCentcom
     - type: Loadout
       prototypes: [ STWorkerCentcomGear ]
+      roleLoadout: [ JobSTWorkerCentcom ]
     - type: RandomMetadata
       nameSegments:
       - NamesFirst
@@ -253,6 +306,13 @@
   id: STMagistrate
   parent: EventHumanoidMindShielded
   components:
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - TrackingImplant
+      - DeathRattleImplantCentcomm
+      - STRadioImplantDSO
+      - RadioImplantCentcomm
     - type: GhostRole
       name: stories-job-name-magistrate
       description: stories-job-description-magistrate
@@ -262,6 +322,7 @@
       job: STMagistrate
     - type: Loadout
       prototypes: [ STMagistrateGear ]
+      roleLoadout: [ JobSTMagistrate ]
     - type: RandomMetadata
       nameSegments:
       - NamesFirst
@@ -285,6 +346,15 @@
   id: STSpecialOfficer
   parent: EventHumanoidMindShielded
   components:
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - TrackingImplant
+      - STAdrenocorImplant
+      - DeathRattleImplantCentcomm
+      - STDeathRattleImplantDSO
+      - STRadioImplantDSO
+      - RadioImplantCentcomm
     - type: GhostRole
       name: stories-job-name-special-officer
       description: stories-job-description-special-officer
@@ -294,6 +364,7 @@
       job: STSpecialOfficer
     - type: Loadout
       prototypes: [ STSpecialOfficerGear ]
+      roleLoadout: [ JobSTSpecialOfficer ]
     - type: RandomMetadata
       nameSegments:
       - NamesFirst
@@ -315,6 +386,12 @@
   id: STCBURNCommander
   parent: EventHumanoidMindShielded
   components:
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
+      - STAdrenocorImplant
+      - STDeathRattleImplantDSO
+      - STRadioImplantDSO
     - type: GhostRole
       name: stories-ghost-role-information-cburn-commander-name
       description: stories-ghost-role-information-cburn-commander-description

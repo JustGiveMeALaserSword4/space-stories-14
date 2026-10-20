@@ -4,7 +4,7 @@ meta:
   engineVersion: 289.0.3
   forkId: ""
   forkVersion: ""
-  time: 10/20/2026 04:20:44
+  time: 10/20/2026 10:57:05
   entityCount: 11776
 maps: []
 grids:
@@ -63392,11 +63392,33 @@ entities:
     - type: Transform
       parent: 1
       pos: 0.5,-15.5
+    - type: DeviceLinkSource
+      linkedPorts:
+        11737:
+        - - OrderSender
+          - OrderReceiver
+        11750:
+        - - OrderSender
+          - OrderReceiver
+        11751:
+        - - OrderSender
+          - OrderReceiver
   - uid: 3790
     components:
     - type: Transform
       parent: 1
       pos: -3.5,-6.5
+    - type: DeviceLinkSource
+      linkedPorts:
+        11737:
+        - - OrderSender
+          - OrderReceiver
+        11750:
+        - - OrderSender
+          - OrderReceiver
+        11751:
+        - - OrderSender
+          - OrderReceiver
   - uid: 4599
     components:
     - type: Transform

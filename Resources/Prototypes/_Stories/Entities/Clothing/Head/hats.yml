@@ -102,8 +102,8 @@
 
 - type: entity
   parent: [ ClothingHeadBase, BaseCentcommContraband ]
-  id: STClothingHeadHatBeretHeadOfSecurityCentcom
-  name: takes the head of security of the Central Command
+  id: STClothingHeadHatCentcomBeret
+  name: Centcomm beret
   description: A cap for real commanders.
   components:
   - type: Sprite

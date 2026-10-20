@@ -10,7 +10,6 @@
   - !type:DepartmentTimeRequirement
     department: Command
     time: 10h
-  setPreference: false
   startingGear: STEngineerCentcomGear
   icon: "STJobIconEngineerCentcom"
   supervisors: job-supervisors-centcom
@@ -22,25 +21,17 @@
   - CentralCommand
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant, RadioImplantCentcomm ]
+    implants: [ MindShieldImplant, TrackingImplant, RadioImplantCentcomm ]
   minBankBalance: 400
   maxBankBalance: 450
 
 - type: startingGear
   id: STEngineerCentcomGear
   equipment:
-    head: ClothingHeadHatBeretEngineering
     jumpsuit: STClothingUniformJumpsuitEngineerCentcom
-    back: ClothingBackpackSatchelEngineering
     eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetEngineering
     gloves: ClothingHandsGlovesColorYellow
-    shoes: ClothingShoesColorWhite
     id: STEngineerCentcomPDA
     neck: ClothingNeckEngineermedal
     belt: ClothingBeltUtilityEngineering
-
-- type: roleLoadout
-  id: JobSTEngineerCentcom
-  groups:
-  - GroupSpeciesBreathTool

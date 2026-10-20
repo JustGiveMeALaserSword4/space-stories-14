@@ -146,6 +146,9 @@
     - id: HoloprojectorSecurity
     - id: OxygenTankFilled
     - id: RubberStampCentcom
+    - id: STClothingEyesGlassesCentcom
+    - id: STClothingHeadHatBeretCentcom
+    - id: STClothingNeckCloakHeadOfSecurityCentcom
     - id: STClothingOuterHardsuitCentcomSecutiry
     - id: STClothingOuterHardsuitCentcomPersonnel
     - id: STClothingShoesBootsMagCentcomm
