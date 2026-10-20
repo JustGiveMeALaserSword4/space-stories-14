@@ -19,7 +19,7 @@
   parent: BaseCartridgePistol
   id: STCartridgeDeagle
   name: cartridge (.50 AE)
-  description: TODO
+  description: A special caliber for the Desert Eagle pistol.
   components:
   - type: CartridgeAmmo
     proto: STBulletDeagle
@@ -31,7 +31,7 @@
   parent: STCartridgePistolSilver
   id: STCartridgeDeagleSilver
   name: cartridge (.50 AE silver)
-  description: TODO
+  description: A special caliber for the Desert Eagle pistol. Silver ammunition inflicts irreparable damage on demonic minions, making it an ideal weapon against the undead.
   components:
   - type: CartridgeAmmo
     proto: STBulletDeagleSilver

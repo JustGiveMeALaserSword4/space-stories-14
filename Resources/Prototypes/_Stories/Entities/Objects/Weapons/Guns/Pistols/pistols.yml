@@ -1,8 +1,8 @@
 - type: entity
-  name: deagle
+  name: desert eagle
   parent: [BaseWeaponPistol, BaseSecurityContraband]
   id: STWeaponPistolDeagle
-  description: TODO
+  description: A military-grade weapon used primarily by Nuclear operatives, as well as by certain Syndicate officers.
   components:
   - type: Sprite
     sprite: _Stories/Objects/Weapons/Guns/Pistols/deagle.rsi
