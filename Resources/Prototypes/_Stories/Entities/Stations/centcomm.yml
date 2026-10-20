@@ -16,3 +16,19 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Transform
+  - type: StationBankAccount
+    accounts:
+      STCentComm: 200000
+    primaryAccount: STCentComm
+    primaryCut: 1
+    lockboxCut: 0
+    revenueDistribution:
+      STCentComm: 1.00
+  - type: StationCargoOrderDatabase
+    orders:
+      STCentComm: [ ]
+    markets:
+    - market
+    - SalvageJobReward2
+    - SalvageJobReward3
+    - SalvageJobRewardMAX
