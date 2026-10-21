@@ -147,7 +147,7 @@
     - id: OxygenTankFilled
     - id: RubberStampCentcom
     - id: STClothingEyesGlassesCentcom
-    - id: STClothingHeadHatBeretCentcom
+    - id: STClothingHeadHatCentcomBeret
     - id: STClothingNeckCloakHeadOfSecurityCentcom
     - id: STClothingOuterHardsuitCentcomSecutiry
     - id: STClothingOuterHardsuitCentcomPersonnel

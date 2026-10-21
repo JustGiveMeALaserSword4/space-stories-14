@@ -37,7 +37,7 @@
     id: STGuardianNtPDA
     ears: STClothingHeadsetGuardianNtAlt
     gloves: ClothingHandsGlovesCombat
-    eyes: ClothingEyesGlassesSecurity
+    eyes: STClothingEyesGlassesCentcom
 
 - type: chameleonOutfit
   id: STGuardianNtChameleonOutfit
