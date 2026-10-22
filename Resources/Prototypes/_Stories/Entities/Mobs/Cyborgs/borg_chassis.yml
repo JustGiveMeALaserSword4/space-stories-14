@@ -55,7 +55,6 @@
       borg_module:
       - BorgModulePrying
       - STBorgModuleSecurityNonLethal
-      - STBorgModuleSecurityServiceWeapon
       - BorgModuleFireExtinguisher
   - type: ItemSlots
     slots:
