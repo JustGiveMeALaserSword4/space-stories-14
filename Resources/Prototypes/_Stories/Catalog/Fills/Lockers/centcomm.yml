@@ -73,15 +73,20 @@
   components:
   - type: StorageFill
     contents:
+    - id: AirGrenade
+    - id: ClothingShoesBootsMag
     - id: ClothingHandsGlovesColorYellow
     - id: ClothingHeadsetEngineering
-    - id: ClothingMaskGas
+    - id: ClothingHeadHelmetAtmosFire
+    - id: ClothingMaskGasAtmos
+    - id: ClothingOuterHardsuitEngineering
+    - id: ClothingOuterSuitAtmosFire
+    - id: GasAnalyzer
+    - id: HolofanProjector
     - id: MetalFoamGrenade
     - id: OxygenTankFilled
     - id: RCD
     - id: RCDAmmo
-    - id: STClothingOuterHardsuitCentcomPersonnel
-    - id: STClothingShoesBootsMagCentcomm
     - id: trayScanner
 
 - type: entity
